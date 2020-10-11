@@ -1,5 +1,6 @@
 module stage_0_permutation #(
-    parameter DATA_WIDTH = 32
+    parameter DATA_WIDTH_PER_INPUT = 32,
+    parameter INPUT_PER_CYCLE = 32
   ) (
     inData_0,
     inData_1,
@@ -71,71 +72,71 @@ module stage_0_permutation #(
 
   input clk, rst;
 
-  input [DATA_WIDTH-1:0] inData_0;
-  input [DATA_WIDTH-1:0] inData_1;
-  input [DATA_WIDTH-1:0] inData_2;
-  input [DATA_WIDTH-1:0] inData_3;
-  input [DATA_WIDTH-1:0] inData_4;
-  input [DATA_WIDTH-1:0] inData_5;
-  input [DATA_WIDTH-1:0] inData_6;
-  input [DATA_WIDTH-1:0] inData_7;
-  input [DATA_WIDTH-1:0] inData_8;
-  input [DATA_WIDTH-1:0] inData_9;
-  input [DATA_WIDTH-1:0] inData_10;
-  input [DATA_WIDTH-1:0] inData_11;
-  input [DATA_WIDTH-1:0] inData_12;
-  input [DATA_WIDTH-1:0] inData_13;
-  input [DATA_WIDTH-1:0] inData_14;
-  input [DATA_WIDTH-1:0] inData_15;
-  input [DATA_WIDTH-1:0] inData_16;
-  input [DATA_WIDTH-1:0] inData_17;
-  input [DATA_WIDTH-1:0] inData_18;
-  input [DATA_WIDTH-1:0] inData_19;
-  input [DATA_WIDTH-1:0] inData_20;
-  input [DATA_WIDTH-1:0] inData_21;
-  input [DATA_WIDTH-1:0] inData_22;
-  input [DATA_WIDTH-1:0] inData_23;
-  input [DATA_WIDTH-1:0] inData_24;
-  input [DATA_WIDTH-1:0] inData_25;
-  input [DATA_WIDTH-1:0] inData_26;
-  input [DATA_WIDTH-1:0] inData_27;
-  input [DATA_WIDTH-1:0] inData_28;
-  input [DATA_WIDTH-1:0] inData_29;
-  input [DATA_WIDTH-1:0] inData_30;
-  input [DATA_WIDTH-1:0] inData_31;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_0;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_1;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_2;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_3;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_4;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_5;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_6;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_7;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_8;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_9;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_10;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_11;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_12;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_13;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_14;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_15;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_16;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_17;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_18;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_19;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_20;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_21;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_22;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_23;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_24;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_25;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_26;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_27;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_28;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_29;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_30;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_31;
 
-  output logic [DATA_WIDTH-1:0] outData_0;
-  output logic [DATA_WIDTH-1:0] outData_1;
-  output logic [DATA_WIDTH-1:0] outData_2;
-  output logic [DATA_WIDTH-1:0] outData_3;
-  output logic [DATA_WIDTH-1:0] outData_4;
-  output logic [DATA_WIDTH-1:0] outData_5;
-  output logic [DATA_WIDTH-1:0] outData_6;
-  output logic [DATA_WIDTH-1:0] outData_7;
-  output logic [DATA_WIDTH-1:0] outData_8;
-  output logic [DATA_WIDTH-1:0] outData_9;
-  output logic [DATA_WIDTH-1:0] outData_10;
-  output logic [DATA_WIDTH-1:0] outData_11;
-  output logic [DATA_WIDTH-1:0] outData_12;
-  output logic [DATA_WIDTH-1:0] outData_13;
-  output logic [DATA_WIDTH-1:0] outData_14;
-  output logic [DATA_WIDTH-1:0] outData_15;
-  output logic [DATA_WIDTH-1:0] outData_16;
-  output logic [DATA_WIDTH-1:0] outData_17;
-  output logic [DATA_WIDTH-1:0] outData_18;
-  output logic [DATA_WIDTH-1:0] outData_19;
-  output logic [DATA_WIDTH-1:0] outData_20;
-  output logic [DATA_WIDTH-1:0] outData_21;
-  output logic [DATA_WIDTH-1:0] outData_22;
-  output logic [DATA_WIDTH-1:0] outData_23;
-  output logic [DATA_WIDTH-1:0] outData_24;
-  output logic [DATA_WIDTH-1:0] outData_25;
-  output logic [DATA_WIDTH-1:0] outData_26;
-  output logic [DATA_WIDTH-1:0] outData_27;
-  output logic [DATA_WIDTH-1:0] outData_28;
-  output logic [DATA_WIDTH-1:0] outData_29;
-  output logic [DATA_WIDTH-1:0] outData_30;
-  output logic [DATA_WIDTH-1:0] outData_31;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_0;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_1;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_2;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_3;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_4;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_5;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_6;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_7;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_8;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_9;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_10;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_11;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_12;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_13;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_14;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_15;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_16;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_17;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_18;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_19;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_20;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_21;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_22;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_23;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_24;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_25;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_26;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_27;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_28;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_29;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_30;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_31;
 
   always_ff @ (posedge clk) begin
     if (rst) begin
