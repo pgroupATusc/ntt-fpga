@@ -6,15 +6,15 @@ module NTT_Top #(
   ) (
     inData,
     outData,
-    inStart,
-    outStart,
+    in_start,
+    out_start,
     clk,
     rst,
   );
 
   input clk, rst;
-  input inStart;
-  output logic outStart;
+  input in_start;
+  output logic out_start;
 
   input        [DATA_WIDTH_PER_INPUT-1:0] inData[INPUT_PER_CYCLE-1:0];
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData[INPUT_PER_CYCLE-1:0];
@@ -101,8 +101,8 @@ module NTT_Top #(
     .outData_29(stage_0_1_per_outData[29]),
     .outData_30(stage_0_1_per_outData[30]),
     .outData_31(stage_0_1_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );
@@ -179,8 +179,8 @@ module NTT_Top #(
     .outData_29(stage_1_2_per_outData[29]),
     .outData_30(stage_1_2_per_outData[30]),
     .outData_31(stage_1_2_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );
@@ -258,8 +258,8 @@ module NTT_Top #(
     .outData_29(stage_2_3_per_outData[29]),
     .outData_30(stage_2_3_per_outData[30]),
     .outData_31(stage_2_3_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );
@@ -335,8 +335,8 @@ module NTT_Top #(
     .outData_29(stage_3_4_per_outData[29]),
     .outData_30(stage_3_4_per_outData[30]),
     .outData_31(stage_3_4_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );
@@ -344,9 +344,9 @@ module NTT_Top #(
 
   // TODO(Yang): stage 4 -> stage 5 permutation
   // FIXME: ignore butterfly units for now.
-  stage_0_permutation #(
-    .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
-    .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
+  per_dp32_3 //#(
+    //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
+    //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_4_5_per (
     .inData_0(stage_3_4_per_outData[0]),
     .inData_1(stage_3_4_per_outData[1]),
@@ -412,8 +412,8 @@ module NTT_Top #(
     .outData_29(stage_4_5_per_outData[29]),
     .outData_30(stage_4_5_per_outData[30]),
     .outData_31(stage_4_5_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );
@@ -421,9 +421,9 @@ module NTT_Top #(
 
   // TODO(Yang): stage 5 -> stage 6 permutation
   // FIXME: ignore butterfly units for now.
-  stage_0_permutation #(
-    .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
-    .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
+  per_dp32_3 //#(
+    //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
+    //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_5_6_per (
     .inData_0(stage_4_5_per_outData[0]),
     .inData_1(stage_4_5_per_outData[1]),
@@ -489,8 +489,8 @@ module NTT_Top #(
     .outData_29(stage_5_6_per_outData[29]),
     .outData_30(stage_5_6_per_outData[30]),
     .outData_31(stage_5_6_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );
@@ -498,9 +498,9 @@ module NTT_Top #(
 
   // TODO(Yang): stage 6 -> stage 7 permutation
   // FIXME: ignore butterfly units for now.
-  stage_0_permutation #(
-    .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
-    .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
+  per_dp32_3 //#(
+    //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
+    //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_6_7_per (
     .inData_0(stage_5_6_per_outData[0]),
     .inData_1(stage_5_6_per_outData[1]),
@@ -566,8 +566,8 @@ module NTT_Top #(
     .outData_29(stage_6_7_per_outData[29]),
     .outData_30(stage_6_7_per_outData[30]),
     .outData_31(stage_6_7_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );
@@ -575,9 +575,9 @@ module NTT_Top #(
 
   // TODO(Yang): stage 7 -> stage 8 permutation
   // FIXME: ignore butterfly units for now.
-  stage_0_permutation #(
-    .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
-    .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
+  per_dp32_3 //#(
+    //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
+    //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_7_8_per (
     .inData_0(stage_6_7_per_outData[0]),
     .inData_1(stage_6_7_per_outData[1]),
@@ -643,8 +643,8 @@ module NTT_Top #(
     .outData_29(stage_7_8_per_outData[29]),
     .outData_30(stage_7_8_per_outData[30]),
     .outData_31(stage_7_8_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );
@@ -652,9 +652,9 @@ module NTT_Top #(
 
   // TODO(Yang): stage 8 -> stage 9 permutation
   // FIXME: ignore butterfly units for now.
-  stage_0_permutation #(
-    .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
-    .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
+  per_dp32_3 //#(
+    //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
+    //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_8_9_per (
     .inData_0(stage_7_8_per_outData[0]),
     .inData_1(stage_7_8_per_outData[1]),
@@ -720,8 +720,8 @@ module NTT_Top #(
     .outData_29(stage_8_9_per_outData[29]),
     .outData_30(stage_8_9_per_outData[30]),
     .outData_31(stage_8_9_per_outData[31]),
-    .inStart(),
-    .outStart(),
+    .in_start(),
+    .out_start(),
     .clk(clk),
     .rst(rst)
   );

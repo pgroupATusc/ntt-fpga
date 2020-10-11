@@ -66,15 +66,15 @@ module stage_3_permutation #(
     outData_29,
     outData_30,
     outData_31,
-    inStart,
-    outStart,
+    in_start,
+    out_start,
     clk,
     rst
   );
 
   input clk, rst;
-  input inStart;
-  output logic outStart;
+  input in_start;
+  output logic out_start;
 
   input [DATA_WIDTH_PER_INPUT-1:0] inData_0;
   input [DATA_WIDTH_PER_INPUT-1:0] inData_1;
