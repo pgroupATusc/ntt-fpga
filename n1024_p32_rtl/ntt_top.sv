@@ -6,11 +6,16 @@ module NTT_Top #(
   ) (
     inData,
     outData,
+    inStart,
+    outStart,
     clk,
     rst,
   );
 
   input clk, rst;
+  input inStart;
+  output logic outStart;
+
   input        [DATA_WIDTH_PER_INPUT-1:0] inData[INPUT_PER_CYCLE-1:0];
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData[INPUT_PER_CYCLE-1:0];
 
@@ -96,6 +101,8 @@ module NTT_Top #(
     .outData_29(stage_0_1_per_outData[29]),
     .outData_30(stage_0_1_per_outData[30]),
     .outData_31(stage_0_1_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );
@@ -172,6 +179,8 @@ module NTT_Top #(
     .outData_29(stage_1_2_per_outData[29]),
     .outData_30(stage_1_2_per_outData[30]),
     .outData_31(stage_1_2_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );
@@ -181,7 +190,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 2 -> stage 3 permutation
   // FIXME: ignore butterfly units for now.
-  stage_0_permutation #(
+  stage_2_permutation #(
     .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_2_3_per (
@@ -249,6 +258,8 @@ module NTT_Top #(
     .outData_29(stage_2_3_per_outData[29]),
     .outData_30(stage_2_3_per_outData[30]),
     .outData_31(stage_2_3_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );
@@ -256,7 +267,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 3 -> stage 4 permutation
   // FIXME: ignore butterfly units for now.
-  stage_0_permutation #(
+  stage_3_permutation #(
     .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_3_4_per (
@@ -324,6 +335,8 @@ module NTT_Top #(
     .outData_29(stage_3_4_per_outData[29]),
     .outData_30(stage_3_4_per_outData[30]),
     .outData_31(stage_3_4_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );
@@ -399,6 +412,8 @@ module NTT_Top #(
     .outData_29(stage_4_5_per_outData[29]),
     .outData_30(stage_4_5_per_outData[30]),
     .outData_31(stage_4_5_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );
@@ -474,6 +489,8 @@ module NTT_Top #(
     .outData_29(stage_5_6_per_outData[29]),
     .outData_30(stage_5_6_per_outData[30]),
     .outData_31(stage_5_6_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );
@@ -549,6 +566,8 @@ module NTT_Top #(
     .outData_29(stage_6_7_per_outData[29]),
     .outData_30(stage_6_7_per_outData[30]),
     .outData_31(stage_6_7_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );
@@ -624,6 +643,8 @@ module NTT_Top #(
     .outData_29(stage_7_8_per_outData[29]),
     .outData_30(stage_7_8_per_outData[30]),
     .outData_31(stage_7_8_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );
@@ -699,6 +720,8 @@ module NTT_Top #(
     .outData_29(stage_8_9_per_outData[29]),
     .outData_30(stage_8_9_per_outData[30]),
     .outData_31(stage_8_9_per_outData[31]),
+    .inStart(),
+    .outStart(),
     .clk(clk),
     .rst(rst)
   );

@@ -1,4 +1,4 @@
-module stage_1_permutation #(
+module stage_3_permutation #(
     parameter DATA_WIDTH_PER_INPUT = 32,
     parameter INPUT_PER_CYCLE = 32
   ) (
@@ -66,11 +66,15 @@ module stage_1_permutation #(
     outData_29,
     outData_30,
     outData_31,
+    inStart,
+    outStart,
     clk,
     rst
   );
 
   input clk, rst;
+  input inStart;
+  output logic outStart;
 
   input [DATA_WIDTH_PER_INPUT-1:0] inData_0;
   input [DATA_WIDTH_PER_INPUT-1:0] inData_1;
@@ -174,36 +178,36 @@ module stage_1_permutation #(
       outData_31 <= 0;
     end else begin
       outData_0 <= inData_0;
-      outData_1 <= inData_4;
+      outData_1 <= inData_16;
       outData_2 <= inData_2;
-      outData_3 <= inData_6;
-      outData_4 <= inData_1;
-      outData_5 <= inData_5;
-      outData_6 <= inData_3;
-      outData_7 <= inData_7;
+      outData_3 <= inData_18;
+      outData_4 <= inData_4;
+      outData_5 <= inData_20;
+      outData_6 <= inData_6;
+      outData_7 <= inData_22;
       outData_8 <= inData_8;
-      outData_9 <= inData_12;
+      outData_9 <= inData_24;
       outData_10 <= inData_10;
-      outData_11 <= inData_14;
-      outData_12 <= inData_9;
-      outData_13 <= inData_13;
-      outData_14 <= inData_11;
-      outData_15 <= inData_15;
-      outData_16 <= inData_16;
-      outData_17 <= inData_20;
-      outData_18 <= inData_18;
-      outData_19 <= inData_22;
-      outData_20 <= inData_17;
+      outData_11 <= inData_26;
+      outData_12 <= inData_12;
+      outData_13 <= inData_28;
+      outData_14 <= inData_14;
+      outData_15 <= inData_30;
+      outData_16 <= inData_1;
+      outData_17 <= inData_17;
+      outData_18 <= inData_3;
+      outData_19 <= inData_19;
+      outData_20 <= inData_5;
       outData_21 <= inData_21;
-      outData_22 <= inData_19;
+      outData_22 <= inData_7;
       outData_23 <= inData_23;
-      outData_24 <= inData_24;
-      outData_25 <= inData_28;
-      outData_26 <= inData_26;
-      outData_27 <= inData_30;
-      outData_28 <= inData_25;
+      outData_24 <= inData_9;
+      outData_25 <= inData_25;
+      outData_26 <= inData_11;
+      outData_27 <= inData_27;
+      outData_28 <= inData_13;
       outData_29 <= inData_29;
-      outData_30 <= inData_27;
+      outData_30 <= inData_15;
       outData_31 <= inData_31;
     end
   end

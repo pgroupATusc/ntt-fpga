@@ -54,6 +54,8 @@ module NTT_Top_Wrapper #(
   ntt_top_instance (
     .inData(input_data),
     .outData(output_data),
+    .inStart(in_start),
+    .outStart(out_start),
     .clk(clk),
     .rst(rst)
   );
