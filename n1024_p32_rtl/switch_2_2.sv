@@ -16,11 +16,11 @@ module switch_2_2 #(
 
   always_ff @ (posedge clk) begin
     if (rst) begin
-      outData[0] <= 0;
-      outData[1] <= 0;
+      outData_0 <= 0;
+      outData_1 <= 0;
     end else begin
-      outData[0] <= (!ctrl) ? inData_0 : inData_1;
-      outData[1] <= (!ctrl) ? inData_1 : inData_0;
+      outData_0 <= (!ctrl) ? inData_0 : inData_1;
+      outData_1 <= (!ctrl) ? inData_1 : inData_0;
     end
   end
 

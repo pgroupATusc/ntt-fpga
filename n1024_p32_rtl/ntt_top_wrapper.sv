@@ -2,7 +2,7 @@
 // Wrapper to remove IO constraints.
 
 module NTT_Top_Wrapper #(
-    parameter DATA_WIDTH_PER_INPUT = 32,
+    parameter DATA_WIDTH_PER_INPUT = 28,
     parameter INPUT_PER_CYCLE = 32
   ) (
     clk,

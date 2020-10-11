@@ -1,7 +1,7 @@
 // NTT Accelerator
 
 module NTT_Top #(
-    parameter DATA_WIDTH_PER_INPUT = 32,
+    parameter DATA_WIDTH_PER_INPUT = 28,
     parameter INPUT_PER_CYCLE = 32
   ) (
     inData,
@@ -344,7 +344,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 4 -> stage 5 permutation
   // FIXME: ignore butterfly units for now.
-  per_dp32_3 //#(
+  stage_4_permutation //#(
     //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_4_5_per (
@@ -421,7 +421,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 5 -> stage 6 permutation
   // FIXME: ignore butterfly units for now.
-  per_dp32_3 //#(
+  stage_4_permutation //#(
     //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_5_6_per (
@@ -498,7 +498,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 6 -> stage 7 permutation
   // FIXME: ignore butterfly units for now.
-  per_dp32_3 //#(
+  stage_4_permutation //#(
     //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_6_7_per (
@@ -575,7 +575,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 7 -> stage 8 permutation
   // FIXME: ignore butterfly units for now.
-  per_dp32_3 //#(
+  stage_4_permutation //#(
     //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_7_8_per (
@@ -652,7 +652,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 8 -> stage 9 permutation
   // FIXME: ignore butterfly units for now.
-  per_dp32_3 //#(
+  stage_4_permutation //#(
     //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_8_9_per (
