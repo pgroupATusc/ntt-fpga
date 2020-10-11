@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module modularMult(
+module modular_mult(
         input       [27:0]      a, 
         input       [27:0]      b,
         input       [27:0]      q,
@@ -53,8 +53,8 @@ module modularMult(
     assign e = c_reg[13:12] + c_reg[11:0];
     assign f = ((e[12] + e[11:0]) << 16) - (c_reg[13:12] + e[12]);
 
-    ModAdd ma (f_reg, z3_reg, q, clk, c2);
-    ModSub ms (c2_reg, d3_reg, q, clk, out);        
+    mod_add ma (f_reg, z3_reg, q, clk, c2);
+    mod_sub ms (c2_reg, d3_reg, q, clk, out);        
 
     always_ff @(posedge clk) begin
         if (rst) begin

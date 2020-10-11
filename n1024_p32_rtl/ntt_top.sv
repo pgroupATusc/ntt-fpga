@@ -30,6 +30,147 @@ module NTT_Top #(
   logic [DATA_WIDTH_PER_INPUT-1:0] stage_8_9_per_outData[INPUT_PER_CYCLE-1:0];
 
   // TODO(Tian): stage 0 32 butterfly units
+  butterfly stage_0_butterfly_0 (
+    .x_in(inData[0]),
+    .y_in(inData[1]),
+    .x_out(inData[0]),
+    .y_out(inData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_1 (
+    .x_in(inData[2]),
+    .y_in(inData[3]),
+    .x_out(inData[2]),
+    .y_out(inData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_2 (
+    .x_in(inData[4]),
+    .y_in(inData[5]),
+    .x_out(inData[4]),
+    .y_out(inData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_3 (
+    .x_in(inData[6]),
+    .y_in(inData[7]),
+    .x_out(inData[6]),
+    .y_out(inData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_4 (
+    .x_in(inData[8]),
+    .y_in(inData[9]),
+    .x_out(inData[8]),
+    .y_out(inData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_5 (
+    .x_in(inData[10]),
+    .y_in(inData[11]),
+    .x_out(inData[10]),
+    .y_out(inData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_6 (
+    .x_in(inData[12]),
+    .y_in(inData[13]),
+    .x_out(inData[12]),
+    .y_out(inData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_7 (
+    .x_in(inData[14]),
+    .y_in(inData[15]),
+    .x_out(inData[14]),
+    .y_out(inData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_8 (
+    .x_in(inData[16]),
+    .y_in(inData[17]),
+    .x_out(inData[16]),
+    .y_out(inData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_9 (
+    .x_in(inData[18]),
+    .y_in(inData[19]),
+    .x_out(inData[18]),
+    .y_out(inData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+  butterfly stage_0_butterfly_10 (
+    .x_in(inData[20]),
+    .y_in(inData[21]),
+    .x_out(inData[20]),
+    .y_out(inData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_11 (
+    .x_in(inData[22]),
+    .y_in(inData[23]),
+    .x_out(inData[22]),
+    .y_out(inData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+  
+  butterfly stage_0_butterfly_12 (
+    .x_in(inData[24]),
+    .y_in(inData[25]),
+    .x_out(inData[24]),
+    .y_out(inData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_13 (
+    .x_in(inData[26]),
+    .y_in(inData[27]),
+    .x_out(inData[26]),
+    .y_out(inData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+  butterfly stage_0_butterfly_14 (
+    .x_in(inData[28]),
+    .y_in(inData[29]),
+    .x_out(inData[28]),
+    .y_out(inData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_0_butterfly_15 (
+    .x_in(inData[30]),
+    .y_in(inData[31]),
+    .x_out(inData[30]),
+    .y_out(inData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
 
   // TODO(Yang): stage 0 -> stage 1 permutation
   // FIXME: ignore butterfly units for now.
@@ -108,7 +249,150 @@ module NTT_Top #(
   );
 
   // TODO(Tian): stage 1 32 butterfly units
+  butterfly stage_1_butterfly_0 (
+    .x_in(stage_0_1_per_outData[0]),
+    .y_in(stage_0_1_per_outData[1]),
+    .x_out(stage_0_1_per_outData[0]),
+    .y_out(stage_0_1_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
 
+  butterfly stage_1_butterfly_1 (
+    .x_in(stage_0_1_per_outData[2]),
+    .y_in(stage_0_1_per_outData[3]),
+    .x_out(stage_0_1_per_outData[2]),
+    .y_out(stage_0_1_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_2 (
+    .x_in(stage_0_1_per_outData[4]),
+    .y_in(stage_0_1_per_outData[5]),
+    .x_out(stage_0_1_per_outData[4]),
+    .y_out(stage_0_1_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_3 (
+    .x_in(stage_0_1_per_outData[6]),
+    .y_in(stage_0_1_per_outData[7]),
+    .x_out(stage_0_1_per_outData[6]),
+    .y_out(stage_0_1_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_4 (
+    .x_in(stage_0_1_per_outData[8]),
+    .y_in(stage_0_1_per_outData[9]),
+    .x_out(stage_0_1_per_outData[8]),
+    .y_out(stage_0_1_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_5 (
+    .x_in(stage_0_1_per_outData[10]),
+    .y_in(stage_0_1_per_outData[11]),
+    .x_out(stage_0_1_per_outData[10]),
+    .y_out(stage_0_1_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_6 (
+    .x_in(stage_0_1_per_outData[12]),
+    .y_in(stage_0_1_per_outData[13]),
+    .x_out(stage_0_1_per_outData[12]),
+    .y_out(stage_0_1_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_7 (
+    .x_in(stage_0_1_per_outData[14]),
+    .y_in(stage_0_1_per_outData[15]),
+    .x_out(stage_0_1_per_outData[14]),
+    .y_out(stage_0_1_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_8 (
+    .x_in(stage_0_1_per_outData[16]),
+    .y_in(stage_0_1_per_outData[17]),
+    .x_out(stage_0_1_per_outData[16]),
+    .y_out(stage_0_1_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_9 (
+    .x_in(stage_0_1_per_outData[18]),
+    .y_in(stage_0_1_per_outData[19]),
+    .x_out(stage_0_1_per_outData[18]),
+    .y_out(stage_0_1_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_10 (
+    .x_in(stage_0_1_per_outData[20]),
+    .y_in(stage_0_1_per_outData[21]),
+    .x_out(stage_0_1_per_outData[20]),
+    .y_out(stage_0_1_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_11 (
+    .x_in(stage_0_1_per_outData[22]),
+    .y_in(stage_0_1_per_outData[23]),
+    .x_out(stage_0_1_per_outData[22]),
+    .y_out(stage_0_1_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_12 (
+    .x_in(stage_0_1_per_outData[24]),
+    .y_in(stage_0_1_per_outData[25]),
+    .x_out(stage_0_1_per_outData[24]),
+    .y_out(stage_0_1_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_13 (
+    .x_in(stage_0_1_per_outData[26]),
+    .y_in(stage_0_1_per_outData[27]),
+    .x_out(stage_0_1_per_outData[26]),
+    .y_out(stage_0_1_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_14 (
+    .x_in(stage_0_1_per_outData[28]),
+    .y_in(stage_0_1_per_outData[29]),
+    .x_out(stage_0_1_per_outData[28]),
+    .y_out(stage_0_1_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_1_butterfly_15 (
+    .x_in(stage_0_1_per_outData[30]),
+    .y_in(stage_0_1_per_outData[31]),
+    .x_out(stage_0_1_per_outData[30]),
+    .y_out(stage_0_1_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
+  
   // TODO(Yang): stage 1 -> stage 2 permutation
   // FIXME: ignore butterfly units for now.
   stage_1_permutation #(
@@ -187,6 +471,149 @@ module NTT_Top #(
 
 
   // TODO(Tian): stage 2 32 butterfly units
+  butterfly stage_2_butterfly_0 (
+    .x_in(stage_1_2_per_outData[0]),
+    .y_in(stage_1_2_per_outData[1]),
+    .x_out(stage_1_2_per_outData[0]),
+    .y_out(stage_1_2_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_1 (
+    .x_in(stage_1_2_per_outData[2]),
+    .y_in(stage_1_2_per_outData[3]),
+    .x_out(stage_1_2_per_outData[2]),
+    .y_out(stage_1_2_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_2 (
+    .x_in(stage_1_2_per_outData[4]),
+    .y_in(stage_1_2_per_outData[5]),
+    .x_out(stage_1_2_per_outData[4]),
+    .y_out(stage_1_2_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_3 (
+    .x_in(stage_1_2_per_outData[6]),
+    .y_in(stage_1_2_per_outData[7]),
+    .x_out(stage_1_2_per_outData[6]),
+    .y_out(stage_1_2_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_4 (
+    .x_in(stage_1_2_per_outData[8]),
+    .y_in(stage_1_2_per_outData[9]),
+    .x_out(stage_1_2_per_outData[8]),
+    .y_out(stage_1_2_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_5 (
+    .x_in(stage_1_2_per_outData[10]),
+    .y_in(stage_1_2_per_outData[11]),
+    .x_out(stage_1_2_per_outData[10]),
+    .y_out(stage_1_2_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_6 (
+    .x_in(stage_1_2_per_outData[12]),
+    .y_in(stage_1_2_per_outData[13]),
+    .x_out(stage_1_2_per_outData[12]),
+    .y_out(stage_1_2_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_7 (
+    .x_in(stage_1_2_per_outData[14]),
+    .y_in(stage_1_2_per_outData[15]),
+    .x_out(stage_1_2_per_outData[14]),
+    .y_out(stage_1_2_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_8 (
+    .x_in(stage_1_2_per_outData[16]),
+    .y_in(stage_1_2_per_outData[17]),
+    .x_out(stage_1_2_per_outData[16]),
+    .y_out(stage_1_2_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_9 (
+    .x_in(stage_1_2_per_outData[18]),
+    .y_in(stage_1_2_per_outData[19]),
+    .x_out(stage_1_2_per_outData[18]),
+    .y_out(stage_1_2_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_10 (
+    .x_in(stage_1_2_per_outData[20]),
+    .y_in(stage_1_2_per_outData[21]),
+    .x_out(stage_1_2_per_outData[20]),
+    .y_out(stage_1_2_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_11 (
+    .x_in(stage_1_2_per_outData[22]),
+    .y_in(stage_1_2_per_outData[23]),
+    .x_out(stage_1_2_per_outData[22]),
+    .y_out(stage_1_2_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_12 (
+    .x_in(stage_1_2_per_outData[24]),
+    .y_in(stage_1_2_per_outData[25]),
+    .x_out(stage_1_2_per_outData[24]),
+    .y_out(stage_1_2_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_13 (
+    .x_in(stage_1_2_per_outData[26]),
+    .y_in(stage_1_2_per_outData[27]),
+    .x_out(stage_1_2_per_outData[26]),
+    .y_out(stage_1_2_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_14 (
+    .x_in(stage_1_2_per_outData[28]),
+    .y_in(stage_1_2_per_outData[29]),
+    .x_out(stage_1_2_per_outData[28]),
+    .y_out(stage_1_2_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_2_butterfly_15 (
+    .x_in(stage_1_2_per_outData[30]),
+    .y_in(stage_1_2_per_outData[31]),
+    .x_out(stage_1_2_per_outData[30]),
+    .y_out(stage_1_2_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
 
   // TODO(Yang): stage 2 -> stage 3 permutation
   // FIXME: ignore butterfly units for now.
@@ -263,7 +690,151 @@ module NTT_Top #(
     .clk(clk),
     .rst(rst)
   );
+
   // TODO(Tian): stage 3 32 butterfly units
+  butterfly stage_3_butterfly_0 (
+    .x_in(stage_2_3_per_outData[0]),
+    .y_in(stage_2_3_per_outData[1]),
+    .x_out(stage_2_3_per_outData[0]),
+    .y_out(stage_2_3_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_1 (
+    .x_in(stage_2_3_per_outData[2]),
+    .y_in(stage_2_3_per_outData[3]),
+    .x_out(stage_2_3_per_outData[2]),
+    .y_out(stage_2_3_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_2 (
+    .x_in(stage_2_3_per_outData[4]),
+    .y_in(stage_2_3_per_outData[5]),
+    .x_out(stage_2_3_per_outData[4]),
+    .y_out(stage_2_3_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_3 (
+    .x_in(stage_2_3_per_outData[6]),
+    .y_in(stage_2_3_per_outData[7]),
+    .x_out(stage_2_3_per_outData[6]),
+    .y_out(stage_2_3_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_4 (
+    .x_in(stage_2_3_per_outData[8]),
+    .y_in(stage_2_3_per_outData[9]),
+    .x_out(stage_2_3_per_outData[8]),
+    .y_out(stage_2_3_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_5 (
+    .x_in(stage_2_3_per_outData[10]),
+    .y_in(stage_2_3_per_outData[11]),
+    .x_out(stage_2_3_per_outData[10]),
+    .y_out(stage_2_3_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_6 (
+    .x_in(stage_2_3_per_outData[12]),
+    .y_in(stage_2_3_per_outData[13]),
+    .x_out(stage_2_3_per_outData[12]),
+    .y_out(stage_2_3_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_7 (
+    .x_in(stage_2_3_per_outData[14]),
+    .y_in(stage_2_3_per_outData[15]),
+    .x_out(stage_2_3_per_outData[14]),
+    .y_out(stage_2_3_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_8 (
+    .x_in(stage_2_3_per_outData[16]),
+    .y_in(stage_2_3_per_outData[17]),
+    .x_out(stage_2_3_per_outData[16]),
+    .y_out(stage_2_3_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_9 (
+    .x_in(stage_2_3_per_outData[18]),
+    .y_in(stage_2_3_per_outData[19]),
+    .x_out(stage_2_3_per_outData[18]),
+    .y_out(stage_2_3_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_10 (
+    .x_in(stage_2_3_per_outData[20]),
+    .y_in(stage_2_3_per_outData[21]),
+    .x_out(stage_2_3_per_outData[20]),
+    .y_out(stage_2_3_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_11 (
+    .x_in(stage_2_3_per_outData[22]),
+    .y_in(stage_2_3_per_outData[23]),
+    .x_out(stage_2_3_per_outData[22]),
+    .y_out(stage_2_3_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_12 (
+    .x_in(stage_2_3_per_outData[24]),
+    .y_in(stage_2_3_per_outData[25]),
+    .x_out(stage_2_3_per_outData[24]),
+    .y_out(stage_2_3_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_13 (
+    .x_in(stage_2_3_per_outData[26]),
+    .y_in(stage_2_3_per_outData[27]),
+    .x_out(stage_2_3_per_outData[26]),
+    .y_out(stage_2_3_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_14 (
+    .x_in(stage_2_3_per_outData[28]),
+    .y_in(stage_2_3_per_outData[29]),
+    .x_out(stage_2_3_per_outData[28]),
+    .y_out(stage_2_3_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_3_butterfly_15 (
+    .x_in(stage_2_3_per_outData[30]),
+    .y_in(stage_2_3_per_outData[31]),
+    .x_out(stage_2_3_per_outData[30]),
+    .y_out(stage_2_3_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
 
   // TODO(Yang): stage 3 -> stage 4 permutation
   // FIXME: ignore butterfly units for now.
@@ -341,6 +912,149 @@ module NTT_Top #(
     .rst(rst)
   );
   // TODO(Tian): stage 4 32 butterfly units
+  butterfly stage_4_butterfly_0 (
+    .x_in(stage_3_4_per_outData[0]),
+    .y_in(stage_3_4_per_outData[1]),
+    .x_out(stage_3_4_per_outData[0]),
+    .y_out(stage_3_4_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_1 (
+    .x_in(stage_3_4_per_outData[2]),
+    .y_in(stage_3_4_per_outData[3]),
+    .x_out(stage_3_4_per_outData[2]),
+    .y_out(stage_3_4_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_2 (
+    .x_in(stage_3_4_per_outData[4]),
+    .y_in(stage_3_4_per_outData[5]),
+    .x_out(stage_3_4_per_outData[4]),
+    .y_out(stage_3_4_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_3 (
+    .x_in(stage_3_4_per_outData[6]),
+    .y_in(stage_3_4_per_outData[7]),
+    .x_out(stage_3_4_per_outData[6]),
+    .y_out(stage_3_4_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_4 (
+    .x_in(stage_3_4_per_outData[8]),
+    .y_in(stage_3_4_per_outData[9]),
+    .x_out(stage_3_4_per_outData[8]),
+    .y_out(stage_3_4_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_5 (
+    .x_in(stage_3_4_per_outData[10]),
+    .y_in(stage_3_4_per_outData[11]),
+    .x_out(stage_3_4_per_outData[10]),
+    .y_out(stage_3_4_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_6 (
+    .x_in(stage_3_4_per_outData[12]),
+    .y_in(stage_3_4_per_outData[13]),
+    .x_out(stage_3_4_per_outData[12]),
+    .y_out(stage_3_4_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_7 (
+    .x_in(stage_3_4_per_outData[14]),
+    .y_in(stage_3_4_per_outData[15]),
+    .x_out(stage_3_4_per_outData[14]),
+    .y_out(stage_3_4_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_8 (
+    .x_in(stage_3_4_per_outData[16]),
+    .y_in(stage_3_4_per_outData[17]),
+    .x_out(stage_3_4_per_outData[16]),
+    .y_out(stage_3_4_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_9 (
+    .x_in(stage_3_4_per_outData[18]),
+    .y_in(stage_3_4_per_outData[19]),
+    .x_out(stage_3_4_per_outData[18]),
+    .y_out(stage_3_4_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_10 (
+    .x_in(stage_3_4_per_outData[20]),
+    .y_in(stage_3_4_per_outData[21]),
+    .x_out(stage_3_4_per_outData[20]),
+    .y_out(stage_3_4_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_11 (
+    .x_in(stage_3_4_per_outData[22]),
+    .y_in(stage_3_4_per_outData[23]),
+    .x_out(stage_3_4_per_outData[22]),
+    .y_out(stage_3_4_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_12 (
+    .x_in(stage_3_4_per_outData[24]),
+    .y_in(stage_3_4_per_outData[25]),
+    .x_out(stage_3_4_per_outData[24]),
+    .y_out(stage_3_4_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_13 (
+    .x_in(stage_3_4_per_outData[26]),
+    .y_in(stage_3_4_per_outData[27]),
+    .x_out(stage_3_4_per_outData[26]),
+    .y_out(stage_3_4_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_14 (
+    .x_in(stage_3_4_per_outData[28]),
+    .y_in(stage_3_4_per_outData[29]),
+    .x_out(stage_3_4_per_outData[28]),
+    .y_out(stage_3_4_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_4_butterfly_15 (
+    .x_in(stage_3_4_per_outData[30]),
+    .y_in(stage_3_4_per_outData[31]),
+    .x_out(stage_3_4_per_outData[30]),
+    .y_out(stage_3_4_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
 
   // TODO(Yang): stage 4 -> stage 5 permutation
   // FIXME: ignore butterfly units for now.
@@ -418,6 +1132,149 @@ module NTT_Top #(
     .rst(rst)
   );
   // TODO(Tian): stage 5 32 butterfly units
+  butterfly stage_5_butterfly_0 (
+    .x_in(stage_4_5_per_outData[0]),
+    .y_in(stage_4_5_per_outData[1]),
+    .x_out(stage_4_5_per_outData[0]),
+    .y_out(stage_4_5_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_1 (
+    .x_in(stage_4_5_per_outData[2]),
+    .y_in(stage_4_5_per_outData[3]),
+    .x_out(stage_4_5_per_outData[2]),
+    .y_out(stage_4_5_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_2 (
+    .x_in(stage_4_5_per_outData[4]),
+    .y_in(stage_4_5_per_outData[5]),
+    .x_out(stage_4_5_per_outData[4]),
+    .y_out(stage_4_5_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_3 (
+    .x_in(stage_4_5_per_outData[6]),
+    .y_in(stage_4_5_per_outData[7]),
+    .x_out(stage_4_5_per_outData[6]),
+    .y_out(stage_4_5_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_4 (
+    .x_in(stage_4_5_per_outData[8]),
+    .y_in(stage_4_5_per_outData[9]),
+    .x_out(stage_4_5_per_outData[8]),
+    .y_out(stage_4_5_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_5 (
+    .x_in(stage_4_5_per_outData[10]),
+    .y_in(stage_4_5_per_outData[11]),
+    .x_out(stage_4_5_per_outData[10]),
+    .y_out(stage_4_5_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_6 (
+    .x_in(stage_4_5_per_outData[12]),
+    .y_in(stage_4_5_per_outData[13]),
+    .x_out(stage_4_5_per_outData[12]),
+    .y_out(stage_4_5_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_7 (
+    .x_in(stage_4_5_per_outData[14]),
+    .y_in(stage_4_5_per_outData[15]),
+    .x_out(stage_4_5_per_outData[14]),
+    .y_out(stage_4_5_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_8 (
+    .x_in(stage_4_5_per_outData[16]),
+    .y_in(stage_4_5_per_outData[17]),
+    .x_out(stage_4_5_per_outData[16]),
+    .y_out(stage_4_5_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_9 (
+    .x_in(stage_4_5_per_outData[18]),
+    .y_in(stage_4_5_per_outData[19]),
+    .x_out(stage_4_5_per_outData[18]),
+    .y_out(stage_4_5_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_10 (
+    .x_in(stage_4_5_per_outData[20]),
+    .y_in(stage_4_5_per_outData[21]),
+    .x_out(stage_4_5_per_outData[20]),
+    .y_out(stage_4_5_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_11 (
+    .x_in(stage_4_5_per_outData[22]),
+    .y_in(stage_4_5_per_outData[23]),
+    .x_out(stage_4_5_per_outData[22]),
+    .y_out(stage_4_5_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_12 (
+    .x_in(stage_4_5_per_outData[24]),
+    .y_in(stage_4_5_per_outData[25]),
+    .x_out(stage_4_5_per_outData[24]),
+    .y_out(stage_4_5_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_13 (
+    .x_in(stage_4_5_per_outData[26]),
+    .y_in(stage_4_5_per_outData[27]),
+    .x_out(stage_4_5_per_outData[26]),
+    .y_out(stage_4_5_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_14 (
+    .x_in(stage_4_5_per_outData[28]),
+    .y_in(stage_4_5_per_outData[29]),
+    .x_out(stage_4_5_per_outData[28]),
+    .y_out(stage_4_5_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_5_butterfly_15 (
+    .x_in(stage_4_5_per_outData[30]),
+    .y_in(stage_4_5_per_outData[31]),
+    .x_out(stage_4_5_per_outData[30]),
+    .y_out(stage_4_5_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
 
   // TODO(Yang): stage 5 -> stage 6 permutation
   // FIXME: ignore butterfly units for now.
@@ -495,6 +1352,149 @@ module NTT_Top #(
     .rst(rst)
   );
   // TODO(Tian): stage 6 32 butterfly units
+  butterfly stage_6_butterfly_0 (
+    .x_in(stage_5_6_per_outData[0]),
+    .y_in(stage_5_6_per_outData[1]),
+    .x_out(stage_5_6_per_outData[0]),
+    .y_out(stage_5_6_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_1 (
+    .x_in(stage_5_6_per_outData[2]),
+    .y_in(stage_5_6_per_outData[3]),
+    .x_out(stage_5_6_per_outData[2]),
+    .y_out(stage_5_6_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_2 (
+    .x_in(stage_5_6_per_outData[4]),
+    .y_in(stage_5_6_per_outData[5]),
+    .x_out(stage_5_6_per_outData[4]),
+    .y_out(stage_5_6_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_3 (
+    .x_in(stage_5_6_per_outData[6]),
+    .y_in(stage_5_6_per_outData[7]),
+    .x_out(stage_5_6_per_outData[6]),
+    .y_out(stage_5_6_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_4 (
+    .x_in(stage_5_6_per_outData[8]),
+    .y_in(stage_5_6_per_outData[9]),
+    .x_out(stage_5_6_per_outData[8]),
+    .y_out(stage_5_6_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_5 (
+    .x_in(stage_5_6_per_outData[10]),
+    .y_in(stage_5_6_per_outData[11]),
+    .x_out(stage_5_6_per_outData[10]),
+    .y_out(stage_5_6_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_6 (
+    .x_in(stage_5_6_per_outData[12]),
+    .y_in(stage_5_6_per_outData[13]),
+    .x_out(stage_5_6_per_outData[12]),
+    .y_out(stage_5_6_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_7 (
+    .x_in(stage_5_6_per_outData[14]),
+    .y_in(stage_5_6_per_outData[15]),
+    .x_out(stage_5_6_per_outData[14]),
+    .y_out(stage_5_6_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_8 (
+    .x_in(stage_5_6_per_outData[16]),
+    .y_in(stage_5_6_per_outData[17]),
+    .x_out(stage_5_6_per_outData[16]),
+    .y_out(stage_5_6_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_9 (
+    .x_in(stage_5_6_per_outData[18]),
+    .y_in(stage_5_6_per_outData[19]),
+    .x_out(stage_5_6_per_outData[18]),
+    .y_out(stage_5_6_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_10 (
+    .x_in(stage_5_6_per_outData[20]),
+    .y_in(stage_5_6_per_outData[21]),
+    .x_out(stage_5_6_per_outData[20]),
+    .y_out(stage_5_6_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_11 (
+    .x_in(stage_5_6_per_outData[22]),
+    .y_in(stage_5_6_per_outData[23]),
+    .x_out(stage_5_6_per_outData[22]),
+    .y_out(stage_5_6_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_12 (
+    .x_in(stage_5_6_per_outData[24]),
+    .y_in(stage_5_6_per_outData[25]),
+    .x_out(stage_5_6_per_outData[24]),
+    .y_out(stage_5_6_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_13 (
+    .x_in(stage_5_6_per_outData[26]),
+    .y_in(stage_5_6_per_outData[27]),
+    .x_out(stage_5_6_per_outData[26]),
+    .y_out(stage_5_6_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_14 (
+    .x_in(stage_5_6_per_outData[28]),
+    .y_in(stage_5_6_per_outData[29]),
+    .x_out(stage_5_6_per_outData[28]),
+    .y_out(stage_5_6_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_6_butterfly_15 (
+    .x_in(stage_5_6_per_outData[30]),
+    .y_in(stage_5_6_per_outData[31]),
+    .x_out(stage_5_6_per_outData[30]),
+    .y_out(stage_5_6_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
 
   // TODO(Yang): stage 6 -> stage 7 permutation
   // FIXME: ignore butterfly units for now.
@@ -572,6 +1572,149 @@ module NTT_Top #(
     .rst(rst)
   );
   // TODO(Tian): stage 7 32 butterfly units
+  butterfly stage_7_butterfly_0 (
+    .x_in(stage_6_7_per_outData[0]),
+    .y_in(stage_6_7_per_outData[1]),
+    .x_out(stage_6_7_per_outData[0]),
+    .y_out(stage_6_7_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_1 (
+    .x_in(stage_6_7_per_outData[2]),
+    .y_in(stage_6_7_per_outData[3]),
+    .x_out(stage_6_7_per_outData[2]),
+    .y_out(stage_6_7_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_2 (
+    .x_in(stage_6_7_per_outData[4]),
+    .y_in(stage_6_7_per_outData[5]),
+    .x_out(stage_6_7_per_outData[4]),
+    .y_out(stage_6_7_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_3 (
+    .x_in(stage_6_7_per_outData[6]),
+    .y_in(stage_6_7_per_outData[7]),
+    .x_out(stage_6_7_per_outData[6]),
+    .y_out(stage_6_7_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_4 (
+    .x_in(stage_6_7_per_outData[8]),
+    .y_in(stage_6_7_per_outData[9]),
+    .x_out(stage_6_7_per_outData[8]),
+    .y_out(stage_6_7_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_5 (
+    .x_in(stage_6_7_per_outData[10]),
+    .y_in(stage_6_7_per_outData[11]),
+    .x_out(stage_6_7_per_outData[10]),
+    .y_out(stage_6_7_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_6 (
+    .x_in(stage_6_7_per_outData[12]),
+    .y_in(stage_6_7_per_outData[13]),
+    .x_out(stage_6_7_per_outData[12]),
+    .y_out(stage_6_7_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_7 (
+    .x_in(stage_6_7_per_outData[14]),
+    .y_in(stage_6_7_per_outData[15]),
+    .x_out(stage_6_7_per_outData[14]),
+    .y_out(stage_6_7_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_8 (
+    .x_in(stage_6_7_per_outData[16]),
+    .y_in(stage_6_7_per_outData[17]),
+    .x_out(stage_6_7_per_outData[16]),
+    .y_out(stage_6_7_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_9 (
+    .x_in(stage_6_7_per_outData[18]),
+    .y_in(stage_6_7_per_outData[19]),
+    .x_out(stage_6_7_per_outData[18]),
+    .y_out(stage_6_7_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_10 (
+    .x_in(stage_6_7_per_outData[20]),
+    .y_in(stage_6_7_per_outData[21]),
+    .x_out(stage_6_7_per_outData[20]),
+    .y_out(stage_6_7_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_11 (
+    .x_in(stage_6_7_per_outData[22]),
+    .y_in(stage_6_7_per_outData[23]),
+    .x_out(stage_6_7_per_outData[22]),
+    .y_out(stage_6_7_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_12 (
+    .x_in(stage_6_7_per_outData[24]),
+    .y_in(stage_6_7_per_outData[25]),
+    .x_out(stage_6_7_per_outData[24]),
+    .y_out(stage_6_7_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_13 (
+    .x_in(stage_6_7_per_outData[26]),
+    .y_in(stage_6_7_per_outData[27]),
+    .x_out(stage_6_7_per_outData[26]),
+    .y_out(stage_6_7_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_14 (
+    .x_in(stage_6_7_per_outData[28]),
+    .y_in(stage_6_7_per_outData[29]),
+    .x_out(stage_6_7_per_outData[28]),
+    .y_out(stage_6_7_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_7_butterfly_15 (
+    .x_in(stage_6_7_per_outData[30]),
+    .y_in(stage_6_7_per_outData[31]),
+    .x_out(stage_6_7_per_outData[30]),
+    .y_out(stage_6_7_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
 
   // TODO(Yang): stage 7 -> stage 8 permutation
   // FIXME: ignore butterfly units for now.
@@ -649,7 +1792,149 @@ module NTT_Top #(
     .rst(rst)
   );
   // TODO(Tian): stage 8 32 butterfly units
+  butterfly stage_8_butterfly_0 (
+    .x_in(stage_7_8_per_outData[0]),
+    .y_in(stage_7_8_per_outData[1]),
+    .x_out(stage_7_8_per_outData[0]),
+    .y_out(stage_7_8_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
 
+  butterfly stage_8_butterfly_1 (
+    .x_in(stage_7_8_per_outData[2]),
+    .y_in(stage_7_8_per_outData[3]),
+    .x_out(stage_7_8_per_outData[2]),
+    .y_out(stage_7_8_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_2 (
+    .x_in(stage_7_8_per_outData[4]),
+    .y_in(stage_7_8_per_outData[5]),
+    .x_out(stage_7_8_per_outData[4]),
+    .y_out(stage_7_8_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_3 (
+    .x_in(stage_7_8_per_outData[6]),
+    .y_in(stage_7_8_per_outData[7]),
+    .x_out(stage_7_8_per_outData[6]),
+    .y_out(stage_7_8_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_4 (
+    .x_in(stage_7_8_per_outData[8]),
+    .y_in(stage_7_8_per_outData[9]),
+    .x_out(stage_7_8_per_outData[8]),
+    .y_out(stage_7_8_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_5 (
+    .x_in(stage_7_8_per_outData[10]),
+    .y_in(stage_7_8_per_outData[11]),
+    .x_out(stage_7_8_per_outData[10]),
+    .y_out(stage_7_8_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_6 (
+    .x_in(stage_7_8_per_outData[12]),
+    .y_in(stage_7_8_per_outData[13]),
+    .x_out(stage_7_8_per_outData[12]),
+    .y_out(stage_7_8_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_7 (
+    .x_in(stage_7_8_per_outData[14]),
+    .y_in(stage_7_8_per_outData[15]),
+    .x_out(stage_7_8_per_outData[14]),
+    .y_out(stage_7_8_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_8 (
+    .x_in(stage_7_8_per_outData[16]),
+    .y_in(stage_7_8_per_outData[17]),
+    .x_out(stage_7_8_per_outData[16]),
+    .y_out(stage_7_8_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_9 (
+    .x_in(stage_7_8_per_outData[18]),
+    .y_in(stage_7_8_per_outData[19]),
+    .x_out(stage_7_8_per_outData[18]),
+    .y_out(stage_7_8_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_10 (
+    .x_in(stage_7_8_per_outData[20]),
+    .y_in(stage_7_8_per_outData[21]),
+    .x_out(stage_7_8_per_outData[20]),
+    .y_out(stage_7_8_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_11 (
+    .x_in(stage_7_8_per_outData[22]),
+    .y_in(stage_7_8_per_outData[23]),
+    .x_out(stage_7_8_per_outData[22]),
+    .y_out(stage_7_8_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_12 (
+    .x_in(stage_7_8_per_outData[24]),
+    .y_in(stage_7_8_per_outData[25]),
+    .x_out(stage_7_8_per_outData[24]),
+    .y_out(stage_7_8_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_13 (
+    .x_in(stage_7_8_per_outData[26]),
+    .y_in(stage_7_8_per_outData[27]),
+    .x_out(stage_7_8_per_outData[26]),
+    .y_out(stage_7_8_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_14 (
+    .x_in(stage_7_8_per_outData[28]),
+    .y_in(stage_7_8_per_outData[29]),
+    .x_out(stage_7_8_per_outData[28]),
+    .y_out(stage_7_8_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_8_butterfly_15 (
+    .x_in(stage_7_8_per_outData[30]),
+    .y_in(stage_7_8_per_outData[31]),
+    .x_out(stage_7_8_per_outData[30]),
+    .y_out(stage_7_8_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
   // TODO(Yang): stage 8 -> stage 9 permutation
   // FIXME: ignore butterfly units for now.
   stage_4_permutation //#(
@@ -726,6 +2011,150 @@ module NTT_Top #(
     .rst(rst)
   );
   // TODO(Tian): stage 9 32 butterfly units
+  butterfly stage_9_butterfly_0 (
+    .x_in(stage_8_9_per_outData[0]),
+    .y_in(stage_8_9_per_outData[1]),
+    .x_out(stage_8_9_per_outData[0]),
+    .y_out(stage_8_9_per_outData[1]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_1 (
+    .x_in(stage_8_9_per_outData[2]),
+    .y_in(stage_8_9_per_outData[3]),
+    .x_out(stage_8_9_per_outData[2]),
+    .y_out(stage_8_9_per_outData[3]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_2 (
+    .x_in(stage_8_9_per_outData[4]),
+    .y_in(stage_8_9_per_outData[5]),
+    .x_out(stage_8_9_per_outData[4]),
+    .y_out(stage_8_9_per_outData[5]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_3 (
+    .x_in(stage_8_9_per_outData[6]),
+    .y_in(stage_8_9_per_outData[7]),
+    .x_out(stage_8_9_per_outData[6]),
+    .y_out(stage_8_9_per_outData[7]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_4 (
+    .x_in(stage_8_9_per_outData[8]),
+    .y_in(stage_8_9_per_outData[9]),
+    .x_out(stage_8_9_per_outData[8]),
+    .y_out(stage_8_9_per_outData[9]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_5 (
+    .x_in(stage_8_9_per_outData[10]),
+    .y_in(stage_8_9_per_outData[11]),
+    .x_out(stage_8_9_per_outData[10]),
+    .y_out(stage_8_9_per_outData[11]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_6 (
+    .x_in(stage_8_9_per_outData[12]),
+    .y_in(stage_8_9_per_outData[13]),
+    .x_out(stage_8_9_per_outData[12]),
+    .y_out(stage_8_9_per_outData[13]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_7 (
+    .x_in(stage_8_9_per_outData[14]),
+    .y_in(stage_8_9_per_outData[15]),
+    .x_out(stage_8_9_per_outData[14]),
+    .y_out(stage_8_9_per_outData[15]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_8 (
+    .x_in(stage_8_9_per_outData[16]),
+    .y_in(stage_8_9_per_outData[17]),
+    .x_out(stage_8_9_per_outData[16]),
+    .y_out(stage_8_9_per_outData[17]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_9 (
+    .x_in(stage_8_9_per_outData[18]),
+    .y_in(stage_8_9_per_outData[19]),
+    .x_out(stage_8_9_per_outData[18]),
+    .y_out(stage_8_9_per_outData[19]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_10 (
+    .x_in(stage_8_9_per_outData[20]),
+    .y_in(stage_8_9_per_outData[21]),
+    .x_out(stage_8_9_per_outData[20]),
+    .y_out(stage_8_9_per_outData[21]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_11 (
+    .x_in(stage_8_9_per_outData[22]),
+    .y_in(stage_8_9_per_outData[23]),
+    .x_out(stage_8_9_per_outData[22]),
+    .y_out(stage_8_9_per_outData[23]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_12 (
+    .x_in(stage_8_9_per_outData[24]),
+    .y_in(stage_8_9_per_outData[25]),
+    .x_out(stage_8_9_per_outData[24]),
+    .y_out(stage_8_9_per_outData[25]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_13 (
+    .x_in(stage_8_9_per_outData[26]),
+    .y_in(stage_8_9_per_outData[27]),
+    .x_out(stage_8_9_per_outData[26]),
+    .y_out(stage_8_9_per_outData[27]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_14 (
+    .x_in(stage_8_9_per_outData[28]),
+    .y_in(stage_8_9_per_outData[29]),
+    .x_out(stage_8_9_per_outData[28]),
+    .y_out(stage_8_9_per_outData[29]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly stage_9_butterfly_15 (
+    .x_in(stage_8_9_per_outData[30]),
+    .y_in(stage_8_9_per_outData[31]),
+    .x_out(stage_8_9_per_outData[30]),
+    .y_out(stage_8_9_per_outData[31]),
+    .clk(clk),
+    .rst(rst)
+  );
+
 
   assign outData[0] = stage_8_9_per_outData[0];
   assign outData[1] = stage_8_9_per_outData[1];

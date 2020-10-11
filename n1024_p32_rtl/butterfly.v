@@ -50,9 +50,9 @@ module butterfly(
     assign  x_out = x_out_reg;
     assign  y_out = y_out_reg;
     
-    modularMult mm (y_in, w, q, clk, rst, mult);
-    ModAdd ma (x5_reg, mult_reg, q, clk, add_out);
-    ModSub ms (x5_reg, mult_reg, q, clk, sub_out);
+    modular_mult mm (y_in, w, q, clk, rst, mult);
+    mod_add ma (x5_reg, mult_reg, q, clk, add_out);
+    mod_sub ms (x5_reg, mult_reg, q, clk, sub_out);
     
     always_ff @(posedge clk) begin
         if (rst) begin
