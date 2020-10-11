@@ -704,4 +704,37 @@ module NTT_Top #(
   );
   // TODO(Tian): stage 9 32 butterfly units
 
+  assign outData[0] = stage_8_9_per_outData[0];
+  assign outData[1] = stage_8_9_per_outData[1];
+  assign outData[2] = stage_8_9_per_outData[2];
+  assign outData[3] = stage_8_9_per_outData[3];
+  assign outData[4] = stage_8_9_per_outData[4];
+  assign outData[5] = stage_8_9_per_outData[5];
+  assign outData[6] = stage_8_9_per_outData[6];
+  assign outData[7] = stage_8_9_per_outData[7];
+  assign outData[8] = stage_8_9_per_outData[8];
+  assign outData[9] = stage_8_9_per_outData[9];
+  assign outData[10] = stage_8_9_per_outData[10];
+  assign outData[11] = stage_8_9_per_outData[11];
+  assign outData[12] = stage_8_9_per_outData[12];
+  assign outData[13] = stage_8_9_per_outData[13];
+  assign outData[14] = stage_8_9_per_outData[14];
+  assign outData[15] = stage_8_9_per_outData[15];
+  assign outData[16] = stage_8_9_per_outData[16];
+  assign outData[17] = stage_8_9_per_outData[17];
+  assign outData[18] = stage_8_9_per_outData[18];
+  assign outData[19] = stage_8_9_per_outData[19];
+  assign outData[20] = stage_8_9_per_outData[20];
+  assign outData[21] = stage_8_9_per_outData[21];
+  assign outData[22] = stage_8_9_per_outData[22];
+  assign outData[23] = stage_8_9_per_outData[23];
+  assign outData[24] = stage_8_9_per_outData[24];
+  assign outData[25] = stage_8_9_per_outData[25];
+  assign outData[26] = stage_8_9_per_outData[26];
+  assign outData[27] = stage_8_9_per_outData[27];
+  assign outData[28] = stage_8_9_per_outData[28];
+  assign outData[29] = stage_8_9_per_outData[29];
+  assign outData[30] = stage_8_9_per_outData[30];
+  assign outData[31] = stage_8_9_per_outData[31];
+
 endmodule
