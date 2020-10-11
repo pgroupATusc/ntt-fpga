@@ -1,0 +1,6 @@
+input size: 512
+stride: 0
+data parallelism: 1
+num of levels: -2147483648
+num_files: -1
+idx_level: -2147483648

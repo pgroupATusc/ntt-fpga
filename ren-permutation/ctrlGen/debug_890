@@ -1,0 +1,43 @@
+input size: 16
+stride: 0
+data parallelism: 4
+num of levels: 1
+num_files: 3
+idx_level: 1
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The num of null switches is: 0
+The value of min_idx is: 15
+idx_level: 0
+The num of null switches is: 0
+The num of null switches is: 2
+The num of null switches is: 0
+The num of null switches is: 2
+The num of null switches is: 0
+The num of null switches is: 2
+The num of null switches is: 0
+The num of null switches is: 2
+The value of min_idx is: 7
+idx_level: 0
+The num of null switches is: 0
+The num of null switches is: 2
+The num of null switches is: 0
+The num of null switches is: 2
+The num of null switches is: 0
+The num of null switches is: 2
+The num of null switches is: 0
+The num of null switches is: 2
+The value of min_idx is: 7

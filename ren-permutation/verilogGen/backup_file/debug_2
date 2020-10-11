@@ -1,0 +1,6 @@
+input size: 1024
+stride: 0
+data parallelism: 2
+num of levels: 0
+num_files: 1
+idx_level: 0

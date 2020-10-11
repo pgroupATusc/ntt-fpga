@@ -1,0 +1,20 @@
+input size: 8192
+stride: 0
+data parallelism: 16
+num of levels: 3
+num_files: 15
+idx_level: 3
+idx_level: 2
+idx_level: 1
+idx_level: 0
+idx_level: 0
+idx_level: 1
+idx_level: 0
+idx_level: 0
+idx_level: 2
+idx_level: 1
+idx_level: 0
+idx_level: 0
+idx_level: 1
+idx_level: 0
+idx_level: 0

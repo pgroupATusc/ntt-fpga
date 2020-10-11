@@ -1,0 +1,530 @@
+#Input size: 512
+#Data parallelism: 64
+#Stride: 0
+#Switch ctrl in input stages:
+#Stage 0:
+#Switch 0: 0 0 0 0 1 1 1 1 
+#Switch 1: 0 0 0 0 1 1 1 1 
+#Switch 2: 0 0 0 0 1 1 1 1 
+#Switch 3: 0 0 0 0 1 1 1 1 
+#Switch 4: 0 0 0 0 1 1 1 1 
+#Switch 5: 0 0 0 0 1 1 1 1 
+#Switch 6: 0 0 0 0 1 1 1 1 
+#Switch 7: 0 0 0 0 1 1 1 1 
+#Switch 8: 0 0 0 0 1 1 1 1 
+#Switch 9: 0 0 0 0 1 1 1 1 
+#Switch 10: 0 0 0 0 1 1 1 1 
+#Switch 11: 0 0 0 0 1 1 1 1 
+#Switch 12: 0 0 0 0 1 1 1 1 
+#Switch 13: 0 0 0 0 1 1 1 1 
+#Switch 14: 0 0 0 0 1 1 1 1 
+#Switch 15: 0 0 0 0 1 1 1 1 
+#Switch 16: 0 0 0 0 1 1 1 1 
+#Switch 17: 0 0 0 0 1 1 1 1 
+#Switch 18: 0 0 0 0 1 1 1 1 
+#Switch 19: 0 0 0 0 1 1 1 1 
+#Switch 20: 0 0 0 0 1 1 1 1 
+#Switch 21: 0 0 0 0 1 1 1 1 
+#Switch 22: 0 0 0 0 1 1 1 1 
+#Switch 23: 0 0 0 0 1 1 1 1 
+#Switch 24: 0 0 0 0 1 1 1 1 
+#Switch 25: 0 0 0 0 1 1 1 1 
+#Switch 26: 0 0 0 0 1 1 1 1 
+#Switch 27: 0 0 0 0 1 1 1 1 
+#Switch 28: 0 0 0 0 1 1 1 1 
+#Switch 29: 0 0 0 0 1 1 1 1 
+#Switch 30: 0 0 0 0 1 1 1 1 
+#Switch 31: 0 0 0 0 1 1 1 1 
+#Stage 1:
+#Switch 0: 0 0 1 1 0 0 1 1 
+#Switch 1: 0 0 1 1 0 0 1 1 
+#Switch 2: 0 0 1 1 0 0 1 1 
+#Switch 3: 0 0 1 1 0 0 1 1 
+#Switch 4: 0 0 1 1 0 0 1 1 
+#Switch 5: 0 0 1 1 0 0 1 1 
+#Switch 6: 0 0 1 1 0 0 1 1 
+#Switch 7: 0 0 1 1 0 0 1 1 
+#Switch 8: 0 0 1 1 0 0 1 1 
+#Switch 9: 0 0 1 1 0 0 1 1 
+#Switch 10: 0 0 1 1 0 0 1 1 
+#Switch 11: 0 0 1 1 0 0 1 1 
+#Switch 12: 0 0 1 1 0 0 1 1 
+#Switch 13: 0 0 1 1 0 0 1 1 
+#Switch 14: 0 0 1 1 0 0 1 1 
+#Switch 15: 0 0 1 1 0 0 1 1 
+#Switch 16: 0 0 1 1 0 0 1 1 
+#Switch 17: 0 0 1 1 0 0 1 1 
+#Switch 18: 0 0 1 1 0 0 1 1 
+#Switch 19: 0 0 1 1 0 0 1 1 
+#Switch 20: 0 0 1 1 0 0 1 1 
+#Switch 21: 0 0 1 1 0 0 1 1 
+#Switch 22: 0 0 1 1 0 0 1 1 
+#Switch 23: 0 0 1 1 0 0 1 1 
+#Switch 24: 0 0 1 1 0 0 1 1 
+#Switch 25: 0 0 1 1 0 0 1 1 
+#Switch 26: 0 0 1 1 0 0 1 1 
+#Switch 27: 0 0 1 1 0 0 1 1 
+#Switch 28: 0 0 1 1 0 0 1 1 
+#Switch 29: 0 0 1 1 0 0 1 1 
+#Switch 30: 0 0 1 1 0 0 1 1 
+#Switch 31: 0 0 1 1 0 0 1 1 
+#Stage 2:
+#Switch 0: 0 1 0 1 0 1 0 1 
+#Switch 1: 0 1 0 1 0 1 0 1 
+#Switch 2: 0 1 0 1 0 1 0 1 
+#Switch 3: 0 1 0 1 0 1 0 1 
+#Switch 4: 0 1 0 1 0 1 0 1 
+#Switch 5: 0 1 0 1 0 1 0 1 
+#Switch 6: 0 1 0 1 0 1 0 1 
+#Switch 7: 0 1 0 1 0 1 0 1 
+#Switch 8: 0 1 0 1 0 1 0 1 
+#Switch 9: 0 1 0 1 0 1 0 1 
+#Switch 10: 0 1 0 1 0 1 0 1 
+#Switch 11: 0 1 0 1 0 1 0 1 
+#Switch 12: 0 1 0 1 0 1 0 1 
+#Switch 13: 0 1 0 1 0 1 0 1 
+#Switch 14: 0 1 0 1 0 1 0 1 
+#Switch 15: 0 1 0 1 0 1 0 1 
+#Switch 16: 0 1 0 1 0 1 0 1 
+#Switch 17: 0 1 0 1 0 1 0 1 
+#Switch 18: 0 1 0 1 0 1 0 1 
+#Switch 19: 0 1 0 1 0 1 0 1 
+#Switch 20: 0 1 0 1 0 1 0 1 
+#Switch 21: 0 1 0 1 0 1 0 1 
+#Switch 22: 0 1 0 1 0 1 0 1 
+#Switch 23: 0 1 0 1 0 1 0 1 
+#Switch 24: 0 1 0 1 0 1 0 1 
+#Switch 25: 0 1 0 1 0 1 0 1 
+#Switch 26: 0 1 0 1 0 1 0 1 
+#Switch 27: 0 1 0 1 0 1 0 1 
+#Switch 28: 0 1 0 1 0 1 0 1 
+#Switch 29: 0 1 0 1 0 1 0 1 
+#Switch 30: 0 1 0 1 0 1 0 1 
+#Switch 31: 0 1 0 1 0 1 0 1 
+#Stage 3:
+#Switch 0: 0 0 0 0 0 0 0 0 
+#Switch 1: 0 0 0 0 0 0 0 0 
+#Switch 2: 1 1 1 1 1 1 1 1 
+#Switch 3: 1 1 1 1 1 1 1 1 
+#Switch 4: 0 0 0 0 0 0 0 0 
+#Switch 5: 0 0 0 0 0 0 0 0 
+#Switch 6: 1 1 1 1 1 1 1 1 
+#Switch 7: 1 1 1 1 1 1 1 1 
+#Switch 8: 0 0 0 0 0 0 0 0 
+#Switch 9: 0 0 0 0 0 0 0 0 
+#Switch 10: 1 1 1 1 1 1 1 1 
+#Switch 11: 1 1 1 1 1 1 1 1 
+#Switch 12: 0 0 0 0 0 0 0 0 
+#Switch 13: 0 0 0 0 0 0 0 0 
+#Switch 14: 1 1 1 1 1 1 1 1 
+#Switch 15: 1 1 1 1 1 1 1 1 
+#Switch 16: 0 0 0 0 0 0 0 0 
+#Switch 17: 0 0 0 0 0 0 0 0 
+#Switch 18: 1 1 1 1 1 1 1 1 
+#Switch 19: 1 1 1 1 1 1 1 1 
+#Switch 20: 0 0 0 0 0 0 0 0 
+#Switch 21: 0 0 0 0 0 0 0 0 
+#Switch 22: 1 1 1 1 1 1 1 1 
+#Switch 23: 1 1 1 1 1 1 1 1 
+#Switch 24: 0 0 0 0 0 0 0 0 
+#Switch 25: 0 0 0 0 0 0 0 0 
+#Switch 26: 1 1 1 1 1 1 1 1 
+#Switch 27: 1 1 1 1 1 1 1 1 
+#Switch 28: 0 0 0 0 0 0 0 0 
+#Switch 29: 0 0 0 0 0 0 0 0 
+#Switch 30: 1 1 1 1 1 1 1 1 
+#Switch 31: 1 1 1 1 1 1 1 1 
+#Stage 4:
+#Switch 0: 0 1 1 1 1 1 1 1 
+#Switch 1: 1 1 1 1 1 1 1 1 
+#Switch 2: 0 1 1 1 1 1 1 1 
+#Switch 3: 1 1 1 1 1 1 1 1 
+#Switch 4: 0 1 1 1 1 1 1 1 
+#Switch 5: 1 1 1 1 1 1 1 1 
+#Switch 6: 0 1 1 1 1 1 1 1 
+#Switch 7: 1 1 1 1 1 1 1 1 
+#Switch 8: 0 1 1 1 1 1 1 1 
+#Switch 9: 1 1 1 1 1 1 1 1 
+#Switch 10: 0 1 1 1 1 1 1 1 
+#Switch 11: 1 1 1 1 1 1 1 1 
+#Switch 12: 0 1 1 1 1 1 1 1 
+#Switch 13: 1 1 1 1 1 1 1 1 
+#Switch 14: 0 1 1 1 1 1 1 1 
+#Switch 15: 1 1 1 1 1 1 1 1 
+#Switch 16: 0 1 1 1 1 1 1 1 
+#Switch 17: 1 1 1 1 1 1 1 1 
+#Switch 18: 0 1 1 1 1 1 1 1 
+#Switch 19: 1 1 1 1 1 1 1 1 
+#Switch 20: 0 1 1 1 1 1 1 1 
+#Switch 21: 1 1 1 1 1 1 1 1 
+#Switch 22: 0 1 1 1 1 1 1 1 
+#Switch 23: 1 1 1 1 1 1 1 1 
+#Switch 24: 0 1 1 1 1 1 1 1 
+#Switch 25: 1 1 1 1 1 1 1 1 
+#Switch 26: 0 1 1 1 1 1 1 1 
+#Switch 27: 1 1 1 1 1 1 1 1 
+#Switch 28: 0 1 1 1 1 1 1 1 
+#Switch 29: 1 1 1 1 1 1 1 1 
+#Switch 30: 0 1 1 1 1 1 1 1 
+#Switch 31: 1 1 1 1 1 1 1 1 
+#Stage 5:
+#Switch 0: 0 1 1 1 1 1 1 1 
+#Switch 1: 0 1 1 1 1 1 1 1 
+#Switch 2: 0 1 1 1 1 1 1 1 
+#Switch 3: 0 1 1 1 1 1 1 1 
+#Switch 4: 0 1 1 1 1 1 1 1 
+#Switch 5: 0 1 1 1 1 1 1 1 
+#Switch 6: 0 1 1 1 1 1 1 1 
+#Switch 7: 0 1 1 1 1 1 1 1 
+#Switch 8: 0 1 1 1 1 1 1 1 
+#Switch 9: 0 1 1 1 1 1 1 1 
+#Switch 10: 0 1 1 1 1 1 1 1 
+#Switch 11: 0 1 1 1 1 1 1 1 
+#Switch 12: 0 1 1 1 1 1 1 1 
+#Switch 13: 0 1 1 1 1 1 1 1 
+#Switch 14: 0 1 1 1 1 1 1 1 
+#Switch 15: 0 1 1 1 1 1 1 1 
+#Switch 16: 0 1 1 1 1 1 1 1 
+#Switch 17: 0 1 1 1 1 1 1 1 
+#Switch 18: 0 1 1 1 1 1 1 1 
+#Switch 19: 0 1 1 1 1 1 1 1 
+#Switch 20: 0 1 1 1 1 1 1 1 
+#Switch 21: 0 1 1 1 1 1 1 1 
+#Switch 22: 0 1 1 1 1 1 1 1 
+#Switch 23: 0 1 1 1 1 1 1 1 
+#Switch 24: 0 1 1 1 1 1 1 1 
+#Switch 25: 0 1 1 1 1 1 1 1 
+#Switch 26: 0 1 1 1 1 1 1 1 
+#Switch 27: 0 1 1 1 1 1 1 1 
+#Switch 28: 0 1 1 1 1 1 1 1 
+#Switch 29: 0 1 1 1 1 1 1 1 
+#Switch 30: 0 1 1 1 1 1 1 1 
+#Switch 31: 0 1 1 1 1 1 1 1 
+#Switch ctrl in output stages:
+#Stage 0:
+#Switch 0: 0 0 0 0 1 1 1 1 
+#Switch 1: 0 0 0 0 1 1 1 1 
+#Switch 2: 0 0 0 0 1 1 1 1 
+#Switch 3: 0 0 0 0 1 1 1 1 
+#Switch 4: 0 0 0 0 1 1 1 1 
+#Switch 5: 0 0 0 0 1 1 1 1 
+#Switch 6: 0 0 0 0 1 1 1 1 
+#Switch 7: 0 0 0 0 1 1 1 1 
+#Switch 8: 0 0 0 0 1 1 1 1 
+#Switch 9: 0 0 0 0 1 1 1 1 
+#Switch 10: 0 0 0 0 1 1 1 1 
+#Switch 11: 0 0 0 0 1 1 1 1 
+#Switch 12: 0 0 0 0 1 1 1 1 
+#Switch 13: 0 0 0 0 1 1 1 1 
+#Switch 14: 0 0 0 0 1 1 1 1 
+#Switch 15: 0 0 0 0 1 1 1 1 
+#Switch 16: 0 0 0 0 1 1 1 1 
+#Switch 17: 0 0 0 0 1 1 1 1 
+#Switch 18: 0 0 0 0 1 1 1 1 
+#Switch 19: 0 0 0 0 1 1 1 1 
+#Switch 20: 0 0 0 0 1 1 1 1 
+#Switch 21: 0 0 0 0 1 1 1 1 
+#Switch 22: 0 0 0 0 1 1 1 1 
+#Switch 23: 0 0 0 0 1 1 1 1 
+#Switch 24: 0 0 0 0 1 1 1 1 
+#Switch 25: 0 0 0 0 1 1 1 1 
+#Switch 26: 0 0 0 0 1 1 1 1 
+#Switch 27: 0 0 0 0 1 1 1 1 
+#Switch 28: 0 0 0 0 1 1 1 1 
+#Switch 29: 0 0 0 0 1 1 1 1 
+#Switch 30: 0 0 0 0 1 1 1 1 
+#Switch 31: 0 0 0 0 1 1 1 1 
+#Stage 1:
+#Switch 0: 0 0 1 1 0 0 1 1 
+#Switch 1: 0 0 1 1 0 0 1 1 
+#Switch 2: 0 0 1 1 0 0 1 1 
+#Switch 3: 0 0 1 1 0 0 1 1 
+#Switch 4: 0 0 1 1 0 0 1 1 
+#Switch 5: 0 0 1 1 0 0 1 1 
+#Switch 6: 0 0 1 1 0 0 1 1 
+#Switch 7: 0 0 1 1 0 0 1 1 
+#Switch 8: 0 0 1 1 0 0 1 1 
+#Switch 9: 0 0 1 1 0 0 1 1 
+#Switch 10: 0 0 1 1 0 0 1 1 
+#Switch 11: 0 0 1 1 0 0 1 1 
+#Switch 12: 0 0 1 1 0 0 1 1 
+#Switch 13: 0 0 1 1 0 0 1 1 
+#Switch 14: 0 0 1 1 0 0 1 1 
+#Switch 15: 0 0 1 1 0 0 1 1 
+#Switch 16: 0 0 1 1 0 0 1 1 
+#Switch 17: 0 0 1 1 0 0 1 1 
+#Switch 18: 0 0 1 1 0 0 1 1 
+#Switch 19: 0 0 1 1 0 0 1 1 
+#Switch 20: 0 0 1 1 0 0 1 1 
+#Switch 21: 0 0 1 1 0 0 1 1 
+#Switch 22: 0 0 1 1 0 0 1 1 
+#Switch 23: 0 0 1 1 0 0 1 1 
+#Switch 24: 0 0 1 1 0 0 1 1 
+#Switch 25: 0 0 1 1 0 0 1 1 
+#Switch 26: 0 0 1 1 0 0 1 1 
+#Switch 27: 0 0 1 1 0 0 1 1 
+#Switch 28: 0 0 1 1 0 0 1 1 
+#Switch 29: 0 0 1 1 0 0 1 1 
+#Switch 30: 0 0 1 1 0 0 1 1 
+#Switch 31: 0 0 1 1 0 0 1 1 
+#Stage 2:
+#Switch 0: 0 1 0 1 0 1 0 1 
+#Switch 1: 0 1 0 1 0 1 0 1 
+#Switch 2: 0 1 0 1 0 1 0 1 
+#Switch 3: 0 1 0 1 0 1 0 1 
+#Switch 4: 0 1 0 1 0 1 0 1 
+#Switch 5: 0 1 0 1 0 1 0 1 
+#Switch 6: 0 1 0 1 0 1 0 1 
+#Switch 7: 0 1 0 1 0 1 0 1 
+#Switch 8: 0 1 0 1 0 1 0 1 
+#Switch 9: 0 1 0 1 0 1 0 1 
+#Switch 10: 0 1 0 1 0 1 0 1 
+#Switch 11: 0 1 0 1 0 1 0 1 
+#Switch 12: 0 1 0 1 0 1 0 1 
+#Switch 13: 0 1 0 1 0 1 0 1 
+#Switch 14: 0 1 0 1 0 1 0 1 
+#Switch 15: 0 1 0 1 0 1 0 1 
+#Switch 16: 0 1 0 1 0 1 0 1 
+#Switch 17: 0 1 0 1 0 1 0 1 
+#Switch 18: 0 1 0 1 0 1 0 1 
+#Switch 19: 0 1 0 1 0 1 0 1 
+#Switch 20: 0 1 0 1 0 1 0 1 
+#Switch 21: 0 1 0 1 0 1 0 1 
+#Switch 22: 0 1 0 1 0 1 0 1 
+#Switch 23: 0 1 0 1 0 1 0 1 
+#Switch 24: 0 1 0 1 0 1 0 1 
+#Switch 25: 0 1 0 1 0 1 0 1 
+#Switch 26: 0 1 0 1 0 1 0 1 
+#Switch 27: 0 1 0 1 0 1 0 1 
+#Switch 28: 0 1 0 1 0 1 0 1 
+#Switch 29: 0 1 0 1 0 1 0 1 
+#Switch 30: 0 1 0 1 0 1 0 1 
+#Switch 31: 0 1 0 1 0 1 0 1 
+#Stage 3:
+#Switch 0: 0 0 0 0 0 0 0 0 
+#Switch 1: 0 0 0 0 0 0 0 0 
+#Switch 2: 1 1 1 1 1 1 1 1 
+#Switch 3: 1 1 1 1 1 1 1 1 
+#Switch 4: 0 0 0 0 0 0 0 0 
+#Switch 5: 0 0 0 0 0 0 0 0 
+#Switch 6: 1 1 1 1 1 1 1 1 
+#Switch 7: 1 1 1 1 1 1 1 1 
+#Switch 8: 0 0 0 0 0 0 0 0 
+#Switch 9: 0 0 0 0 0 0 0 0 
+#Switch 10: 1 1 1 1 1 1 1 1 
+#Switch 11: 1 1 1 1 1 1 1 1 
+#Switch 12: 0 0 0 0 0 0 0 0 
+#Switch 13: 0 0 0 0 0 0 0 0 
+#Switch 14: 1 1 1 1 1 1 1 1 
+#Switch 15: 1 1 1 1 1 1 1 1 
+#Switch 16: 0 0 0 0 0 0 0 0 
+#Switch 17: 0 0 0 0 0 0 0 0 
+#Switch 18: 1 1 1 1 1 1 1 1 
+#Switch 19: 1 1 1 1 1 1 1 1 
+#Switch 20: 0 0 0 0 0 0 0 0 
+#Switch 21: 0 0 0 0 0 0 0 0 
+#Switch 22: 1 1 1 1 1 1 1 1 
+#Switch 23: 1 1 1 1 1 1 1 1 
+#Switch 24: 0 0 0 0 0 0 0 0 
+#Switch 25: 0 0 0 0 0 0 0 0 
+#Switch 26: 1 1 1 1 1 1 1 1 
+#Switch 27: 1 1 1 1 1 1 1 1 
+#Switch 28: 0 0 0 0 0 0 0 0 
+#Switch 29: 0 0 0 0 0 0 0 0 
+#Switch 30: 1 1 1 1 1 1 1 1 
+#Switch 31: 1 1 1 1 1 1 1 1 
+#Stage 4:
+#Switch 0: 0 1 1 1 1 1 1 1 
+#Switch 1: 1 1 1 1 1 1 1 1 
+#Switch 2: 0 1 1 1 1 1 1 1 
+#Switch 3: 1 1 1 1 1 1 1 1 
+#Switch 4: 0 1 1 1 1 1 1 1 
+#Switch 5: 1 1 1 1 1 1 1 1 
+#Switch 6: 0 1 1 1 1 1 1 1 
+#Switch 7: 1 1 1 1 1 1 1 1 
+#Switch 8: 0 1 1 1 1 1 1 1 
+#Switch 9: 1 1 1 1 1 1 1 1 
+#Switch 10: 0 1 1 1 1 1 1 1 
+#Switch 11: 1 1 1 1 1 1 1 1 
+#Switch 12: 0 1 1 1 1 1 1 1 
+#Switch 13: 1 1 1 1 1 1 1 1 
+#Switch 14: 0 1 1 1 1 1 1 1 
+#Switch 15: 1 1 1 1 1 1 1 1 
+#Switch 16: 0 1 1 1 1 1 1 1 
+#Switch 17: 1 1 1 1 1 1 1 1 
+#Switch 18: 0 1 1 1 1 1 1 1 
+#Switch 19: 1 1 1 1 1 1 1 1 
+#Switch 20: 0 1 1 1 1 1 1 1 
+#Switch 21: 1 1 1 1 1 1 1 1 
+#Switch 22: 0 1 1 1 1 1 1 1 
+#Switch 23: 1 1 1 1 1 1 1 1 
+#Switch 24: 0 1 1 1 1 1 1 1 
+#Switch 25: 1 1 1 1 1 1 1 1 
+#Switch 26: 0 1 1 1 1 1 1 1 
+#Switch 27: 1 1 1 1 1 1 1 1 
+#Switch 28: 0 1 1 1 1 1 1 1 
+#Switch 29: 1 1 1 1 1 1 1 1 
+#Switch 30: 0 1 1 1 1 1 1 1 
+#Switch 31: 1 1 1 1 1 1 1 1 
+#Stage 5:
+#Switch 0: 0 1 1 1 1 1 1 1 
+#Switch 1: 0 1 1 1 1 1 1 1 
+#Switch 2: 0 1 1 1 1 1 1 1 
+#Switch 3: 0 1 1 1 1 1 1 1 
+#Switch 4: 0 1 1 1 1 1 1 1 
+#Switch 5: 0 1 1 1 1 1 1 1 
+#Switch 6: 0 1 1 1 1 1 1 1 
+#Switch 7: 0 1 1 1 1 1 1 1 
+#Switch 8: 0 1 1 1 1 1 1 1 
+#Switch 9: 0 1 1 1 1 1 1 1 
+#Switch 10: 0 1 1 1 1 1 1 1 
+#Switch 11: 0 1 1 1 1 1 1 1 
+#Switch 12: 0 1 1 1 1 1 1 1 
+#Switch 13: 0 1 1 1 1 1 1 1 
+#Switch 14: 0 1 1 1 1 1 1 1 
+#Switch 15: 0 1 1 1 1 1 1 1 
+#Switch 16: 0 1 1 1 1 1 1 1 
+#Switch 17: 0 1 1 1 1 1 1 1 
+#Switch 18: 0 1 1 1 1 1 1 1 
+#Switch 19: 0 1 1 1 1 1 1 1 
+#Switch 20: 0 1 1 1 1 1 1 1 
+#Switch 21: 0 1 1 1 1 1 1 1 
+#Switch 22: 0 1 1 1 1 1 1 1 
+#Switch 23: 0 1 1 1 1 1 1 1 
+#Switch 24: 0 1 1 1 1 1 1 1 
+#Switch 25: 0 1 1 1 1 1 1 1 
+#Switch 26: 0 1 1 1 1 1 1 1 
+#Switch 27: 0 1 1 1 1 1 1 1 
+#Switch 28: 0 1 1 1 1 1 1 1 
+#Switch 29: 0 1 1 1 1 1 1 1 
+#Switch 30: 0 1 1 1 1 1 1 1 
+#Switch 31: 0 1 1 1 1 1 1 1 
+#Memory addresses: 
+#Memory block 0: 
+0 1 2 3 4 5 6 7 
+#Memory block 1: 
+0 1 2 3 4 5 6 7 
+#Memory block 2: 
+0 1 2 3 4 5 6 7 
+#Memory block 3: 
+0 1 2 3 4 5 6 7 
+#Memory block 4: 
+0 1 2 3 4 5 6 7 
+#Memory block 5: 
+0 1 2 3 4 5 6 7 
+#Memory block 6: 
+0 1 2 3 4 5 6 7 
+#Memory block 7: 
+0 1 2 3 4 5 6 7 
+#Memory block 8: 
+1 0 3 2 5 4 7 6 0 1 2 3 4 5 6 7 
+#Memory block 9: 
+1 0 3 2 5 4 7 6 0 1 2 3 4 5 6 7 
+#Memory block a: 
+1 0 3 2 5 4 7 6 0 1 2 3 4 5 6 7 
+#Memory block b: 
+1 0 3 2 5 4 7 6 0 1 2 3 4 5 6 7 
+#Memory block c: 
+1 0 3 2 5 4 7 6 0 1 2 3 4 5 6 7 
+#Memory block d: 
+1 0 3 2 5 4 7 6 0 1 2 3 4 5 6 7 
+#Memory block e: 
+1 0 3 2 5 4 7 6 0 1 2 3 4 5 6 7 
+#Memory block f: 
+1 0 3 2 5 4 7 6 0 1 2 3 4 5 6 7 
+#Memory block 10: 
+2 3 0 1 6 7 4 5 0 1 2 3 4 5 6 7 
+#Memory block 11: 
+2 3 0 1 6 7 4 5 0 1 2 3 4 5 6 7 
+#Memory block 12: 
+2 3 0 1 6 7 4 5 0 1 2 3 4 5 6 7 
+#Memory block 13: 
+2 3 0 1 6 7 4 5 0 1 2 3 4 5 6 7 
+#Memory block 14: 
+2 3 0 1 6 7 4 5 0 1 2 3 4 5 6 7 
+#Memory block 15: 
+2 3 0 1 6 7 4 5 0 1 2 3 4 5 6 7 
+#Memory block 16: 
+2 3 0 1 6 7 4 5 0 1 2 3 4 5 6 7 
+#Memory block 17: 
+2 3 0 1 6 7 4 5 0 1 2 3 4 5 6 7 
+#Memory block 18: 
+3 2 1 0 7 6 5 4 0 1 2 3 4 5 6 7 
+#Memory block 19: 
+3 2 1 0 7 6 5 4 0 1 2 3 4 5 6 7 
+#Memory block 1a: 
+3 2 1 0 7 6 5 4 0 1 2 3 4 5 6 7 
+#Memory block 1b: 
+3 2 1 0 7 6 5 4 0 1 2 3 4 5 6 7 
+#Memory block 1c: 
+3 2 1 0 7 6 5 4 0 1 2 3 4 5 6 7 
+#Memory block 1d: 
+3 2 1 0 7 6 5 4 0 1 2 3 4 5 6 7 
+#Memory block 1e: 
+3 2 1 0 7 6 5 4 0 1 2 3 4 5 6 7 
+#Memory block 1f: 
+3 2 1 0 7 6 5 4 0 1 2 3 4 5 6 7 
+#Memory block 20: 
+4 5 6 7 0 1 2 3 0 1 2 3 4 5 6 7 
+#Memory block 21: 
+4 5 6 7 0 1 2 3 0 1 2 3 4 5 6 7 
+#Memory block 22: 
+4 5 6 7 0 1 2 3 0 1 2 3 4 5 6 7 
+#Memory block 23: 
+4 5 6 7 0 1 2 3 0 1 2 3 4 5 6 7 
+#Memory block 24: 
+4 5 6 7 0 1 2 3 0 1 2 3 4 5 6 7 
+#Memory block 25: 
+4 5 6 7 0 1 2 3 0 1 2 3 4 5 6 7 
+#Memory block 26: 
+4 5 6 7 0 1 2 3 0 1 2 3 4 5 6 7 
+#Memory block 27: 
+4 5 6 7 0 1 2 3 0 1 2 3 4 5 6 7 
+#Memory block 28: 
+5 4 7 6 1 0 3 2 0 1 2 3 4 5 6 7 
+#Memory block 29: 
+5 4 7 6 1 0 3 2 0 1 2 3 4 5 6 7 
+#Memory block 2a: 
+5 4 7 6 1 0 3 2 0 1 2 3 4 5 6 7 
+#Memory block 2b: 
+5 4 7 6 1 0 3 2 0 1 2 3 4 5 6 7 
+#Memory block 2c: 
+5 4 7 6 1 0 3 2 0 1 2 3 4 5 6 7 
+#Memory block 2d: 
+5 4 7 6 1 0 3 2 0 1 2 3 4 5 6 7 
+#Memory block 2e: 
+5 4 7 6 1 0 3 2 0 1 2 3 4 5 6 7 
+#Memory block 2f: 
+5 4 7 6 1 0 3 2 0 1 2 3 4 5 6 7 
+#Memory block 30: 
+6 7 4 5 2 3 0 1 0 1 2 3 4 5 6 7 
+#Memory block 31: 
+6 7 4 5 2 3 0 1 0 1 2 3 4 5 6 7 
+#Memory block 32: 
+6 7 4 5 2 3 0 1 0 1 2 3 4 5 6 7 
+#Memory block 33: 
+6 7 4 5 2 3 0 1 0 1 2 3 4 5 6 7 
+#Memory block 34: 
+6 7 4 5 2 3 0 1 0 1 2 3 4 5 6 7 
+#Memory block 35: 
+6 7 4 5 2 3 0 1 0 1 2 3 4 5 6 7 
+#Memory block 36: 
+6 7 4 5 2 3 0 1 0 1 2 3 4 5 6 7 
+#Memory block 37: 
+6 7 4 5 2 3 0 1 0 1 2 3 4 5 6 7 
+#Memory block 38: 
+7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 
+#Memory block 39: 
+7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 
+#Memory block 3a: 
+7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 
+#Memory block 3b: 
+7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 
+#Memory block 3c: 
+7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 
+#Memory block 3d: 
+7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 
+#Memory block 3e: 
+7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 
+#Memory block 3f: 
+7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 

@@ -1,0 +1,26 @@
+#Input size: 8
+#Data parallelism: 4
+#Stride: 4
+#Switch ctrl in input stages:
+#Stage 0:
+#Switch 0: 0 1 
+#Switch 1: 0 1 
+#Stage 1:
+#Switch 0: 0 1 
+#Switch 1: 0 1 
+#Switch ctrl in output stages:
+#Stage 0:
+#Switch 0: 0 1 
+#Switch 1: 0 1 
+#Stage 1:
+#Switch 0: 0 1 
+#Switch 1: 0 1 
+#Memory addresses: 
+#Memory block 0: 
+0 1 
+#Memory block 1: 
+1 0 0 1 
+#Memory block 2: 
+0 1 
+#Memory block 3: 
+1 0 0 1 

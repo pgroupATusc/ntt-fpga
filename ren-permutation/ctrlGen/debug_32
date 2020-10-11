@@ -1,0 +1,8 @@
+input size: 8
+stride: 4
+data parallelism: 4
+num of levels: 1
+num_files: 3
+idx_level: 1
+idx_level: 0
+idx_level: 0

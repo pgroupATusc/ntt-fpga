@@ -1,0 +1,14 @@
+##For network with a size:64
+##Stride:0
+##Sub Network Data Parallelism:2
+##The first stage
+##The switch 0
+ 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1
+##The last stage
+##The switch 0
+ 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1
+##The addresses here may not be used
+##The upper addresses
+ 4 5 6 7 0 1 2 3 12 13 14 15 8 9 10 11 20 21 22 23 16 17 18 19 28 29 30 31 24 25 26 27
+##The lower addresses
+ 5 4 7 6 1 0 3 2 13 12 15 14 9 8 11 10 21 20 23 22 17 16 19 18 29 28 31 30 25 24 27 26

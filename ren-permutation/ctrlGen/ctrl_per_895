@@ -1,0 +1,26 @@
+#Input size: 64
+#Data parallelism: 4
+#Stride: 0
+#Switch ctrl in input stages:
+#Stage 0:
+#Switch 0: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 
+#Switch 1: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 
+#Stage 1:
+#Switch 0: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 
+#Switch 1: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 
+#Switch ctrl in output stages:
+#Stage 0:
+#Switch 0: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 
+#Switch 1: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 
+#Stage 1:
+#Switch 0: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 
+#Switch 1: 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 
+#Memory addresses: 
+#Memory block 0: 
+0 1 2 3 4 5 6 7 8 9 a b c d e f 
+#Memory block 1: 
+4 5 6 7 0 1 2 3 c d e f 8 9 a b 0 1 2 3 4 5 6 7 8 9 a b c d e f 
+#Memory block 2: 
+0 1 2 3 4 5 6 7 8 9 a b c d e f 
+#Memory block 3: 
+4 5 6 7 0 1 2 3 c d e f 8 9 a b 0 1 2 3 4 5 6 7 8 9 a b c d e f 

@@ -1,0 +1,14 @@
+##For network with a size:8
+##Stride:2
+##Sub Network Data Parallelism:2
+##The first stage
+##The switch 0
+ 0 1 0 1
+##The last stage
+##The switch 0
+ 1 1 0 0
+##The addresses here may not be used
+##The upper addresses
+ 1 3 0 2
+##The lower addresses
+ 0 2 1 3
