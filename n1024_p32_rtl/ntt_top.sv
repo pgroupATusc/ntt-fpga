@@ -575,7 +575,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 7 -> stage 8 permutation
   // FIXME: ignore butterfly units for now.
-  stage_4_permutation //#(
+  stage_7_permutation //#(
     //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_7_8_per (
@@ -652,7 +652,7 @@ module NTT_Top #(
 
   // TODO(Yang): stage 8 -> stage 9 permutation
   // FIXME: ignore butterfly units for now.
-  stage_4_permutation //#(
+  stage_8_permutation //#(
     //.DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     //.INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   stage_8_9_per (
