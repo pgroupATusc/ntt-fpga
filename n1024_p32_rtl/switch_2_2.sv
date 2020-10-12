@@ -1,5 +1,5 @@
 module switch_2_2 #(
-    parameter DATA_WIDTH = 32
+    parameter DATA_WIDTH = 28
   ) (
     inData_0,
     inData_1,
