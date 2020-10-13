@@ -51,6 +51,7 @@ module permutation_tb;
     for (int i = 0; i < 1024 / INPUT_PER_CYCLE; ++i) begin
 
       #CLK_PERIOD
+      input_valid = 1'b1;
       for (int j = 0; j < INPUT_PER_CYCLE; ++j) begin
         inData[j] = offset + j;
       end
