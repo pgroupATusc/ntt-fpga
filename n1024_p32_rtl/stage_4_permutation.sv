@@ -9364,7 +9364,7 @@ data
 endmodule                        
 
 
-module  addr_rom_ctrl_dp32_per0(
+module  s4_addr_rom_ctrl_dp32_per0(
 in_start,                          
 wen_out,                         
 out_start,                         
@@ -9764,7 +9764,7 @@ rst
 
   wire [4:0] addr_wire_31;        
 
-  addr_rom_ctrl_dp32_per0 addr_gen_inst(.in_start(in_start), .wen_out(wen_wire), .out_start(out_start_wire), .rom_out_0(addr_wire_0), .rom_out_1(addr_wire_1), .rom_out_2(addr_wire_2), .rom_out_3(addr_wire_3), .rom_out_4(addr_wire_4), .rom_out_5(addr_wire_5), .rom_out_6(addr_wire_6), .rom_out_7(addr_wire_7), .rom_out_8(addr_wire_8), .rom_out_9(addr_wire_9), .rom_out_10(addr_wire_10), .rom_out_11(addr_wire_11), .rom_out_12(addr_wire_12), .rom_out_13(addr_wire_13), .rom_out_14(addr_wire_14), .rom_out_15(addr_wire_15), .rom_out_16(addr_wire_16), .rom_out_17(addr_wire_17), .rom_out_18(addr_wire_18), .rom_out_19(addr_wire_19), .rom_out_20(addr_wire_20), .rom_out_21(addr_wire_21), .rom_out_22(addr_wire_22), .rom_out_23(addr_wire_23), .rom_out_24(addr_wire_24), .rom_out_25(addr_wire_25), .rom_out_26(addr_wire_26), .rom_out_27(addr_wire_27), .rom_out_28(addr_wire_28), .rom_out_29(addr_wire_29), .rom_out_30(addr_wire_30), .rom_out_31(addr_wire_31), .clk(clk), .rst(rst));
+  s4_addr_rom_ctrl_dp32_per0 addr_gen_inst(.in_start(in_start), .wen_out(wen_wire), .out_start(out_start_wire), .rom_out_0(addr_wire_0), .rom_out_1(addr_wire_1), .rom_out_2(addr_wire_2), .rom_out_3(addr_wire_3), .rom_out_4(addr_wire_4), .rom_out_5(addr_wire_5), .rom_out_6(addr_wire_6), .rom_out_7(addr_wire_7), .rom_out_8(addr_wire_8), .rom_out_9(addr_wire_9), .rom_out_10(addr_wire_10), .rom_out_11(addr_wire_11), .rom_out_12(addr_wire_12), .rom_out_13(addr_wire_13), .rom_out_14(addr_wire_14), .rom_out_15(addr_wire_15), .rom_out_16(addr_wire_16), .rom_out_17(addr_wire_17), .rom_out_18(addr_wire_18), .rom_out_19(addr_wire_19), .rom_out_20(addr_wire_20), .rom_out_21(addr_wire_21), .rom_out_22(addr_wire_22), .rom_out_23(addr_wire_23), .rom_out_24(addr_wire_24), .rom_out_25(addr_wire_25), .rom_out_26(addr_wire_26), .rom_out_27(addr_wire_27), .rom_out_28(addr_wire_28), .rom_out_29(addr_wire_29), .rom_out_30(addr_wire_30), .rom_out_31(addr_wire_31), .clk(clk), .rst(rst));
 
   block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
          ram_inst_0(.wen(wen_wire), .addr(addr_wire_0), .din(wire_in[0]), .dout(wire_out[0]), .clk(clk) );
