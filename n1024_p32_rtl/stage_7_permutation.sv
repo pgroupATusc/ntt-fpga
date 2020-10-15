@@ -328,7 +328,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st0_per0L ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st0_per0L s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -904,7 +904,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st1_per0L ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st1_per0L s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -1480,7 +1480,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st2_per0L ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st2_per0L s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -2056,7 +2056,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st3_per0L ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st3_per0L s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -2632,7 +2632,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st4_per0L ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st4_per0L s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -3114,7 +3114,7 @@ rst
         .in_start(con_in_start_stage0), .out_start(in_start_stage1), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st0_per0L switch_ctrl_stage_0(.in_start(in_start_stage0),.ctrl_out(wire_ctrl_stage0),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st0_per0L s7_switch_ctrl_stage_0(.in_start(in_start_stage0),.ctrl_out(wire_ctrl_stage0),.clk(clk), .rst(rst));
 
   wire [DATA_WIDTH-1:0] wire_con_in_stage1[31:0];
   wire [DATA_WIDTH-1:0] wire_con_out_stage1[31:0];
@@ -3131,7 +3131,7 @@ rst
         .in_start(con_in_start_stage1), .out_start(in_start_stage2), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st1_per0L switch_ctrl_stage_1(.in_start(in_start_stage1),.ctrl_out(wire_ctrl_stage1),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st1_per0L s7_switch_ctrl_stage_1(.in_start(in_start_stage1),.ctrl_out(wire_ctrl_stage1),.clk(clk), .rst(rst));
 
   wire [DATA_WIDTH-1:0] wire_con_in_stage2[31:0];
   wire [DATA_WIDTH-1:0] wire_con_out_stage2[31:0];
@@ -3148,7 +3148,7 @@ rst
         .in_start(con_in_start_stage2), .out_start(in_start_stage3), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st2_per0L switch_ctrl_stage_2(.in_start(in_start_stage2),.ctrl_out(wire_ctrl_stage2),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st2_per0L s7_switch_ctrl_stage_2(.in_start(in_start_stage2),.ctrl_out(wire_ctrl_stage2),.clk(clk), .rst(rst));
 
   wire [DATA_WIDTH-1:0] wire_con_in_stage3[31:0];
   wire [DATA_WIDTH-1:0] wire_con_out_stage3[31:0];
@@ -3165,7 +3165,7 @@ rst
         .in_start(con_in_start_stage3), .out_start(in_start_stage4), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st3_per0L switch_ctrl_stage_3(.in_start(in_start_stage3),.ctrl_out(wire_ctrl_stage3),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st3_per0L s7_switch_ctrl_stage_3(.in_start(in_start_stage3),.ctrl_out(wire_ctrl_stage3),.clk(clk), .rst(rst));
 
   wire [DATA_WIDTH-1:0] wire_con_in_stage4[31:0];
   wire [DATA_WIDTH-1:0] wire_con_out_stage4[31:0];
@@ -3182,7 +3182,7 @@ rst
         .in_start(con_in_start_stage4), .out_start(out_start_w), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st4_per0L switch_ctrl_stage_4(.in_start(in_start_stage4),.ctrl_out(wire_ctrl_stage4),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st4_per0L s7_switch_ctrl_stage_4(.in_start(in_start_stage4),.ctrl_out(wire_ctrl_stage4),.clk(clk), .rst(rst));
 
   
   assign in_start_stage0 = in_start;    
@@ -3525,7 +3525,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st0_per0R ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st0_per0R s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -4101,7 +4101,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st1_per0R ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st1_per0R s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -4677,7 +4677,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st2_per0R ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st2_per0R s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -5253,7 +5253,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st3_per0R ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st3_per0R s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -5829,7 +5829,7 @@ rst
   reg [4:0] addr;        
   reg state;        
   
-  s7_ctrl_rom_dp32_st4_per0R ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
+  s7_ctrl_rom_dp32_st4_per0R s7_ctrl_rom_inst(.en(1'b1),.clk(clk),.rst(rst),.addr(addr),.data(ctrl_out)); 
   
   always@(posedge clk)             
   begin                            
@@ -6311,7 +6311,7 @@ rst
         .in_start(in_start_stage4), .out_start(con_in_start_stage4), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st4_per0R switch_ctrl_stage_4(.in_start(con_in_start_stage4),.ctrl_out(wire_ctrl_stage4),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st4_per0R s7_switch_ctrl_stage_4(.in_start(con_in_start_stage4),.ctrl_out(wire_ctrl_stage4),.clk(clk), .rst(rst));
 
   wire [DATA_WIDTH-1:0] wire_switch_in_stage3[31:0];
   wire [DATA_WIDTH-1:0] wire_switch_out_stage3[31:0];
@@ -6328,7 +6328,7 @@ rst
         .in_start(in_start_stage3), .out_start(con_in_start_stage3), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st3_per0R switch_ctrl_stage_3(.in_start(con_in_start_stage3),.ctrl_out(wire_ctrl_stage3),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st3_per0R s7_switch_ctrl_stage_3(.in_start(con_in_start_stage3),.ctrl_out(wire_ctrl_stage3),.clk(clk), .rst(rst));
 
   wire [DATA_WIDTH-1:0] wire_switch_in_stage2[31:0];
   wire [DATA_WIDTH-1:0] wire_switch_out_stage2[31:0];
@@ -6345,7 +6345,7 @@ rst
         .in_start(in_start_stage2), .out_start(con_in_start_stage2), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st2_per0R switch_ctrl_stage_2(.in_start(con_in_start_stage2),.ctrl_out(wire_ctrl_stage2),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st2_per0R s7_switch_ctrl_stage_2(.in_start(con_in_start_stage2),.ctrl_out(wire_ctrl_stage2),.clk(clk), .rst(rst));
 
   wire [DATA_WIDTH-1:0] wire_switch_in_stage1[31:0];
   wire [DATA_WIDTH-1:0] wire_switch_out_stage1[31:0];
@@ -6362,7 +6362,7 @@ rst
         .in_start(in_start_stage1), .out_start(con_in_start_stage1), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st1_per0R switch_ctrl_stage_1(.in_start(con_in_start_stage1),.ctrl_out(wire_ctrl_stage1),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st1_per0R s7_switch_ctrl_stage_1(.in_start(con_in_start_stage1),.ctrl_out(wire_ctrl_stage1),.clk(clk), .rst(rst));
 
   wire [DATA_WIDTH-1:0] wire_switch_in_stage0[31:0];
   wire [DATA_WIDTH-1:0] wire_switch_out_stage0[31:0];
@@ -6379,7 +6379,7 @@ rst
         .in_start(in_start_stage0), .out_start(con_in_start_stage0), .clk(clk), .rst(rst)); 
 
   
-  s7_switch_ctrl_dp32_st0_per0R switch_ctrl_stage_0(.in_start(con_in_start_stage0),.ctrl_out(wire_ctrl_stage0),.clk(clk), .rst(rst));
+  s7_switch_ctrl_dp32_st0_per0R s7_switch_ctrl_stage_0(.in_start(con_in_start_stage0),.ctrl_out(wire_ctrl_stage0),.clk(clk), .rst(rst));
 
   
   assign in_start_stage4 = in_start;    
@@ -8447,6 +8447,7 @@ rst
   output wen_out;
   output out_start;
   
+  /*
   reg [4:0] rom_addr_0;        
   reg [1:0] state;        
   
@@ -8520,6 +8521,73 @@ rst
       endcase
     end
   end                              
+  */
+
+  reg [4:0] offset;
+  reg [2:0] state;
+  always @ (posedge clk) begin
+    if (rst | in_start) begin
+      state <= 3'b101;
+      offset <= 0;
+    end else begin
+      if (state != 3'b000) begin
+        state <= state - 3'b001;
+      end else begin
+        offset <= offset + 1'b1;
+      end
+    end
+  end
+
+  assign wen_out = (state == 3'b0);
+  assign out_start = (offset == 2);
+
+  assign rom_out_0 = offset;
+  assign rom_out_1 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_2 = offset;
+  assign rom_out_3 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_4 = offset;
+  assign rom_out_5 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_6 = offset;
+  assign rom_out_7 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_8 = offset;
+  assign rom_out_9 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_10 = offset;
+  assign rom_out_11 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_12 = offset;
+  assign rom_out_13 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_14 = offset;
+  assign rom_out_15 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_16 = offset;
+  assign rom_out_17 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_18 = offset;
+  assign rom_out_19 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_20 = offset;
+  assign rom_out_21 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_22 = offset;
+  assign rom_out_23 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_24 = offset;
+  assign rom_out_25 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_26 = offset;
+  assign rom_out_27 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_28 = offset;
+  assign rom_out_29 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
+
+  assign rom_out_30 = offset;
+  assign rom_out_31 = (offset[3:0] >= 4'b1000) ? offset - 4'b1000 : offset + 4'b1000;
 
 endmodule                        
 
@@ -8702,167 +8770,181 @@ rst
   assign wire_in[30] = inData_30;    
   assign wire_in[31] = inData_31;    
   
-  wire [4:0] addr_wire_0;        
+  wire [4:0] addr_w_wire_0;        
 
-  wire [4:0] addr_wire_1;        
+  wire [4:0] addr_w_wire_1;        
 
-  wire [4:0] addr_wire_2;        
+  wire [4:0] addr_w_wire_2;        
 
-  wire [4:0] addr_wire_3;        
+  wire [4:0] addr_w_wire_3;        
 
-  wire [4:0] addr_wire_4;        
+  wire [4:0] addr_w_wire_4;        
 
-  wire [4:0] addr_wire_5;        
+  wire [4:0] addr_w_wire_5;        
 
-  wire [4:0] addr_wire_6;        
+  wire [4:0] addr_w_wire_6;        
 
-  wire [4:0] addr_wire_7;        
+  wire [4:0] addr_w_wire_7;        
 
-  wire [4:0] addr_wire_8;        
+  wire [4:0] addr_w_wire_8;        
 
-  wire [4:0] addr_wire_9;        
+  wire [4:0] addr_w_wire_9;        
 
-  wire [4:0] addr_wire_10;        
+  wire [4:0] addr_w_wire_10;        
 
-  wire [4:0] addr_wire_11;        
+  wire [4:0] addr_w_wire_11;        
 
-  wire [4:0] addr_wire_12;        
+  wire [4:0] addr_w_wire_12;        
 
-  wire [4:0] addr_wire_13;        
+  wire [4:0] addr_w_wire_13;        
 
-  wire [4:0] addr_wire_14;        
+  wire [4:0] addr_w_wire_14;        
 
-  wire [4:0] addr_wire_15;        
+  wire [4:0] addr_w_wire_15;        
 
-  wire [4:0] addr_wire_16;        
+  wire [4:0] addr_w_wire_16;        
 
-  wire [4:0] addr_wire_17;        
+  wire [4:0] addr_w_wire_17;        
 
-  wire [4:0] addr_wire_18;        
+  wire [4:0] addr_w_wire_18;        
 
-  wire [4:0] addr_wire_19;        
+  wire [4:0] addr_w_wire_19;        
 
-  wire [4:0] addr_wire_20;        
+  wire [4:0] addr_w_wire_20;        
 
-  wire [4:0] addr_wire_21;        
+  wire [4:0] addr_w_wire_21;        
 
-  wire [4:0] addr_wire_22;        
+  wire [4:0] addr_w_wire_22;        
 
-  wire [4:0] addr_wire_23;        
+  wire [4:0] addr_w_wire_23;        
 
-  wire [4:0] addr_wire_24;        
+  wire [4:0] addr_w_wire_24;        
 
-  wire [4:0] addr_wire_25;        
+  wire [4:0] addr_w_wire_25;        
 
-  wire [4:0] addr_wire_26;        
+  wire [4:0] addr_w_wire_26;        
 
-  wire [4:0] addr_wire_27;        
+  wire [4:0] addr_w_wire_27;        
 
-  wire [4:0] addr_wire_28;        
+  wire [4:0] addr_w_wire_28;        
 
-  wire [4:0] addr_wire_29;        
+  wire [4:0] addr_w_wire_29;        
 
-  wire [4:0] addr_wire_30;        
+  wire [4:0] addr_w_wire_30;        
 
-  wire [4:0] addr_wire_31;        
+  wire [4:0] addr_w_wire_31;        
 
-  s7_addr_rom_ctrl_dp32_per0 addr_gen_inst(.in_start(in_start), .wen_out(wen_wire), .out_start(out_start_wire), .rom_out_0(addr_wire_0), .rom_out_1(addr_wire_1), .rom_out_2(addr_wire_2), .rom_out_3(addr_wire_3), .rom_out_4(addr_wire_4), .rom_out_5(addr_wire_5), .rom_out_6(addr_wire_6), .rom_out_7(addr_wire_7), .rom_out_8(addr_wire_8), .rom_out_9(addr_wire_9), .rom_out_10(addr_wire_10), .rom_out_11(addr_wire_11), .rom_out_12(addr_wire_12), .rom_out_13(addr_wire_13), .rom_out_14(addr_wire_14), .rom_out_15(addr_wire_15), .rom_out_16(addr_wire_16), .rom_out_17(addr_wire_17), .rom_out_18(addr_wire_18), .rom_out_19(addr_wire_19), .rom_out_20(addr_wire_20), .rom_out_21(addr_wire_21), .rom_out_22(addr_wire_22), .rom_out_23(addr_wire_23), .rom_out_24(addr_wire_24), .rom_out_25(addr_wire_25), .rom_out_26(addr_wire_26), .rom_out_27(addr_wire_27), .rom_out_28(addr_wire_28), .rom_out_29(addr_wire_29), .rom_out_30(addr_wire_30), .rom_out_31(addr_wire_31), .clk(clk), .rst(rst));
+  wire [4:0] addr_r_wire_0;        
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_0(.wen(wen_wire), .addr(addr_wire_0), .din(wire_in[0]), .dout(wire_out[0]), .clk(clk) );
+  reg [4:0] read_address;
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_1(.wen(wen_wire), .addr(addr_wire_1), .din(wire_in[1]), .dout(wire_out[1]), .clk(clk) );
+  always @ (posedge clk) begin
+    if (rst | in_start) begin
+      read_address <= 5'b11111 - 3'b100 - 4'b1000;
+    end else begin
+      read_address <= read_address + 1'b1;
+    end
+  end
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_2(.wen(wen_wire), .addr(addr_wire_2), .din(wire_in[2]), .dout(wire_out[2]), .clk(clk) );
+  assign addr_r_wire_0 = read_address;
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_3(.wen(wen_wire), .addr(addr_wire_3), .din(wire_in[3]), .dout(wire_out[3]), .clk(clk) );
+  s7_addr_rom_ctrl_dp32_per0 addr_gen_inst(.in_start(in_start), .wen_out(wen_wire), .out_start(out_start_wire), .rom_out_0(addr_w_wire_0), .rom_out_1(addr_w_wire_1), .rom_out_2(addr_w_wire_2), .rom_out_3(addr_w_wire_3), .rom_out_4(addr_w_wire_4), .rom_out_5(addr_w_wire_5), .rom_out_6(addr_w_wire_6), .rom_out_7(addr_w_wire_7), .rom_out_8(addr_w_wire_8), .rom_out_9(addr_w_wire_9), .rom_out_10(addr_w_wire_10), .rom_out_11(addr_w_wire_11), .rom_out_12(addr_w_wire_12), .rom_out_13(addr_w_wire_13), .rom_out_14(addr_w_wire_14), .rom_out_15(addr_w_wire_15), .rom_out_16(addr_w_wire_16), .rom_out_17(addr_w_wire_17), .rom_out_18(addr_w_wire_18), .rom_out_19(addr_w_wire_19), .rom_out_20(addr_w_wire_20), .rom_out_21(addr_w_wire_21), .rom_out_22(addr_w_wire_22), .rom_out_23(addr_w_wire_23), .rom_out_24(addr_w_wire_24), .rom_out_25(addr_w_wire_25), .rom_out_26(addr_w_wire_26), .rom_out_27(addr_w_wire_27), .rom_out_28(addr_w_wire_28), .rom_out_29(addr_w_wire_29), .rom_out_30(addr_w_wire_30), .rom_out_31(addr_w_wire_31), .clk(clk), .rst(rst));
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_4(.wen(wen_wire), .addr(addr_wire_4), .din(wire_in[4]), .dout(wire_out[4]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_0(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_0), .din(wire_in[0]), .dout(wire_out[0]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_5(.wen(wen_wire), .addr(addr_wire_5), .din(wire_in[5]), .dout(wire_out[5]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_1(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_1), .din(wire_in[1]), .dout(wire_out[1]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_6(.wen(wen_wire), .addr(addr_wire_6), .din(wire_in[6]), .dout(wire_out[6]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_2(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_2), .din(wire_in[2]), .dout(wire_out[2]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_7(.wen(wen_wire), .addr(addr_wire_7), .din(wire_in[7]), .dout(wire_out[7]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_3(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_3), .din(wire_in[3]), .dout(wire_out[3]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_8(.wen(wen_wire), .addr(addr_wire_8), .din(wire_in[8]), .dout(wire_out[8]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_4(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_4), .din(wire_in[4]), .dout(wire_out[4]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_9(.wen(wen_wire), .addr(addr_wire_9), .din(wire_in[9]), .dout(wire_out[9]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_5(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_5), .din(wire_in[5]), .dout(wire_out[5]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_10(.wen(wen_wire), .addr(addr_wire_10), .din(wire_in[10]), .dout(wire_out[10]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_6(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_6), .din(wire_in[6]), .dout(wire_out[6]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_11(.wen(wen_wire), .addr(addr_wire_11), .din(wire_in[11]), .dout(wire_out[11]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_7(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_7), .din(wire_in[7]), .dout(wire_out[7]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_12(.wen(wen_wire), .addr(addr_wire_12), .din(wire_in[12]), .dout(wire_out[12]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_8(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_8), .din(wire_in[8]), .dout(wire_out[8]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_13(.wen(wen_wire), .addr(addr_wire_13), .din(wire_in[13]), .dout(wire_out[13]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_9(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_9), .din(wire_in[9]), .dout(wire_out[9]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_14(.wen(wen_wire), .addr(addr_wire_14), .din(wire_in[14]), .dout(wire_out[14]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_10(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_10), .din(wire_in[10]), .dout(wire_out[10]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_15(.wen(wen_wire), .addr(addr_wire_15), .din(wire_in[15]), .dout(wire_out[15]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_11(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_11), .din(wire_in[11]), .dout(wire_out[11]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_16(.wen(wen_wire), .addr(addr_wire_16), .din(wire_in[16]), .dout(wire_out[16]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_12(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_12), .din(wire_in[12]), .dout(wire_out[12]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_17(.wen(wen_wire), .addr(addr_wire_17), .din(wire_in[17]), .dout(wire_out[17]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_13(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_13), .din(wire_in[13]), .dout(wire_out[13]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_18(.wen(wen_wire), .addr(addr_wire_18), .din(wire_in[18]), .dout(wire_out[18]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_14(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_14), .din(wire_in[14]), .dout(wire_out[14]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_19(.wen(wen_wire), .addr(addr_wire_19), .din(wire_in[19]), .dout(wire_out[19]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_15(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_15), .din(wire_in[15]), .dout(wire_out[15]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_20(.wen(wen_wire), .addr(addr_wire_20), .din(wire_in[20]), .dout(wire_out[20]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_16(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_16), .din(wire_in[16]), .dout(wire_out[16]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_21(.wen(wen_wire), .addr(addr_wire_21), .din(wire_in[21]), .dout(wire_out[21]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_17(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_17), .din(wire_in[17]), .dout(wire_out[17]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_22(.wen(wen_wire), .addr(addr_wire_22), .din(wire_in[22]), .dout(wire_out[22]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_18(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_18), .din(wire_in[18]), .dout(wire_out[18]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_23(.wen(wen_wire), .addr(addr_wire_23), .din(wire_in[23]), .dout(wire_out[23]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_19(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_19), .din(wire_in[19]), .dout(wire_out[19]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_24(.wen(wen_wire), .addr(addr_wire_24), .din(wire_in[24]), .dout(wire_out[24]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_20(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_20), .din(wire_in[20]), .dout(wire_out[20]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_25(.wen(wen_wire), .addr(addr_wire_25), .din(wire_in[25]), .dout(wire_out[25]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_21(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_21), .din(wire_in[21]), .dout(wire_out[21]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_26(.wen(wen_wire), .addr(addr_wire_26), .din(wire_in[26]), .dout(wire_out[26]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_22(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_22), .din(wire_in[22]), .dout(wire_out[22]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_27(.wen(wen_wire), .addr(addr_wire_27), .din(wire_in[27]), .dout(wire_out[27]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_23(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_23), .din(wire_in[23]), .dout(wire_out[23]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_28(.wen(wen_wire), .addr(addr_wire_28), .din(wire_in[28]), .dout(wire_out[28]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_24(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_24), .din(wire_in[24]), .dout(wire_out[24]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_29(.wen(wen_wire), .addr(addr_wire_29), .din(wire_in[29]), .dout(wire_out[29]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_25(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_25), .din(wire_in[25]), .dout(wire_out[25]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_30(.wen(wen_wire), .addr(addr_wire_30), .din(wire_in[30]), .dout(wire_out[30]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_26(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_26), .din(wire_in[26]), .dout(wire_out[26]), .clk(clk) );
 
-  block_ram_sp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
-         ram_inst_31(.wen(wen_wire), .addr(addr_wire_31), .din(wire_in[31]), .dout(wire_out[31]), .clk(clk) );
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_27(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_27), .din(wire_in[27]), .dout(wire_out[27]), .clk(clk) );
+
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_28(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_28), .din(wire_in[28]), .dout(wire_out[28]), .clk(clk) );
+
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_29(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_29), .din(wire_in[29]), .dout(wire_out[29]), .clk(clk) );
+
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_30(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_30), .din(wire_in[30]), .dout(wire_out[30]), .clk(clk) );
+
+  block_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(5)) 
+         ram_inst_31(.wen(wen_wire), .en(1'b1), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_31), .din(wire_in[31]), .dout(wire_out[31]), .clk(clk) );
 
   
   always@(posedge clk)             
