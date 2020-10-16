@@ -25,10 +25,10 @@ module butterfly
 (
         input   [27:0]  x_in,
         input   [27:0]  y_in,
-        input           clk,
-        input           rst,
         output  [27:0]  x_out,
-        output  [27:0]  y_out
+        output  [27:0]  y_out,
+        input           clk,
+        input           rst
     );
     
     wire    [27:0]  mult;
