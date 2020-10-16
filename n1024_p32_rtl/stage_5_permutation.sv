@@ -8840,7 +8840,7 @@ rst
 
   always @ (posedge clk) begin
     if (rst | in_start) begin
-      read_address <= 5'b11111 - 3'b100 - 3'b010;
+      read_address <= 5'b11111 - 3'b100 - 3'b010 - 1'b1;
     end else begin
       read_address <= read_address + 1'b1;
     end

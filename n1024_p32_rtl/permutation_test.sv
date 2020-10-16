@@ -73,7 +73,9 @@ module permutation_tb;
   //stage_2_permutation #(
   //stage_3_permutation #(
   //stage_4_permutation #(
-  per_dp32_0_r #(
+  stage_6_permutation #(
+  //stage_7_permutation #(
+  //stage_8_permutation #(
     .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   DUT (
