@@ -18,10 +18,10 @@ module NTT_Top_Wrapper #(
   input                             clk;
   input                             rst;
 
-  input                             in_start;
+  input                             in_start[8:0];
   input [DATA_WIDTH_PER_INPUT-1:0]  in_data;
 
-  output logic                            out_start;
+  output logic                            out_start[8:0];
   output logic [DATA_WIDTH_PER_INPUT-1:0] out_data;
 
   logic [COUNTER_WIDTH-1:0]         counter;
