@@ -5,7 +5,7 @@
 // 
 // Create Date: 10/04/2020 03:35:33 PM
 // Design Name: 
-// Module Name: modularMult
+// Module Name: modular_mult
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 

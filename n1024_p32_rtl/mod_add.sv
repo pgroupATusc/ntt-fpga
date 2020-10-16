@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10/04/2020 04:22:09 PM
+// Create Date: 10/04/2020 04:16:45 PM
 // Design Name: 
-// Module Name: ModSub
+// Module Name: mod_add
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mod_sub(
+module mod_add(
         input   [27:0]  x,
         input   [27:0]  y,
         input   [27:0]  q,
@@ -31,9 +31,10 @@ module mod_sub(
     wire [28:0] z1;
     wire [28:0] z2;
     
-    assign z1 = x - y;
-    assign z2 = z1 + q;
+    assign z1 = x + y;
+    assign z2 = z1 - q;
     
-    assign out = (z2 < q) ? z2[27:0] : z1[27:0];   
+    assign out = (z1 >= q) ? z2[27:0] : z1[27:0];
+    
     
 endmodule

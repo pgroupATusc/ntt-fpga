@@ -20,13 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module butterfly(
+module butterfly
+#(parameter [7:0] start = 6, parameter [27:0] factors[16]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1})
+(
         input   [27:0]  x_in,
         input   [27:0]  y_in,
-        output  [27:0]  x_out,
-        output  [27:0]  y_out,
         input           clk,
-        input           rst
+        input           rst,
+        output  [27:0]  x_out,
+        output  [27:0]  y_out
     );
     
     wire    [27:0]  mult;
@@ -44,7 +46,13 @@ module butterfly(
     reg     [27:0]  x4_reg;
     reg     [27:0]  x5_reg;
         
-    assign  w = 28'habcdef0;
+    reg             enable;
+    reg     [7:0]   counter;
+    reg     [3:0]   index;        
+        
+    //assign  w = 28'habcdef0;
+    
+    assign  w = factors[index];
     assign  q = (1<<28) - (1<<16) + 1;
     
     assign  x_out = x_out_reg;
@@ -64,6 +72,10 @@ module butterfly(
             x5_reg <= 0;
             x_out_reg <= 0;
             y_out_reg <= 0;
+            
+            enable <= start ? 0 : 1;
+            counter <= 0;
+            index <= 0;
         end
         else begin
             mult_reg <= mult;
@@ -74,6 +86,10 @@ module butterfly(
             x5_reg <= x4_reg;
             x_out_reg <= add_out;
             y_out_reg <= sub_out;
+                        
+            counter <= counter + 1;
+            index <= enable ? (index + 1): 0;
+            enable <= enable ? enable : (counter == start - 1);
         end
     end
     
