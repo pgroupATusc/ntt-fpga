@@ -9439,6 +9439,7 @@ rst
   output wen_out;
   output out_start;
   
+  /*
   reg [4:0] rom_addr_0;        
   reg [5:0] rom_addr_1;        
   reg [1:0] state;        
@@ -9518,6 +9519,73 @@ rst
       endcase
     end
   end                              
+  */
+
+  reg [4:0] offset;
+  reg [2:0] state;
+  always @ (posedge clk) begin
+    if (rst | in_start) begin
+      state <= 3'b101;
+      offset <= 0;
+    end else begin
+      if (state != 3'b000) begin
+        state <= state - 3'b001;
+      end else begin
+        offset <= offset + 1'b1;
+      end
+    end
+  end
+
+  assign wen_out = (state == 3'b0);
+  assign out_start = (offset == 2);
+
+  assign rom_out_0 = offset;
+  assign rom_out_1 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_2 = offset;
+  assign rom_out_3 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_4 = offset;
+  assign rom_out_5 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_6 = offset;
+  assign rom_out_7 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_8 = offset;
+  assign rom_out_9 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_10 = offset;
+  assign rom_out_11 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_12 = offset;
+  assign rom_out_13 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_14 = offset;
+  assign rom_out_15 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_16 = offset;
+  assign rom_out_17 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_18 = offset;
+  assign rom_out_19 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_20 = offset;
+  assign rom_out_21 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_22 = offset;
+  assign rom_out_23 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_24 = offset;
+  assign rom_out_25 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_26 = offset;
+  assign rom_out_27 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_28 = offset;
+  assign rom_out_29 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
+
+  assign rom_out_30 = offset;
+  assign rom_out_31 = (offset[0] == 1'b0) ? offset + 1'b1 : offset - 1'b1;
 
 endmodule                        
 
@@ -9766,7 +9834,17 @@ rst
 
   wire [4:0] addr_r_wire_0;        
 
-  assign addr_r_wire_0 = counter_in;        
+  reg [4:0] read_address;
+
+  always @ (posedge clk) begin
+    if (rst | in_start) begin
+      read_address <= 5'b11111 - 3'b100 - 2'b10;
+    end else begin
+      read_address <= read_address + 1'b1;
+    end
+  end
+
+  assign addr_r_wire_0 = read_address;
 
   addr_rom_ctrl_dp32_per0 addr_gen_inst(.in_start(in_start), .wen_out(wen_wire), .out_start(out_start_wire), .rom_out_0(addr_w_wire_0), .rom_out_1(addr_w_wire_1), .rom_out_2(addr_w_wire_2), .rom_out_3(addr_w_wire_3), .rom_out_4(addr_w_wire_4), .rom_out_5(addr_w_wire_5), .rom_out_6(addr_w_wire_6), .rom_out_7(addr_w_wire_7), .rom_out_8(addr_w_wire_8), .rom_out_9(addr_w_wire_9), .rom_out_10(addr_w_wire_10), .rom_out_11(addr_w_wire_11), .rom_out_12(addr_w_wire_12), .rom_out_13(addr_w_wire_13), .rom_out_14(addr_w_wire_14), .rom_out_15(addr_w_wire_15), .rom_out_16(addr_w_wire_16), .rom_out_17(addr_w_wire_17), .rom_out_18(addr_w_wire_18), .rom_out_19(addr_w_wire_19), .rom_out_20(addr_w_wire_20), .rom_out_21(addr_w_wire_21), .rom_out_22(addr_w_wire_22), .rom_out_23(addr_w_wire_23), .rom_out_24(addr_w_wire_24), .rom_out_25(addr_w_wire_25), .rom_out_26(addr_w_wire_26), .rom_out_27(addr_w_wire_27), .rom_out_28(addr_w_wire_28), .rom_out_29(addr_w_wire_29), .rom_out_30(addr_w_wire_30), .rom_out_31(addr_w_wire_31), .clk(clk), .rst(rst));
 
