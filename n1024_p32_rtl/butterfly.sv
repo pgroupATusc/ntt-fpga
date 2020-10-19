@@ -45,6 +45,7 @@ module butterfly
     reg     [27:0]  x3_reg;
     reg     [27:0]  x4_reg;
     reg     [27:0]  x5_reg;
+    reg     [27:0]  x6_reg;
         
     reg             enable;
     reg     [7:0]   counter;
@@ -59,8 +60,8 @@ module butterfly
     assign  y_out = y_out_reg;
     
     modular_mult mm (y_in, w, q, clk, rst, mult);
-    mod_add ma (x5_reg, mult_reg, q, clk, add_out);
-    mod_sub ms (x5_reg, mult_reg, q, clk, sub_out);
+    mod_add ma (x6_reg, mult_reg, q, clk, add_out);
+    mod_sub ms (x6_reg, mult_reg, q, clk, sub_out);
     
     always_ff @(posedge clk) begin
         if (rst) begin
@@ -70,6 +71,7 @@ module butterfly
             x3_reg <= 0;
             x4_reg <= 0;
             x5_reg <= 0;
+            x6_reg <= 0;
             x_out_reg <= 0;
             y_out_reg <= 0;
             
@@ -84,6 +86,7 @@ module butterfly
             x3_reg <= x2_reg;
             x4_reg <= x3_reg;
             x5_reg <= x4_reg;
+            x6_reg <= x5_reg;
             x_out_reg <= add_out;
             y_out_reg <= sub_out;
                         
