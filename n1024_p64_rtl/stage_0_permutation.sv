@@ -1,6 +1,6 @@
 module stage_0_permutation #(
     parameter DATA_WIDTH_PER_INPUT = 28,
-    parameter INPUT_PER_CYCLE = 64 
+    parameter INPUT_PER_CYCLE = 64
   ) (
     inData_0,
     inData_1,

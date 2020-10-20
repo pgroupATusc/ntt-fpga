@@ -3,7 +3,7 @@
 
 module NTT_Top_Wrapper #(
     parameter DATA_WIDTH_PER_INPUT = 28,
-    parameter INPUT_PER_CYCLE = 32
+    parameter INPUT_PER_CYCLE = 64
   ) (
     clk,
     rst,

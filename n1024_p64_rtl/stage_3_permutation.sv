@@ -1,6 +1,6 @@
 module stage_3_permutation #(
-    parameter DATA_WIDTH_PER_INPUT = 32,
-    parameter INPUT_PER_CYCLE = 32
+    parameter DATA_WIDTH_PER_INPUT = 28,
+    parameter INPUT_PER_CYCLE = 64
   ) (
     inData_0,
     inData_1,
@@ -34,6 +34,38 @@ module stage_3_permutation #(
     inData_29,
     inData_30,
     inData_31,
+    inData_32,
+    inData_33,
+    inData_34,
+    inData_35,
+    inData_36,
+    inData_37,
+    inData_38,
+    inData_39,
+    inData_40,
+    inData_41,
+    inData_42,
+    inData_43,
+    inData_44,
+    inData_45,
+    inData_46,
+    inData_47,
+    inData_48,
+    inData_49,
+    inData_50,
+    inData_51,
+    inData_52,
+    inData_53,
+    inData_54,
+    inData_55,
+    inData_56,
+    inData_57,
+    inData_58,
+    inData_59,
+    inData_60,
+    inData_61,
+    inData_62,
+    inData_63,
     outData_0,
     outData_1,
     outData_2,
@@ -66,6 +98,38 @@ module stage_3_permutation #(
     outData_29,
     outData_30,
     outData_31,
+    outData_32,
+    outData_33,
+    outData_34,
+    outData_35,
+    outData_36,
+    outData_37,
+    outData_38,
+    outData_39,
+    outData_40,
+    outData_41,
+    outData_42,
+    outData_43,
+    outData_44,
+    outData_45,
+    outData_46,
+    outData_47,
+    outData_48,
+    outData_49,
+    outData_50,
+    outData_51,
+    outData_52,
+    outData_53,
+    outData_54,
+    outData_55,
+    outData_56,
+    outData_57,
+    outData_58,
+    outData_59,
+    outData_60,
+    outData_61,
+    outData_62,
+    outData_63,
     in_start,
     out_start,
     clk,
@@ -108,6 +172,38 @@ module stage_3_permutation #(
   input [DATA_WIDTH_PER_INPUT-1:0] inData_29;
   input [DATA_WIDTH_PER_INPUT-1:0] inData_30;
   input [DATA_WIDTH_PER_INPUT-1:0] inData_31;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_32;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_33;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_34;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_35;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_36;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_37;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_38;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_39;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_40;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_41;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_42;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_43;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_44;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_45;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_46;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_47;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_48;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_49;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_50;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_51;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_52;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_53;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_54;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_55;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_56;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_57;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_58;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_59;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_60;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_61;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_62;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_63;
 
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_0;
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_1;
@@ -141,6 +237,38 @@ module stage_3_permutation #(
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_29;
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_30;
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_31;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_32;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_33;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_34;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_35;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_36;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_37;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_38;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_39;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_40;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_41;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_42;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_43;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_44;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_45;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_46;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_47;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_48;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_49;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_50;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_51;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_52;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_53;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_54;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_55;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_56;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_57;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_58;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_59;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_60;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_61;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_62;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_63;
 
   always_ff @ (posedge clk) begin
     if (rst) begin
@@ -176,6 +304,38 @@ module stage_3_permutation #(
       outData_29 <= 0;
       outData_30 <= 0;
       outData_31 <= 0;
+      outData_32 <= 0;
+      outData_33 <= 0;
+      outData_34 <= 0;
+      outData_35 <= 0;
+      outData_36 <= 0;
+      outData_37 <= 0;
+      outData_38 <= 0;
+      outData_39 <= 0;
+      outData_40 <= 0;
+      outData_41 <= 0;
+      outData_42 <= 0;
+      outData_43 <= 0;
+      outData_44 <= 0;
+      outData_45 <= 0;
+      outData_46 <= 0;
+      outData_47 <= 0;
+      outData_48 <= 0;
+      outData_49 <= 0;
+      outData_50 <= 0;
+      outData_51 <= 0;
+      outData_52 <= 0;
+      outData_53 <= 0;
+      outData_54 <= 0;
+      outData_55 <= 0;
+      outData_56 <= 0;
+      outData_57 <= 0;
+      outData_58 <= 0;
+      outData_59 <= 0;
+      outData_60 <= 0;
+      outData_61 <= 0;
+      outData_62 <= 0;
+      outData_63 <= 0;
     end else begin
       outData_0 <= inData_0;
       outData_1 <= inData_16;
@@ -209,6 +369,38 @@ module stage_3_permutation #(
       outData_29 <= inData_29;
       outData_30 <= inData_15;
       outData_31 <= inData_31;
+      outData_32 <= inData_32;
+      outData_33 <= inData_48;
+      outData_34 <= inData_34;
+      outData_35 <= inData_50;
+      outData_36 <= inData_36;
+      outData_37 <= inData_52;
+      outData_38 <= inData_38;
+      outData_39 <= inData_54;
+      outData_40 <= inData_40;
+      outData_41 <= inData_56;
+      outData_42 <= inData_42;
+      outData_43 <= inData_58;
+      outData_44 <= inData_44;
+      outData_45 <= inData_60;
+      outData_46 <= inData_46;
+      outData_47 <= inData_62;
+      outData_48 <= inData_33;
+      outData_49 <= inData_49;
+      outData_50 <= inData_35;
+      outData_51 <= inData_51;
+      outData_52 <= inData_37;
+      outData_53 <= inData_53;
+      outData_54 <= inData_39;
+      outData_55 <= inData_55;
+      outData_56 <= inData_41;
+      outData_57 <= inData_57;
+      outData_58 <= inData_43;
+      outData_59 <= inData_59;
+      outData_60 <= inData_45;
+      outData_61 <= inData_61;
+      outData_62 <= inData_47;
+      outData_63 <= inData_63;
     end
   end
 
