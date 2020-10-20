@@ -18194,6 +18194,8 @@ rst
 
   wire [3:0] addr_r_wire_0;        
 
+  reg [3:0] read_address;
+
   always @ (posedge clk) begin
     if (rst | in_start) begin
       // - log(64) - 1

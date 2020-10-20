@@ -1,4 +1,4 @@
-module stage_2_permutation #(
+module stage_4_permutation #(
     parameter DATA_WIDTH_PER_INPUT = 28,
     parameter INPUT_PER_CYCLE = 64
   ) (

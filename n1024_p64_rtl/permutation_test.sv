@@ -73,9 +73,10 @@ module permutation_tb;
   //stage_2_permutation #(
   //stage_3_permutation #(
   //stage_4_permutation #(
-  stage_6_permutation #(
+  //stage_5_permutation #(
+  //stage_6_permutation #(
   //stage_7_permutation #(
-  //stage_8_permutation #(
+  stage_8_permutation #(
     .DATA_WIDTH_PER_INPUT(DATA_WIDTH_PER_INPUT),
     .INPUT_PER_CYCLE(INPUT_PER_CYCLE))
   DUT (
