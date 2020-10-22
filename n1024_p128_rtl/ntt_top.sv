@@ -6668,11 +6668,9 @@ module NTT_Top #(
   );
   // TODO(Tian): stage 6 32 butterfly units
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_0 (
     .x_in(stage_5_per_out[0]),
     .y_in(stage_5_per_out[1]),
@@ -6683,11 +6681,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_1 (
     .x_in(stage_5_per_out[2]),
     .y_in(stage_5_per_out[3]),
@@ -6698,11 +6694,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_2 (
     .x_in(stage_5_per_out[4]),
     .y_in(stage_5_per_out[5]),
@@ -6713,11 +6707,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_3 (
     .x_in(stage_5_per_out[6]),
     .y_in(stage_5_per_out[7]),
@@ -6728,11 +6720,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_4 (
     .x_in(stage_5_per_out[8]),
     .y_in(stage_5_per_out[9]),
@@ -6743,11 +6733,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_5 (
     .x_in(stage_5_per_out[10]),
     .y_in(stage_5_per_out[11]),
@@ -6758,11 +6746,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_6 (
     .x_in(stage_5_per_out[12]),
     .y_in(stage_5_per_out[13]),
@@ -6773,11 +6759,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_7 (
     .x_in(stage_5_per_out[14]),
     .y_in(stage_5_per_out[15]),
@@ -6788,11 +6772,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_8 (
     .x_in(stage_5_per_out[16]),
     .y_in(stage_5_per_out[17]),
@@ -6803,11 +6785,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_9 (
     .x_in(stage_5_per_out[18]),
     .y_in(stage_5_per_out[19]),
@@ -6818,11 +6798,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_10 (
     .x_in(stage_5_per_out[20]),
     .y_in(stage_5_per_out[21]),
@@ -6833,11 +6811,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_11 (
     .x_in(stage_5_per_out[22]),
     .y_in(stage_5_per_out[23]),
@@ -6848,11 +6824,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_12 (
     .x_in(stage_5_per_out[24]),
     .y_in(stage_5_per_out[25]),
@@ -6863,11 +6837,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_13 (
     .x_in(stage_5_per_out[26]),
     .y_in(stage_5_per_out[27]),
@@ -6878,11 +6850,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_14 (
     .x_in(stage_5_per_out[28]),
     .y_in(stage_5_per_out[29]),
@@ -6893,11 +6863,9 @@ module NTT_Top #(
   );
 
   butterfly #(
-    .start(65),
-    .factors({180609988, 180609988, 172037025, 172037025,
-              130838261, 130838261, 219782419, 219782419,
-              162923847, 162923847, 90670588, 90670588,
-              197095417, 197095417, 128108241, 128108241}))
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
   stage_6_butterfly_15 (
     .x_in(stage_5_per_out[30]),
     .y_in(stage_5_per_out[31]),
@@ -6906,6 +6874,631 @@ module NTT_Top #(
     .clk(clk),
     .rst(rst)
   );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_16 (
+    .x_in(stage_5_per_out[32]),
+    .y_in(stage_5_per_out[33]),
+    .x_out(stage_6_per_in[32]),
+    .y_out(stage_6_per_in[33]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_17 (
+    .x_in(stage_5_per_out[34]),
+    .y_in(stage_5_per_out[35]),
+    .x_out(stage_6_per_in[34]),
+    .y_out(stage_6_per_in[35]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_18 (
+    .x_in(stage_5_per_out[36]),
+    .y_in(stage_5_per_out[37]),
+    .x_out(stage_6_per_in[36]),
+    .y_out(stage_6_per_in[37]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_19 (
+    .x_in(stage_5_per_out[38]),
+    .y_in(stage_5_per_out[39]),
+    .x_out(stage_6_per_in[38]),
+    .y_out(stage_6_per_in[39]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_20 (
+    .x_in(stage_5_per_out[40]),
+    .y_in(stage_5_per_out[41]),
+    .x_out(stage_6_per_in[40]),
+    .y_out(stage_6_per_in[41]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_21 (
+    .x_in(stage_5_per_out[42]),
+    .y_in(stage_5_per_out[43]),
+    .x_out(stage_6_per_in[42]),
+    .y_out(stage_6_per_in[43]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_22 (
+    .x_in(stage_5_per_out[44]),
+    .y_in(stage_5_per_out[45]),
+    .x_out(stage_6_per_in[44]),
+    .y_out(stage_6_per_in[45]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_23 (
+    .x_in(stage_5_per_out[46]),
+    .y_in(stage_5_per_out[47]),
+    .x_out(stage_6_per_in[46]),
+    .y_out(stage_6_per_in[47]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_24 (
+    .x_in(stage_5_per_out[48]),
+    .y_in(stage_5_per_out[49]),
+    .x_out(stage_6_per_in[48]),
+    .y_out(stage_6_per_in[49]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_25 (
+    .x_in(stage_5_per_out[50]),
+    .y_in(stage_5_per_out[51]),
+    .x_out(stage_6_per_in[50]),
+    .y_out(stage_6_per_in[51]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_26 (
+    .x_in(stage_5_per_out[52]),
+    .y_in(stage_5_per_out[53]),
+    .x_out(stage_6_per_in[52]),
+    .y_out(stage_6_per_in[53]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_27 (
+    .x_in(stage_5_per_out[54]),
+    .y_in(stage_5_per_out[55]),
+    .x_out(stage_6_per_in[54]),
+    .y_out(stage_6_per_in[55]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_28 (
+    .x_in(stage_5_per_out[56]),
+    .y_in(stage_5_per_out[57]),
+    .x_out(stage_6_per_in[56]),
+    .y_out(stage_6_per_in[57]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_29 (
+    .x_in(stage_5_per_out[58]),
+    .y_in(stage_5_per_out[59]),
+    .x_out(stage_6_per_in[58]),
+    .y_out(stage_6_per_in[59]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_30 (
+    .x_in(stage_5_per_out[60]),
+    .y_in(stage_5_per_out[61]),
+    .x_out(stage_6_per_in[60]),
+    .y_out(stage_6_per_in[61]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_31 (
+    .x_in(stage_5_per_out[62]),
+    .y_in(stage_5_per_out[63]),
+    .x_out(stage_6_per_in[62]),
+    .y_out(stage_6_per_in[63]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_32 (
+    .x_in(stage_5_per_out[64]),
+    .y_in(stage_5_per_out[65]),
+    .x_out(stage_6_per_in[64]),
+    .y_out(stage_6_per_in[65]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_33 (
+    .x_in(stage_5_per_out[66]),
+    .y_in(stage_5_per_out[67]),
+    .x_out(stage_6_per_in[66]),
+    .y_out(stage_6_per_in[67]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_34 (
+    .x_in(stage_5_per_out[68]),
+    .y_in(stage_5_per_out[69]),
+    .x_out(stage_6_per_in[68]),
+    .y_out(stage_6_per_in[69]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_35 (
+    .x_in(stage_5_per_out[70]),
+    .y_in(stage_5_per_out[71]),
+    .x_out(stage_6_per_in[70]),
+    .y_out(stage_6_per_in[71]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_36 (
+    .x_in(stage_5_per_out[72]),
+    .y_in(stage_5_per_out[73]),
+    .x_out(stage_6_per_in[72]),
+    .y_out(stage_6_per_in[73]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_37 (
+    .x_in(stage_5_per_out[74]),
+    .y_in(stage_5_per_out[75]),
+    .x_out(stage_6_per_in[74]),
+    .y_out(stage_6_per_in[75]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_38 (
+    .x_in(stage_5_per_out[76]),
+    .y_in(stage_5_per_out[77]),
+    .x_out(stage_6_per_in[76]),
+    .y_out(stage_6_per_in[77]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_39 (
+    .x_in(stage_5_per_out[78]),
+    .y_in(stage_5_per_out[79]),
+    .x_out(stage_6_per_in[78]),
+    .y_out(stage_6_per_in[79]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_40 (
+    .x_in(stage_5_per_out[80]),
+    .y_in(stage_5_per_out[81]),
+    .x_out(stage_6_per_in[80]),
+    .y_out(stage_6_per_in[81]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_41 (
+    .x_in(stage_5_per_out[82]),
+    .y_in(stage_5_per_out[83]),
+    .x_out(stage_6_per_in[82]),
+    .y_out(stage_6_per_in[83]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_42 (
+    .x_in(stage_5_per_out[84]),
+    .y_in(stage_5_per_out[85]),
+    .x_out(stage_6_per_in[84]),
+    .y_out(stage_6_per_in[85]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_43 (
+    .x_in(stage_5_per_out[86]),
+    .y_in(stage_5_per_out[87]),
+    .x_out(stage_6_per_in[86]),
+    .y_out(stage_6_per_in[87]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_44 (
+    .x_in(stage_5_per_out[88]),
+    .y_in(stage_5_per_out[89]),
+    .x_out(stage_6_per_in[88]),
+    .y_out(stage_6_per_in[89]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_45 (
+    .x_in(stage_5_per_out[90]),
+    .y_in(stage_5_per_out[91]),
+    .x_out(stage_6_per_in[90]),
+    .y_out(stage_6_per_in[91]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_46 (
+    .x_in(stage_5_per_out[92]),
+    .y_in(stage_5_per_out[93]),
+    .x_out(stage_6_per_in[92]),
+    .y_out(stage_6_per_in[93]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_47 (
+    .x_in(stage_5_per_out[94]),
+    .y_in(stage_5_per_out[95]),
+    .x_out(stage_6_per_in[94]),
+    .y_out(stage_6_per_in[95]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_48 (
+    .x_in(stage_5_per_out[96]),
+    .y_in(stage_5_per_out[97]),
+    .x_out(stage_6_per_in[96]),
+    .y_out(stage_6_per_in[97]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_49 (
+    .x_in(stage_5_per_out[98]),
+    .y_in(stage_5_per_out[99]),
+    .x_out(stage_6_per_in[98]),
+    .y_out(stage_6_per_in[99]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_50 (
+    .x_in(stage_5_per_out[100]),
+    .y_in(stage_5_per_out[101]),
+    .x_out(stage_6_per_in[100]),
+    .y_out(stage_6_per_in[101]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_51 (
+    .x_in(stage_5_per_out[102]),
+    .y_in(stage_5_per_out[103]),
+    .x_out(stage_6_per_in[102]),
+    .y_out(stage_6_per_in[103]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_52 (
+    .x_in(stage_5_per_out[104]),
+    .y_in(stage_5_per_out[105]),
+    .x_out(stage_6_per_in[104]),
+    .y_out(stage_6_per_in[105]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_53 (
+    .x_in(stage_5_per_out[106]),
+    .y_in(stage_5_per_out[107]),
+    .x_out(stage_6_per_in[106]),
+    .y_out(stage_6_per_in[107]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_54 (
+    .x_in(stage_5_per_out[108]),
+    .y_in(stage_5_per_out[109]),
+    .x_out(stage_6_per_in[108]),
+    .y_out(stage_6_per_in[109]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_55 (
+    .x_in(stage_5_per_out[110]),
+    .y_in(stage_5_per_out[111]),
+    .x_out(stage_6_per_in[110]),
+    .y_out(stage_6_per_in[111]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_56 (
+    .x_in(stage_5_per_out[112]),
+    .y_in(stage_5_per_out[113]),
+    .x_out(stage_6_per_in[112]),
+    .y_out(stage_6_per_in[113]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_57 (
+    .x_in(stage_5_per_out[114]),
+    .y_in(stage_5_per_out[115]),
+    .x_out(stage_6_per_in[114]),
+    .y_out(stage_6_per_in[115]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_58 (
+    .x_in(stage_5_per_out[116]),
+    .y_in(stage_5_per_out[117]),
+    .x_out(stage_6_per_in[116]),
+    .y_out(stage_6_per_in[117]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_59 (
+    .x_in(stage_5_per_out[118]),
+    .y_in(stage_5_per_out[119]),
+    .x_out(stage_6_per_in[118]),
+    .y_out(stage_6_per_in[119]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_60 (
+    .x_in(stage_5_per_out[120]),
+    .y_in(stage_5_per_out[121]),
+    .x_out(stage_6_per_in[120]),
+    .y_out(stage_6_per_in[121]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_61 (
+    .x_in(stage_5_per_out[122]),
+    .y_in(stage_5_per_out[123]),
+    .x_out(stage_6_per_in[122]),
+    .y_out(stage_6_per_in[123]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_62 (
+    .x_in(stage_5_per_out[124]),
+    .y_in(stage_5_per_out[125]),
+    .x_out(stage_6_per_in[124]),
+    .y_out(stage_6_per_in[125]),
+    .clk(clk),
+    .rst(rst)
+  );
+
+  butterfly #(
+    .start(START_CYCLE[6]),
+    .factors({180609988, 172037025, 130838261, 219782419,
+              162923847, 90670588, 197095417, 128108241}))
+  stage_6_butterfly_63 (
+    .x_in(stage_5_per_out[126]),
+    .y_in(stage_5_per_out[127]),
+    .x_out(stage_6_per_in[126]),
+    .y_out(stage_6_per_in[127]),
+    .clk(clk),
+    .rst(rst)
+  );
+
 
 
 
