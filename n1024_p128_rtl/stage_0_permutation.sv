@@ -66,6 +66,70 @@ module stage_0_permutation #(
     inData_61,
     inData_62,
     inData_63,
+    inData_64,
+    inData_65,
+    inData_66,
+    inData_67,
+    inData_68,
+    inData_69,
+    inData_70,
+    inData_71,
+    inData_72,
+    inData_73,
+    inData_74,
+    inData_75,
+    inData_76,
+    inData_77,
+    inData_78,
+    inData_79,
+    inData_80,
+    inData_81,
+    inData_82,
+    inData_83,
+    inData_84,
+    inData_85,
+    inData_86,
+    inData_87,
+    inData_88,
+    inData_89,
+    inData_90,
+    inData_91,
+    inData_92,
+    inData_93,
+    inData_94,
+    inData_95,
+    inData_96,
+    inData_97,
+    inData_98,
+    inData_99,
+    inData_100,
+    inData_101,
+    inData_102,
+    inData_103,
+    inData_104,
+    inData_105,
+    inData_106,
+    inData_107,
+    inData_108,
+    inData_109,
+    inData_110,
+    inData_111,
+    inData_112,
+    inData_113,
+    inData_114,
+    inData_115,
+    inData_116,
+    inData_117,
+    inData_118,
+    inData_119,
+    inData_120,
+    inData_121,
+    inData_122,
+    inData_123,
+    inData_124,
+    inData_125,
+    inData_126,
+    inData_127,
     outData_0,
     outData_1,
     outData_2,
@@ -130,6 +194,70 @@ module stage_0_permutation #(
     outData_61,
     outData_62,
     outData_63,
+    outData_64,
+    outData_65,
+    outData_66,
+    outData_67,
+    outData_68,
+    outData_69,
+    outData_70,
+    outData_71,
+    outData_72,
+    outData_73,
+    outData_74,
+    outData_75,
+    outData_76,
+    outData_77,
+    outData_78,
+    outData_79,
+    outData_80,
+    outData_81,
+    outData_82,
+    outData_83,
+    outData_84,
+    outData_85,
+    outData_86,
+    outData_87,
+    outData_88,
+    outData_89,
+    outData_90,
+    outData_91,
+    outData_92,
+    outData_93,
+    outData_94,
+    outData_95,
+    outData_96,
+    outData_97,
+    outData_98,
+    outData_99,
+    outData_100,
+    outData_101,
+    outData_102,
+    outData_103,
+    outData_104,
+    outData_105,
+    outData_106,
+    outData_107,
+    outData_108,
+    outData_109,
+    outData_110,
+    outData_111,
+    outData_112,
+    outData_113,
+    outData_114,
+    outData_115,
+    outData_116,
+    outData_117,
+    outData_118,
+    outData_119,
+    outData_120,
+    outData_121,
+    outData_122,
+    outData_123,
+    outData_124,
+    outData_125,
+    outData_126,
+    outData_127,
     in_start,
     out_start,
     clk,
@@ -204,6 +332,70 @@ module stage_0_permutation #(
   input [DATA_WIDTH_PER_INPUT-1:0] inData_61;
   input [DATA_WIDTH_PER_INPUT-1:0] inData_62;
   input [DATA_WIDTH_PER_INPUT-1:0] inData_63;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_64;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_65;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_66;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_67;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_68;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_69;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_70;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_71;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_72;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_73;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_74;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_75;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_76;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_77;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_78;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_79;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_80;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_81;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_82;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_83;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_84;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_85;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_86;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_87;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_88;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_89;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_90;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_91;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_92;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_93;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_94;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_95;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_96;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_97;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_98;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_99;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_100;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_101;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_102;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_103;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_104;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_105;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_106;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_107;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_108;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_109;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_110;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_111;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_112;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_113;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_114;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_115;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_116;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_117;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_118;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_119;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_120;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_121;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_122;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_123;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_124;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_125;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_126;
+  input [DATA_WIDTH_PER_INPUT-1:0] inData_127;
 
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_0;
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_1;
@@ -269,6 +461,70 @@ module stage_0_permutation #(
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_61;
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_62;
   output logic [DATA_WIDTH_PER_INPUT-1:0] outData_63;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_64;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_65;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_66;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_67;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_68;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_69;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_70;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_71;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_72;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_73;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_74;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_75;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_76;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_77;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_78;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_79;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_80;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_81;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_82;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_83;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_84;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_85;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_86;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_87;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_88;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_89;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_90;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_91;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_92;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_93;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_94;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_95;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_96;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_97;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_98;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_99;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_100;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_101;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_102;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_103;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_104;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_105;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_106;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_107;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_108;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_109;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_110;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_111;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_112;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_113;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_114;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_115;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_116;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_117;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_118;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_119;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_120;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_121;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_122;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_123;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_124;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_125;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_126;
+  output logic [DATA_WIDTH_PER_INPUT-1:0] outData_127;
 
 
   always_ff @ (posedge clk) begin
@@ -337,6 +593,70 @@ module stage_0_permutation #(
       outData_61 <= 0;
       outData_62 <= 0;
       outData_63 <= 0;
+      outData_64 <= 0;
+      outData_65 <= 0;
+      outData_66 <= 0;
+      outData_67 <= 0;
+      outData_68 <= 0;
+      outData_69 <= 0;
+      outData_70 <= 0;
+      outData_71 <= 0;
+      outData_72 <= 0;
+      outData_73 <= 0;
+      outData_74 <= 0;
+      outData_75 <= 0;
+      outData_76 <= 0;
+      outData_77 <= 0;
+      outData_78 <= 0;
+      outData_79 <= 0;
+      outData_80 <= 0;
+      outData_81 <= 0;
+      outData_82 <= 0;
+      outData_83 <= 0;
+      outData_84 <= 0;
+      outData_85 <= 0;
+      outData_86 <= 0;
+      outData_87 <= 0;
+      outData_88 <= 0;
+      outData_89 <= 0;
+      outData_90 <= 0;
+      outData_91 <= 0;
+      outData_92 <= 0;
+      outData_93 <= 0;
+      outData_94 <= 0;
+      outData_95 <= 0;
+      outData_96 <= 0;
+      outData_97 <= 0;
+      outData_98 <= 0;
+      outData_99 <= 0;
+      outData_100 <= 0;
+      outData_101 <= 0;
+      outData_102 <= 0;
+      outData_103 <= 0;
+      outData_104 <= 0;
+      outData_105 <= 0;
+      outData_106 <= 0;
+      outData_107 <= 0;
+      outData_108 <= 0;
+      outData_109 <= 0;
+      outData_110 <= 0;
+      outData_111 <= 0;
+      outData_112 <= 0;
+      outData_113 <= 0;
+      outData_114 <= 0;
+      outData_115 <= 0;
+      outData_116 <= 0;
+      outData_117 <= 0;
+      outData_118 <= 0;
+      outData_119 <= 0;
+      outData_120 <= 0;
+      outData_121 <= 0;
+      outData_122 <= 0;
+      outData_123 <= 0;
+      outData_124 <= 0;
+      outData_125 <= 0;
+      outData_126 <= 0;
+      outData_127 <= 0;
     end else begin
       outData_0 <= inData_0;
       outData_1 <= inData_2;
@@ -402,6 +722,70 @@ module stage_0_permutation #(
       outData_61 <= inData_62;
       outData_62 <= inData_61;
       outData_63 <= inData_63;
+      outData_64 <= inData_64;
+      outData_65 <= inData_66;
+      outData_66 <= inData_65;
+      outData_67 <= inData_67;
+      outData_68 <= inData_68;
+      outData_69 <= inData_70;
+      outData_70 <= inData_69;
+      outData_71 <= inData_71;
+      outData_72 <= inData_72;
+      outData_73 <= inData_74;
+      outData_74 <= inData_73;
+      outData_75 <= inData_75;
+      outData_76 <= inData_76;
+      outData_77 <= inData_78;
+      outData_78 <= inData_77;
+      outData_79 <= inData_79;
+      outData_80 <= inData_80;
+      outData_81 <= inData_82;
+      outData_82 <= inData_81;
+      outData_83 <= inData_83;
+      outData_84 <= inData_84;
+      outData_85 <= inData_86;
+      outData_86 <= inData_85;
+      outData_87 <= inData_87;
+      outData_88 <= inData_88;
+      outData_89 <= inData_90;
+      outData_90 <= inData_89;
+      outData_91 <= inData_91;
+      outData_92 <= inData_92;
+      outData_93 <= inData_94;
+      outData_94 <= inData_93;
+      outData_95 <= inData_95;
+      outData_96 <= inData_96;
+      outData_97 <= inData_98;
+      outData_98 <= inData_97;
+      outData_99 <= inData_99;
+      outData_100 <= inData_100;
+      outData_101 <= inData_102;
+      outData_102 <= inData_101;
+      outData_103 <= inData_103;
+      outData_104 <= inData_104;
+      outData_105 <= inData_106;
+      outData_106 <= inData_105;
+      outData_107 <= inData_107;
+      outData_108 <= inData_108;
+      outData_109 <= inData_110;
+      outData_110 <= inData_109;
+      outData_111 <= inData_111;
+      outData_112 <= inData_112;
+      outData_113 <= inData_114;
+      outData_114 <= inData_113;
+      outData_115 <= inData_115;
+      outData_116 <= inData_116;
+      outData_117 <= inData_118;
+      outData_118 <= inData_117;
+      outData_119 <= inData_119;
+      outData_120 <= inData_120;
+      outData_121 <= inData_122;
+      outData_122 <= inData_121;
+      outData_123 <= inData_123;
+      outData_124 <= inData_124;
+      outData_125 <= inData_126;
+      outData_126 <= inData_125;
+      outData_127 <= inData_127;
     end
   end
 

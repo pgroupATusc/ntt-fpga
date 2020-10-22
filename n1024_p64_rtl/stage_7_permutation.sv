@@ -18686,7 +18686,7 @@ rst
   reg [2:0] state;
   always @ (posedge clk) begin
     if (rst | in_start) begin
-      state <= 3'b101;
+      state <= 3'b110;
       offset <= 0;
     end else begin
       if (state != 3'b000) begin

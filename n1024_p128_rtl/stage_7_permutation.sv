@@ -26,200 +26,6 @@
  *                                                                                          
 */                                                                                         
  
-module switch_2_2(
-inData_0,
-inData_1,
-outData_0,
-outData_1,
-ctrl,                            
-clk,                             
-rst                              
-);                               
-  parameter DATA_WIDTH = 28;                                
-  input ctrl, clk, rst;                   
-  input [DATA_WIDTH-1:0] inData_0,
-      inData_1;
-  output [DATA_WIDTH-1:0] outData_0,
-      outData_1;
-  
-  wire [DATA_WIDTH-1:0] wireIn [1:0];              
-  wire [DATA_WIDTH-1:0] wireOut [1:0];              
-  
-  assign wireIn[0] = inData_0;    
-  assign wireIn[1] = inData_1;    
-  
-  assign wireOut[0] = (!ctrl) ? wireIn[0] : wireIn[1];    
-  assign wireOut[1] = (!ctrl) ? wireIn[1] : wireIn[0];    
-  
-  assign outData_0 = wireOut[0];    
-  assign outData_1 = wireOut[1];    
-  
-endmodule                        
-
-
-module  counter_16(
-in_start,                         
-counter_out,                         
-clk,                             
-rst                              
-);                               
-  input in_start, clk, rst;                   
-  output [3:0] counter_out;            
-  
-  reg [3:0] counter_r;        
-  reg status_couting;        
-
-  assign counter_out = counter_r;        
-  
-  always@(posedge clk)             
-  begin                            
-    if(rst) begin                    
-      counter_r <= 4'b0;    
-      status_couting <= 1'b0;            
-    end
-    else begin                        
-      if (status_couting == 1'b1)                
-        counter_r <= counter_r + 1'b1;                   
-      if (counter_r[3:0] == 15) begin  
-        status_couting <= 1'b0;                 
-        counter_r <= 4'b0;         
-      end                                    
-      if (in_start) begin                     
-        status_couting <= 1'b1;                 
-      counter_r <= 4'b0;                
-      end                                    
-    end
-  end                              
-
-endmodule                        
-
-
-module  block_ram_sp(
-wen,                              
-en,                              
-clk,                             
-addr,                            
-din,                            
-dout                             
-);                               
-  parameter DATA_WIDTH = 28;                                
-  parameter ADDR_WIDTH = 3;                                
-  parameter RAM_SIZE = 1 << ADDR_WIDTH;                                
-  input wen, clk;                   
-  input en;                              
-  input [ADDR_WIDTH-1:0] addr;                        
-  input [DATA_WIDTH-1:0] din;                        
-  output reg [DATA_WIDTH-1:0] dout;        
-  
-  reg [DATA_WIDTH-1:0] ram[RAM_SIZE-1:0];        
-  
-  always@(posedge clk)             
-  begin                            
-    // synthesis attribute ram_style of ram is "block" 
-  if(en) begin                    
-      if(wen)                         
-        ram[addr] <= din ;              
-      dout <= ram[addr];              
-  end
-  end                             
-  
-endmodule                        
-
-
-module  dist_ram_sp(
-wen,                              
-clk,                             
-addr,                            
-din,                            
-dout                             
-);                               
-  parameter DATA_WIDTH = 28;                                
-  parameter ADDR_WIDTH = 3;                                
-  parameter RAM_SIZE = 1 << ADDR_WIDTH;                                
-  input wen, clk;                   
-  input [ADDR_WIDTH-1:0] addr;                        
-  input [DATA_WIDTH-1:0] din;                        
-  output [DATA_WIDTH-1:0] dout;        
-  
-  reg [DATA_WIDTH-1:0] ram[RAM_SIZE-1:0];        
-  
-  always@(posedge clk)             
-  begin                            
-    // synthesis attribute ram_style of ram is "distributed" 
-  if(wen)                         
-      ram[addr] <= din ;              
-  end                             
- 
-  assign dout = ram[addr];         
-  
-endmodule                        
-
-
-module  block_ram_dp(
-wen,                              
-en,                              
-clk,                             
-addr_r,                            
-addr_w,                            
-din,                            
-dout                             
-);                               
-  parameter DATA_WIDTH = 28;                                
-  parameter ADDR_WIDTH = 3;                                
-  parameter RAM_SIZE = 1 << ADDR_WIDTH;                                
-  input wen, clk;                   
-  input en;                              
-  input [ADDR_WIDTH-1:0] addr_r;                        
-  input [ADDR_WIDTH-1:0] addr_w;                        
-  input [DATA_WIDTH-1:0] din;                        
-  output reg [DATA_WIDTH-1:0] dout;        
-  
-  reg [DATA_WIDTH-1:0] ram[RAM_SIZE-1:0];        
-  
-  always@(posedge clk)             
-  begin                            
-    // synthesis attribute ram_style of ram is "block" 
-  if(en) begin                    
-      if(wen)                         
-        ram[addr_w] <= din ;              
-      dout <= ram[addr_r];              
-  end
-  end                             
-  
-endmodule                        
-
-
-module  dist_ram_dp(
-wen,                              
-clk,                             
-addr_r,                            
-addr_w,                            
-din,                            
-dout                             
-);                               
-  parameter DATA_WIDTH = 28;                                
-  parameter ADDR_WIDTH = 3;                                
-  parameter RAM_SIZE = 1 << ADDR_WIDTH;                                
-  input wen, clk;                   
-  input [ADDR_WIDTH-1:0] addr_r;                        
-  input [ADDR_WIDTH-1:0] addr_w;                        
-  input [DATA_WIDTH-1:0] din;                        
-  output [DATA_WIDTH-1:0] dout;        
-  
-  reg [DATA_WIDTH-1:0] ram[RAM_SIZE-1:0];        
-  
-  always@(posedge clk)             
-  begin                            
-    // synthesis attribute ram_style of ram is "distributed" 
-  if(wen)                         
-      ram[addr_w] <= din ;              
-  end                             
- 
-  assign dout = ram[addr_r];         
-  
-endmodule                        
-
-
 module switches_stage_st0_0_L(
 inData_0,
 inData_1,
@@ -35009,6 +34815,7 @@ rst
   output wen_out;
   output out_start;
   
+  /*
   reg [3:0] rom_addr_0;        
   reg [4:0] rom_addr_1;        
   reg [1:0] state;        
@@ -35184,6 +34991,73 @@ rst
       endcase
     end
   end                              
+  */
+
+  reg [2:0] offset;
+  reg [2:0] state;
+  always @ (posedge clk) begin
+    if (rst | in_start) begin
+      state <= 3'b111;
+      offset <= 0;
+    end else begin
+      if (state != 3'b000) begin
+        state <= state - 3'b001;
+      end else begin
+        offset <= offset + 1'b1;
+      end
+    end
+  end
+
+  assign wen_out = (state == 3'b0);
+  assign out_start = (offset == 2);
+
+  assign rom_out_0 = offset;
+  assign rom_out_1 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_2 = offset;
+  assign rom_out_3 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_4 = offset;
+  assign rom_out_5 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_6 = offset;
+  assign rom_out_7 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_8 = offset;
+  assign rom_out_9 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_10 = offset;
+  assign rom_out_11 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_12 = offset;
+  assign rom_out_13 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_14 = offset;
+  assign rom_out_15 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_16 = offset;
+  assign rom_out_17 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_18 = offset;
+  assign rom_out_19 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_20 = offset;
+  assign rom_out_21 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_22 = offset;
+  assign rom_out_23 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_24 = offset;
+  assign rom_out_25 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_26 = offset;
+  assign rom_out_27 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_28 = offset;
+  assign rom_out_29 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
+
+  assign rom_out_30 = offset;
+  assign rom_out_31 = (offset[1:0] >= 2'b10) ? offset - 2'b10 : offset + 2'b10;
 
 endmodule                        
 
@@ -36104,9 +35978,19 @@ rst
 
   wire [2:0] addr_r_wire_0;        
 
-  assign addr_r_wire_0 = counter_in;        
+  reg [2:0] read_address;
 
-  addr_rom_ctrl_dp128_per0 addr_gen_inst(.in_start(in_start), .counter_in(counter_in), .wen_out(wen_wire), .out_start(out_start_wire), .rom_out_0(addr_w_wire_0), .rom_out_1(addr_w_wire_1), .rom_out_2(addr_w_wire_2), .rom_out_3(addr_w_wire_3), .rom_out_4(addr_w_wire_4), .rom_out_5(addr_w_wire_5), .rom_out_6(addr_w_wire_6), .rom_out_7(addr_w_wire_7), .rom_out_8(addr_w_wire_8), .rom_out_9(addr_w_wire_9), .rom_out_10(addr_w_wire_10), .rom_out_11(addr_w_wire_11), .rom_out_12(addr_w_wire_12), .rom_out_13(addr_w_wire_13), .rom_out_14(addr_w_wire_14), .rom_out_15(addr_w_wire_15), .rom_out_16(addr_w_wire_16), .rom_out_17(addr_w_wire_17), .rom_out_18(addr_w_wire_18), .rom_out_19(addr_w_wire_19), .rom_out_20(addr_w_wire_20), .rom_out_21(addr_w_wire_21), .rom_out_22(addr_w_wire_22), .rom_out_23(addr_w_wire_23), .rom_out_24(addr_w_wire_24), .rom_out_25(addr_w_wire_25), .rom_out_26(addr_w_wire_26), .rom_out_27(addr_w_wire_27), .rom_out_28(addr_w_wire_28), .rom_out_29(addr_w_wire_29), .rom_out_30(addr_w_wire_30), .rom_out_31(addr_w_wire_31), .rom_out_32(addr_w_wire_32), .rom_out_33(addr_w_wire_33), .rom_out_34(addr_w_wire_34), .rom_out_35(addr_w_wire_35), .rom_out_36(addr_w_wire_36), .rom_out_37(addr_w_wire_37), .rom_out_38(addr_w_wire_38), .rom_out_39(addr_w_wire_39), .rom_out_40(addr_w_wire_40), .rom_out_41(addr_w_wire_41), .rom_out_42(addr_w_wire_42), .rom_out_43(addr_w_wire_43), .rom_out_44(addr_w_wire_44), .rom_out_45(addr_w_wire_45), .rom_out_46(addr_w_wire_46), .rom_out_47(addr_w_wire_47), .rom_out_48(addr_w_wire_48), .rom_out_49(addr_w_wire_49), .rom_out_50(addr_w_wire_50), .rom_out_51(addr_w_wire_51), .rom_out_52(addr_w_wire_52), .rom_out_53(addr_w_wire_53), .rom_out_54(addr_w_wire_54), .rom_out_55(addr_w_wire_55), .rom_out_56(addr_w_wire_56), .rom_out_57(addr_w_wire_57), .rom_out_58(addr_w_wire_58), .rom_out_59(addr_w_wire_59), .rom_out_60(addr_w_wire_60), .rom_out_61(addr_w_wire_61), .rom_out_62(addr_w_wire_62), .rom_out_63(addr_w_wire_63), .rom_out_64(addr_w_wire_64), .rom_out_65(addr_w_wire_65), .rom_out_66(addr_w_wire_66), .rom_out_67(addr_w_wire_67), .rom_out_68(addr_w_wire_68), .rom_out_69(addr_w_wire_69), .rom_out_70(addr_w_wire_70), .rom_out_71(addr_w_wire_71), .rom_out_72(addr_w_wire_72), .rom_out_73(addr_w_wire_73), .rom_out_74(addr_w_wire_74), .rom_out_75(addr_w_wire_75), .rom_out_76(addr_w_wire_76), .rom_out_77(addr_w_wire_77), .rom_out_78(addr_w_wire_78), .rom_out_79(addr_w_wire_79), .rom_out_80(addr_w_wire_80), .rom_out_81(addr_w_wire_81), .rom_out_82(addr_w_wire_82), .rom_out_83(addr_w_wire_83), .rom_out_84(addr_w_wire_84), .rom_out_85(addr_w_wire_85), .rom_out_86(addr_w_wire_86), .rom_out_87(addr_w_wire_87), .rom_out_88(addr_w_wire_88), .rom_out_89(addr_w_wire_89), .rom_out_90(addr_w_wire_90), .rom_out_91(addr_w_wire_91), .rom_out_92(addr_w_wire_92), .rom_out_93(addr_w_wire_93), .rom_out_94(addr_w_wire_94), .rom_out_95(addr_w_wire_95), .rom_out_96(addr_w_wire_96), .rom_out_97(addr_w_wire_97), .rom_out_98(addr_w_wire_98), .rom_out_99(addr_w_wire_99), .rom_out_100(addr_w_wire_100), .rom_out_101(addr_w_wire_101), .rom_out_102(addr_w_wire_102), .rom_out_103(addr_w_wire_103), .rom_out_104(addr_w_wire_104), .rom_out_105(addr_w_wire_105), .rom_out_106(addr_w_wire_106), .rom_out_107(addr_w_wire_107), .rom_out_108(addr_w_wire_108), .rom_out_109(addr_w_wire_109), .rom_out_110(addr_w_wire_110), .rom_out_111(addr_w_wire_111), .rom_out_112(addr_w_wire_112), .rom_out_113(addr_w_wire_113), .rom_out_114(addr_w_wire_114), .rom_out_115(addr_w_wire_115), .rom_out_116(addr_w_wire_116), .rom_out_117(addr_w_wire_117), .rom_out_118(addr_w_wire_118), .rom_out_119(addr_w_wire_119), .rom_out_120(addr_w_wire_120), .rom_out_121(addr_w_wire_121), .rom_out_122(addr_w_wire_122), .rom_out_123(addr_w_wire_123), .rom_out_124(addr_w_wire_124), .rom_out_125(addr_w_wire_125), .rom_out_126(addr_w_wire_126), .rom_out_127(addr_w_wire_127), .clk(clk), .rst(rst));
+  always @ (posedge clk) begin
+    if (rst | in_start) begin
+      read_address <= 4'b1111 - 4'b1010;
+    end else begin
+      read_address <= read_address + 1'b1;
+    end
+  end
+
+  assign addr_r_wire_0 = read_address;
+
+  addr_rom_ctrl_dp128_per0 addr_gen_inst(.in_start(in_start), .wen_out(wen_wire), .out_start(out_start_wire), .rom_out_0(addr_w_wire_0), .rom_out_1(addr_w_wire_1), .rom_out_2(addr_w_wire_2), .rom_out_3(addr_w_wire_3), .rom_out_4(addr_w_wire_4), .rom_out_5(addr_w_wire_5), .rom_out_6(addr_w_wire_6), .rom_out_7(addr_w_wire_7), .rom_out_8(addr_w_wire_8), .rom_out_9(addr_w_wire_9), .rom_out_10(addr_w_wire_10), .rom_out_11(addr_w_wire_11), .rom_out_12(addr_w_wire_12), .rom_out_13(addr_w_wire_13), .rom_out_14(addr_w_wire_14), .rom_out_15(addr_w_wire_15), .rom_out_16(addr_w_wire_16), .rom_out_17(addr_w_wire_17), .rom_out_18(addr_w_wire_18), .rom_out_19(addr_w_wire_19), .rom_out_20(addr_w_wire_20), .rom_out_21(addr_w_wire_21), .rom_out_22(addr_w_wire_22), .rom_out_23(addr_w_wire_23), .rom_out_24(addr_w_wire_24), .rom_out_25(addr_w_wire_25), .rom_out_26(addr_w_wire_26), .rom_out_27(addr_w_wire_27), .rom_out_28(addr_w_wire_28), .rom_out_29(addr_w_wire_29), .rom_out_30(addr_w_wire_30), .rom_out_31(addr_w_wire_31), .rom_out_32(addr_w_wire_32), .rom_out_33(addr_w_wire_33), .rom_out_34(addr_w_wire_34), .rom_out_35(addr_w_wire_35), .rom_out_36(addr_w_wire_36), .rom_out_37(addr_w_wire_37), .rom_out_38(addr_w_wire_38), .rom_out_39(addr_w_wire_39), .rom_out_40(addr_w_wire_40), .rom_out_41(addr_w_wire_41), .rom_out_42(addr_w_wire_42), .rom_out_43(addr_w_wire_43), .rom_out_44(addr_w_wire_44), .rom_out_45(addr_w_wire_45), .rom_out_46(addr_w_wire_46), .rom_out_47(addr_w_wire_47), .rom_out_48(addr_w_wire_48), .rom_out_49(addr_w_wire_49), .rom_out_50(addr_w_wire_50), .rom_out_51(addr_w_wire_51), .rom_out_52(addr_w_wire_52), .rom_out_53(addr_w_wire_53), .rom_out_54(addr_w_wire_54), .rom_out_55(addr_w_wire_55), .rom_out_56(addr_w_wire_56), .rom_out_57(addr_w_wire_57), .rom_out_58(addr_w_wire_58), .rom_out_59(addr_w_wire_59), .rom_out_60(addr_w_wire_60), .rom_out_61(addr_w_wire_61), .rom_out_62(addr_w_wire_62), .rom_out_63(addr_w_wire_63), .rom_out_64(addr_w_wire_64), .rom_out_65(addr_w_wire_65), .rom_out_66(addr_w_wire_66), .rom_out_67(addr_w_wire_67), .rom_out_68(addr_w_wire_68), .rom_out_69(addr_w_wire_69), .rom_out_70(addr_w_wire_70), .rom_out_71(addr_w_wire_71), .rom_out_72(addr_w_wire_72), .rom_out_73(addr_w_wire_73), .rom_out_74(addr_w_wire_74), .rom_out_75(addr_w_wire_75), .rom_out_76(addr_w_wire_76), .rom_out_77(addr_w_wire_77), .rom_out_78(addr_w_wire_78), .rom_out_79(addr_w_wire_79), .rom_out_80(addr_w_wire_80), .rom_out_81(addr_w_wire_81), .rom_out_82(addr_w_wire_82), .rom_out_83(addr_w_wire_83), .rom_out_84(addr_w_wire_84), .rom_out_85(addr_w_wire_85), .rom_out_86(addr_w_wire_86), .rom_out_87(addr_w_wire_87), .rom_out_88(addr_w_wire_88), .rom_out_89(addr_w_wire_89), .rom_out_90(addr_w_wire_90), .rom_out_91(addr_w_wire_91), .rom_out_92(addr_w_wire_92), .rom_out_93(addr_w_wire_93), .rom_out_94(addr_w_wire_94), .rom_out_95(addr_w_wire_95), .rom_out_96(addr_w_wire_96), .rom_out_97(addr_w_wire_97), .rom_out_98(addr_w_wire_98), .rom_out_99(addr_w_wire_99), .rom_out_100(addr_w_wire_100), .rom_out_101(addr_w_wire_101), .rom_out_102(addr_w_wire_102), .rom_out_103(addr_w_wire_103), .rom_out_104(addr_w_wire_104), .rom_out_105(addr_w_wire_105), .rom_out_106(addr_w_wire_106), .rom_out_107(addr_w_wire_107), .rom_out_108(addr_w_wire_108), .rom_out_109(addr_w_wire_109), .rom_out_110(addr_w_wire_110), .rom_out_111(addr_w_wire_111), .rom_out_112(addr_w_wire_112), .rom_out_113(addr_w_wire_113), .rom_out_114(addr_w_wire_114), .rom_out_115(addr_w_wire_115), .rom_out_116(addr_w_wire_116), .rom_out_117(addr_w_wire_117), .rom_out_118(addr_w_wire_118), .rom_out_119(addr_w_wire_119), .rom_out_120(addr_w_wire_120), .rom_out_121(addr_w_wire_121), .rom_out_122(addr_w_wire_122), .rom_out_123(addr_w_wire_123), .rom_out_124(addr_w_wire_124), .rom_out_125(addr_w_wire_125), .rom_out_126(addr_w_wire_126), .rom_out_127(addr_w_wire_127), .clk(clk), .rst(rst));
 
   dist_ram_dp #(.DATA_WIDTH(28), .ADDR_WIDTH(3)) 
          ram_inst_0(.wen(wen_wire), .addr_r(addr_r_wire_0), .addr_w(addr_w_wire_0), .din(wire_in[0]), .dout(wire_out[0]), .clk(clk) );
