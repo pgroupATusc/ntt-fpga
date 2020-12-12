@@ -44,13 +44,12 @@ module NTT_Top #(
   logic [DATA_WIDTH_PER_INPUT-1:0] stage_7_per_in[INPUT_PER_CYCLE-1:0];
   logic [DATA_WIDTH_PER_INPUT-1:0] stage_7_per_out[INPUT_PER_CYCLE-1:0];
 
-  parameter [7:0] START_CYCLE[10] = {0, 7, 14, 21, 28, 35, 42, 67, 93, 121};
+  parameter [6:0] START_CYCLE[8] = {0, 7, 14, 21, 28, 35, 42, 67};
 
   // TODO(Tian): stage 0 32 butterfly units
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({326097, 131309632, 168342750, 67241659,
-              201160126, 107830842, 3021514, 265882354}))
+    .factors({1562592, 6010959, 168676526, 68559335}))
   stage_0_butterfly_0 (
     .x_in(inData[0]),
     .y_in(inData[1]),
@@ -62,8 +61,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({145034434, 222056927, 169924108, 12551837,
-              188526794, 50162577, 34052825, 30998914}))
+    .factors({19223387, 42156432, 87088032, 118377542}))
   stage_0_butterfly_1 (
     .x_in(inData[2]),
     .y_in(inData[3]),
@@ -75,8 +73,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({63661975, 103503994, 155100837, 99695712,
-              122609533, 125713617, 128159746, 66582189}))
+    .factors({50222736, 95861179, 79136411, 202127782}))
   stage_0_butterfly_2 (
     .x_in(inData[4]),
     .y_in(inData[5]),
@@ -88,8 +85,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({120466187, 70017017, 149423455, 225794318,
-              9205704, 157839041, 123018041, 148051010}))
+    .factors({185685569, 234350511, 131377029, 67321994}))
   stage_0_butterfly_3 (
     .x_in(inData[6]),
     .y_in(inData[7]),
@@ -101,8 +97,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({156837559, 167645260, 2204580, 186531585,
-              267506256, 107513427, 244783678, 115050087}))
+    .factors({210770212, 6574921, 57574719, 148390399}))
   stage_0_butterfly_4 (
     .x_in(inData[8]),
     .y_in(inData[9]),
@@ -114,8 +109,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({101188020, 77119896, 24036023, 94686133,
-              71304140, 102034957, 19637177, 157991445}))
+    .factors({137346680, 242302870, 186863562, 172809179}))
   stage_0_butterfly_5 (
     .x_in(inData[10]),
     .y_in(inData[11]),
@@ -127,8 +121,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({254234203, 69205492, 164473684, 206844979,
-              242301146, 92420698, 5161923, 159538295}))
+    .factors({166955734, 58786546, 87074609, 119568150}))
   stage_0_butterfly_6 (
     .x_in(inData[12]),
     .y_in(inData[13]),
@@ -140,8 +133,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({192680819, 190540901, 75195548, 215085706,
-              187208958, 112756762, 212422509, 246787643}))
+    .factors({219898221, 137672988, 100229847, 183117409}))
   stage_0_butterfly_7 (
     .x_in(inData[14]),
     .y_in(inData[15]),
@@ -153,8 +145,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({180764097, 195298807, 124558832, 174028560,
-              126413069, 212287973, 133273987, 248946430}))
+    .factors({233514072, 23892097, 263070789, 263077695}))
   stage_0_butterfly_8 (
     .x_in(inData[16]),
     .y_in(inData[17]),
@@ -166,8 +157,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({172715743, 100343421, 242717180, 119890469,
-              212237706, 107138937, 138692846, 53025186}))
+    .factors({55567611, 165872957, 234113027, 209725121}))
   stage_0_butterfly_9 (
     .x_in(inData[18]),
     .y_in(inData[19]),
@@ -179,8 +169,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({245986816, 255658390, 135080569, 79336225,
-              92659465, 144502563, 79230237, 170100736}))
+    .factors({69584498, 266756542, 225650462, 200102186}))
   stage_0_butterfly_10 (
     .x_in(inData[20]),
     .y_in(inData[21]),
@@ -192,8 +181,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({53126225, 236209279, 59894768, 46197346,
-              256083096, 135271820, 190586128, 247116469}))
+    .factors({54534442, 158727274, 224586596, 210734246}))
   stage_0_butterfly_11 (
     .x_in(inData[22]),
     .y_in(inData[23]),
@@ -205,8 +193,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({52844710, 110055875, 255463943, 55222727,
-              2486257, 1991289, 102785717, 218286321}))
+    .factors({258226806, 242025902, 8411857, 9842125}))
   stage_0_butterfly_12 (
     .x_in(inData[24]),
     .y_in(inData[25]),
@@ -218,8 +205,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({19058782, 233967292, 156009907, 12591284,
-              112825183, 81263879, 237616434, 190565686}))
+    .factors({202059197, 256869432, 253800975, 61345534}))
   stage_0_butterfly_13 (
     .x_in(inData[26]),
     .y_in(inData[27]),
@@ -231,8 +217,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({43447238, 142941966, 227454343, 174856430,
-              217359458, 94792077, 20236367, 173933513}))
+    .factors({257649131, 232445568, 108115637, 206252403}))
   stage_0_butterfly_14 (
     .x_in(inData[28]),
     .y_in(inData[29]),
@@ -244,8 +229,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({177682833, 139780710, 256519333, 203905228,
-              198957507, 122969043, 171841734, 176911171}))
+    .factors({237102043, 21116414, 203485423, 126945619}))
   stage_0_butterfly_15 (
     .x_in(inData[30]),
     .y_in(inData[31]),
@@ -257,8 +241,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({166586238, 146761160, 62435894, 183669067,
-              173513151, 248251528, 265496406, 225369834}))
+    .factors({67970382, 129101436, 62408001, 262540431}))
   stage_0_butterfly_16 (
     .x_in(inData[32]),
     .y_in(inData[33]),
@@ -270,8 +253,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({184522009, 134796549, 44888494, 89987026,
-              24347842, 222249559, 172401093, 256834872}))
+    .factors({167366585, 49675259, 75073484, 168977833}))
   stage_0_butterfly_17 (
     .x_in(inData[34]),
     .y_in(inData[35]),
@@ -283,8 +265,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({84779248, 252714435, 129740611, 99277398,
-              184177651, 18205961, 141562255, 32319537}))
+    .factors({39269267, 25853611, 224068691, 32087335}))
   stage_0_butterfly_18 (
     .x_in(inData[36]),
     .y_in(inData[37]),
@@ -296,8 +277,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({236829199, 103368916, 76313029, 50376784,
-              118465017, 163197321, 62765404, 216819035}))
+    .factors({32260862, 149200070, 151148155, 212123710}))
   stage_0_butterfly_19 (
     .x_in(inData[38]),
     .y_in(inData[39]),
@@ -309,8 +289,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({128995628, 105793954, 7301415, 234786570,
-              164154100, 217763430, 196000333, 147224860}))
+    .factors({206649748, 24153138, 63079505, 128003797}))
   stage_0_butterfly_20 (
     .x_in(inData[40]),
     .y_in(inData[41]),
@@ -322,8 +301,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({20655050, 229954056, 249936132, 92902456,
-              190453366, 83905910, 205242220, 160429892}))
+    .factors({49286409, 43078133, 56094099, 195288398}))
   stage_0_butterfly_21 (
     .x_in(inData[42]),
     .y_in(inData[43]),
@@ -335,8 +313,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({173628384, 195181845, 136710753, 107152911,
-              261541195, 213655453, 108382823, 198336839}))
+    .factors({172935357, 49504466, 82934386, 61644903}))
   stage_0_butterfly_22 (
     .x_in(inData[44]),
     .y_in(inData[45]),
@@ -348,8 +325,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({209878720, 1592538, 193897399, 92770973,
-              209112367, 38252193, 87202745, 81893503}))
+    .factors({250071443, 73698550, 158890265, 138879618}))
   stage_0_butterfly_23 (
     .x_in(inData[46]),
     .y_in(inData[47]),
@@ -361,8 +337,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({85740049, 37498403, 259533807, 69313946,
-              37504237, 18793692, 51838504, 36492987}))
+    .factors({223822620, 201863951, 191444307, 75537498}))
   stage_0_butterfly_24 (
     .x_in(inData[48]),
     .y_in(inData[49]),
@@ -374,8 +349,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({211646222, 79121706, 237395333, 5267255,
-              85566308, 155363318, 109455096, 168826669}))
+    .factors({209886001, 60072008, 205525433, 188517169}))
   stage_0_butterfly_25 (
     .x_in(inData[50]),
     .y_in(inData[51]),
@@ -387,8 +361,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({9793208, 29594281, 255478273, 161345834,
-              178220347, 93978858, 157649589, 232740066}))
+    .factors({194276347, 215146927, 190319963, 136878682}))
   stage_0_butterfly_26 (
     .x_in(inData[52]),
     .y_in(inData[53]),
@@ -400,8 +373,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({3260661, 255737752, 82321748, 91397014,
-              248465751, 179341437, 148108490, 509728}))
+    .factors({203605228, 110201077, 202955937, 209658551}))
   stage_0_butterfly_27 (
     .x_in(inData[54]),
     .y_in(inData[55]),
@@ -413,8 +385,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({170230234, 187867192, 140450929, 78273516,
-              94178347, 104546781, 231354349, 29537138}))
+    .factors({174900371, 85678851, 254911070, 176209504}))
   stage_0_butterfly_28 (
     .x_in(inData[56]),
     .y_in(inData[57]),
@@ -426,8 +397,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({41388380, 222527593, 248552245, 42344203,
-              116527240, 60051251, 154317057, 151857114}))
+    .factors({260909397, 11100143, 244763177, 138793148}))
   stage_0_butterfly_29 (
     .x_in(inData[58]),
     .y_in(inData[59]),
@@ -439,8 +409,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({180877891, 132190398, 110302060, 195270185,
-              253487730, 83977288, 240930884, 148289274}))
+    .factors({222861227, 6292910, 182702557, 60548134}))
   stage_0_butterfly_30 (
     .x_in(inData[60]),
     .y_in(inData[61]),
@@ -452,8 +421,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({210373784, 122538584, 145914728, 148491526,
-              185886007, 194684542, 189909138, 154298223}))
+    .factors({71847431, 36946189, 100123291, 117274103}))
   stage_0_butterfly_31 (
     .x_in(inData[62]),
     .y_in(inData[63]),
@@ -465,8 +433,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({244423105, 5445105, 12817079, 244593894,
-              245041907, 132467399, 257426331, 207530748}))
+    .factors({142306631, 154421517, 77981460, 203044972}))
   stage_0_butterfly_32 (
     .x_in(inData[64]),
     .y_in(inData[65]),
@@ -478,8 +445,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({25030552, 36620312, 132747224, 58671364,
-              262112169, 189601976, 4047489, 73217275}))
+    .factors({170930026, 40718170, 98861208, 69773246}))
   stage_0_butterfly_33 (
     .x_in(inData[66]),
     .y_in(inData[67]),
@@ -491,8 +457,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({161607031, 17758040, 72509307, 62094530,
-              146657273, 79834640, 123720956, 244927134}))
+    .factors({103731033, 251138298, 226014319, 59284831}))
   stage_0_butterfly_34 (
     .x_in(inData[68]),
     .y_in(inData[69]),
@@ -504,8 +469,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({140358303, 157386503, 195297575, 209780385,
-              209744644, 151855973, 128052734, 259621463}))
+    .factors({258257144, 50138453, 132750946, 144929841}))
   stage_0_butterfly_35 (
     .x_in(inData[70]),
     .y_in(inData[71]),
@@ -517,8 +481,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({55581691, 243091016, 230992788, 121730405,
-              62027985, 251672258, 149788353, 257402730}))
+    .factors({196328787, 181167649, 48631162, 212760505}))
   stage_0_butterfly_36 (
     .x_in(inData[72]),
     .y_in(inData[73]),
@@ -530,8 +493,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({246741831, 202565947, 55944760, 167758747,
-              65889055, 17682401, 78612624, 211201491}))
+    .factors({177340471, 193915204, 24688427, 50986641}))
   stage_0_butterfly_37 (
     .x_in(inData[74]),
     .y_in(inData[75]),
@@ -543,8 +505,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({94079265, 210423079, 59214954, 8650362,
-              118320134, 232847226, 209708523, 263725948}))
+    .factors({173118058, 224794776, 34481514, 49057739}))
   stage_0_butterfly_38 (
     .x_in(inData[76]),
     .y_in(inData[77]),
@@ -556,8 +517,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({236528116, 76624935, 241071152, 50174239,
-              60492437, 86776671, 224322272, 105443909}))
+    .factors({97318594, 47375162, 263530653, 71598752}))
   stage_0_butterfly_39 (
     .x_in(inData[78]),
     .y_in(inData[79]),
@@ -569,8 +529,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({199352295, 115053845, 101579460, 228243008,
-              172655984, 29779638, 266514716, 161626887}))
+    .factors({160807241, 91704337, 23405380, 5905084}))
   stage_0_butterfly_40 (
     .x_in(inData[80]),
     .y_in(inData[81]),
@@ -582,8 +541,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({160050812, 232156312, 64518939, 247452694,
-              34932582, 102698816, 86359417, 29901564}))
+    .factors({109902969, 8950678, 178386996, 82155735}))
   stage_0_butterfly_41 (
     .x_in(inData[82]),
     .y_in(inData[83]),
@@ -595,8 +553,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({24365404, 126749676, 128627235, 207021189,
-              90701762, 148152811, 195692414, 183571221}))
+    .factors({83725194, 175719113, 157966005, 153883128}))
   stage_0_butterfly_42 (
     .x_in(inData[84]),
     .y_in(inData[85]),
@@ -608,8 +565,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({56387579, 117072589, 134804553, 111835742,
-              31964447, 248922055, 108164959, 146399832}))
+    .factors({13083849, 210914061, 240127751, 77389872}))
   stage_0_butterfly_43 (
     .x_in(inData[86]),
     .y_in(inData[87]),
@@ -621,8 +577,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({46282885, 156195364, 261458154, 248669125,
-              193911793, 139101859, 145056180, 209643171}))
+    .factors({61574386, 103019692, 256173379, 212214167}))
   stage_0_butterfly_44 (
     .x_in(inData[88]),
     .y_in(inData[89]),
@@ -634,8 +589,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({185175266, 121355275, 159148996, 243047656,
-              32097135, 70325928, 81197166, 9067201}))
+    .factors({225389748, 238382196, 199633043, 173087458}))
   stage_0_butterfly_45 (
     .x_in(inData[90]),
     .y_in(inData[91]),
@@ -647,8 +601,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({160048836, 99012968, 262630184, 250031819,
-              72351531, 62688241, 22997488, 146205579}))
+    .factors({21080194, 143969870, 141849606, 94612904}))
   stage_0_butterfly_46 (
     .x_in(inData[92]),
     .y_in(inData[93]),
@@ -660,8 +613,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({129856203, 159491687, 122025398, 213678985,
-              243009216, 166139329, 133808889, 77127228}))
+    .factors({220490426, 16128104, 222683851, 258366673}))
   stage_0_butterfly_47 (
     .x_in(inData[94]),
     .y_in(inData[95]),
@@ -673,8 +625,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({118444917, 206116619, 116257755, 259895089,
-              168470500, 65498827, 36331533, 1352703}))
+    .factors({204886617, 206372598, 107527972, 20857483}))
   stage_0_butterfly_48 (
     .x_in(inData[96]),
     .y_in(inData[97]),
@@ -686,8 +637,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({125561953, 207047180, 255457916, 54393228,
-              234775081, 266562472, 244216061, 260993294}))
+    .factors({165134943, 67620310, 67225153, 228211497}))
   stage_0_butterfly_49 (
     .x_in(inData[98]),
     .y_in(inData[99]),
@@ -699,8 +649,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({6001670, 164728317, 263001722, 183613005,
-              56257750, 169959063, 252018541, 163812077}))
+    .factors({256272276, 35918322, 17861009, 25944135}))
   stage_0_butterfly_50 (
     .x_in(inData[100]),
     .y_in(inData[101]),
@@ -712,8 +661,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({166126182, 60600589, 220838681, 94206887,
-              21649526, 217210388, 136898494, 261143222}))
+    .factors({146037274, 211426643, 134877507, 16985430}))
   stage_0_butterfly_51 (
     .x_in(inData[102]),
     .y_in(inData[103]),
@@ -725,8 +673,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({237125965, 99996719, 255141549, 200585052,
-              228715598, 33096679, 70944317, 54916848}))
+    .factors({44144526, 161171966, 216395023, 195748297}))
   stage_0_butterfly_52 (
     .x_in(inData[104]),
     .y_in(inData[105]),
@@ -738,8 +685,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({17642100, 165180840, 249947221, 119720513,
-              251717800, 77536776, 223014301, 97171493}))
+    .factors({134100899, 237438985, 66298746, 84058929}))
   stage_0_butterfly_53 (
     .x_in(inData[106]),
     .y_in(inData[107]),
@@ -751,8 +697,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({135921552, 20041783, 121414397, 266777211,
-              141206585, 84669572, 254842567, 93757293}))
+    .factors({186841927, 21739535, 254132077, 187864761}))
   stage_0_butterfly_54 (
     .x_in(inData[108]),
     .y_in(inData[109]),
@@ -764,8 +709,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({218380292, 4457103, 112070980, 164079161,
-              224550271, 194887964, 171206517, 75993973}))
+    .factors({143102859, 61664240, 167911982, 207329882}))
   stage_0_butterfly_55 (
     .x_in(inData[110]),
     .y_in(inData[111]),
@@ -777,8 +721,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({227628318, 115132688, 4721397, 219133933,
-              214937778, 266352891, 212728405, 41535530}))
+    .factors({83231671, 143779572, 98889920, 181468172}))
   stage_0_butterfly_56 (
     .x_in(inData[112]),
     .y_in(inData[113]),
@@ -790,8 +733,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({92379159, 184560259, 127102737, 193438424,
-              86350556, 219484262, 113049121, 169792793}))
+    .factors({43104106, 112003761, 189720821, 27056737}))
   stage_0_butterfly_57 (
     .x_in(inData[114]),
     .y_in(inData[115]),
@@ -803,8 +745,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({138675463, 10646661, 123052007, 40916099,
-              107503597, 62456195, 39337018, 175928561}))
+    .factors({68493159, 171541778, 142181410, 40550456}))
   stage_0_butterfly_58 (
     .x_in(inData[116]),
     .y_in(inData[117]),
@@ -816,8 +757,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({193451294, 1361486, 78552959, 212162524,
-              134417077, 64830196, 7280660, 139044757}))
+    .factors({34971158, 43194148, 232615475, 137065607}))
   stage_0_butterfly_59 (
     .x_in(inData[118]),
     .y_in(inData[119]),
@@ -829,8 +769,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({66337349, 181617487, 263649093, 8259535,
-              79325117, 224391994, 140072656, 50523873}))
+    .factors({93740850, 225784463, 102915173, 155060883}))
   stage_0_butterfly_60 (
     .x_in(inData[120]),
     .y_in(inData[121]),
@@ -842,8 +781,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({36196902, 3395282, 187988754, 226759664,
-              209466626, 134208656, 130154791, 223473865}))
+    .factors({123335450, 202776751, 99187435, 183029478}))
   stage_0_butterfly_61 (
     .x_in(inData[122]),
     .y_in(inData[123]),
@@ -855,8 +793,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({233083676, 66412546, 10310370, 211824237,
-              164248031, 80988251, 108391208, 584543}))
+    .factors({16471674, 117507527, 135886841, 25345558}))
   stage_0_butterfly_62 (
     .x_in(inData[124]),
     .y_in(inData[125]),
@@ -868,8 +805,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[0]),
-    .factors({185590576, 3341663, 203598031, 62513408,
-              81414740, 222912429, 261608985, 39797461}))
+    .factors({258559590, 171362072, 170284131, 266671862}))
   stage_0_butterfly_63 (
     .x_in(inData[126]),
     .y_in(inData[127]),
@@ -878,7 +814,6 @@ module NTT_Top #(
     .clk(clk),
     .rst(rst)
   );
-
 
 
   // TODO(Yang): stage 0 -> stage 1 permutation
@@ -1152,8 +1087,7 @@ module NTT_Top #(
   // TODO(Tian): stage 1 32 butterfly units
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({64764693, 43104106, 182691070, 97007849,
-              193296437, 17861009, 138879618, 184310992}))
+    .factors({64217206, 180525688, 265950570, 258612781}))
   stage_1_butterfly_0 (
     .x_in(stage_0_per_out[0]),
     .y_in(stage_0_per_out[1]),
@@ -1165,8 +1099,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({64764693, 43104106, 182691070, 97007849,
-              193296437, 17861009, 138879618, 184310992}))
+    .factors({64217206, 180525688, 265950570, 258612781}))
   stage_1_butterfly_1 (
     .x_in(stage_0_per_out[2]),
     .y_in(stage_0_per_out[3]),
@@ -1178,8 +1111,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({194276347, 185138250, 257269778, 117507527,
-              62408001, 134877507, 206725018, 195748297}))
+    .factors({202221416, 69161747, 27692847, 209086118}))
   stage_1_butterfly_2 (
     .x_in(stage_0_per_out[4]),
     .y_in(stage_0_per_out[5]),
@@ -1191,8 +1123,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({194276347, 185138250, 257269778, 117507527,
-              62408001, 134877507, 206725018, 195748297}))
+    .factors({202221416, 69161747, 27692847, 209086118}))
   stage_1_butterfly_3 (
     .x_in(stage_0_per_out[6]),
     .y_in(stage_0_per_out[7]),
@@ -1204,8 +1135,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({223822620, 34971158, 262077011, 225784463,
-              117221766, 67225153, 140366124, 61040039}))
+    .factors({108083129, 22541719, 166530134, 94666956}))
   stage_1_butterfly_4 (
     .x_in(stage_0_per_out[8]),
     .y_in(stage_0_per_out[9]),
@@ -1217,8 +1147,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({223822620, 34971158, 262077011, 225784463,
-              117221766, 67225153, 140366124, 61040039}))
+    .factors({108083129, 22541719, 166530134, 94666956}))
   stage_1_butterfly_5 (
     .x_in(stage_0_per_out[10]),
     .y_in(stage_0_per_out[11]),
@@ -1230,8 +1159,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({209886001, 199876762, 231423732, 202776751,
-              224068691, 160841949, 73081523, 187864761}))
+    .factors({229216409, 13250338, 256040960, 177772804}))
   stage_1_butterfly_6 (
     .x_in(stage_0_per_out[12]),
     .y_in(stage_0_per_out[13]),
@@ -1243,8 +1171,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({209886001, 199876762, 231423732, 202776751,
-              224068691, 160841949, 73081523, 187864761}))
+    .factors({229216409, 13250338, 256040960, 177772804}))
   stage_1_butterfly_7 (
     .x_in(stage_0_per_out[14]),
     .y_in(stage_0_per_out[15]),
@@ -1256,8 +1183,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({196522490, 123335450, 53222994, 143779572,
-              212275822, 254132077, 5829490, 251384491}))
+    .factors({254509489, 84143174, 181639510, 34339674}))
   stage_1_butterfly_8 (
     .x_in(stage_0_per_out[16]),
     .y_in(stage_0_per_out[17]),
@@ -1269,8 +1195,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({196522490, 123335450, 53222994, 143779572,
-              212275822, 254132077, 5829490, 251384491}))
+    .factors({254509489, 84143174, 181639510, 34339674}))
   stage_1_butterfly_9 (
     .x_in(stage_0_per_out[18]),
     .y_in(stage_0_per_out[19]),
@@ -1282,8 +1207,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({222861227, 174629071, 158168844, 112003761,
-              63079505, 167911982, 99392088, 25944135}))
+    .factors({55721255, 71933862, 216143425, 41155851}))
   stage_1_butterfly_10 (
     .x_in(stage_0_per_out[20]),
     .y_in(stage_0_per_out[21]),
@@ -1295,8 +1219,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({222861227, 174629071, 158168844, 112003761,
-              63079505, 167911982, 99392088, 25944135}))
+    .factors({55721255, 71933862, 216143425, 41155851}))
   stage_1_butterfly_11 (
     .x_in(stage_0_per_out[22]),
     .y_in(stage_0_per_out[23]),
@@ -1308,8 +1231,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({174900371, 258559590, 208297913, 171541778,
-              109479656, 66298746, 236282586, 20857483}))
+    .factors({220618744, 37667151, 119707826, 106640438}))
   stage_1_butterfly_12 (
     .x_in(stage_0_per_out[24]),
     .y_in(stage_0_per_out[25]),
@@ -1321,8 +1243,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({174900371, 258559590, 208297913, 171541778,
-              109479656, 66298746, 236282586, 20857483}))
+    .factors({220618744, 37667151, 119707826, 106640438}))
   stage_1_butterfly_13 (
     .x_in(stage_0_per_out[26]),
     .y_in(stage_0_per_out[27]),
@@ -1334,8 +1255,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({260909397, 251898247, 201863951, 43194148,
-              82934386, 51974898, 56246211, 228211497}))
+    .factors({15417588, 124400208, 39141691, 85021501}))
   stage_1_butterfly_14 (
     .x_in(stage_0_per_out[28]),
     .y_in(stage_0_per_out[29]),
@@ -1347,8 +1267,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({260909397, 251898247, 201863951, 43194148,
-              82934386, 51974898, 56246211, 228211497}))
+    .factors({15417588, 124400208, 39141691, 85021501}))
   stage_1_butterfly_15 (
     .x_in(stage_0_per_out[30]),
     .y_in(stage_0_per_out[31]),
@@ -1360,8 +1279,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({250071443, 134269022, 25853611, 61997323,
-              205525433, 126188511, 151095818, 183029478}))
+    .factors({204666342, 9446767, 123185272, 75673633}))
   stage_1_butterfly_16 (
     .x_in(stage_0_per_out[32]),
     .y_in(stage_0_per_out[33]),
@@ -1373,8 +1291,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({250071443, 134269022, 25853611, 61997323,
-              205525433, 126188511, 151095818, 183029478}))
+    .factors({204666342, 9446767, 123185272, 75673633}))
   stage_1_butterfly_17 (
     .x_in(stage_0_per_out[34]),
     .y_in(stage_0_per_out[35]),
@@ -1386,8 +1303,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({95434564, 44144526, 149200070, 200749611,
-              76925614, 35754446, 60548134, 113309038}))
+    .factors({26687688, 98878775, 85922744, 159404461}))
   stage_1_butterfly_18 (
     .x_in(stage_0_per_out[36]),
     .y_in(stage_0_per_out[37]),
@@ -1399,8 +1315,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({95434564, 44144526, 149200070, 200749611,
-              76925614, 35754446, 60548134, 113309038}))
+    .factors({26687688, 98878775, 85922744, 159404461}))
   stage_1_butterfly_19 (
     .x_in(stage_0_per_out[38]),
     .y_in(stage_0_per_out[39]),
@@ -1412,8 +1327,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({61720173, 125267062, 49675259, 232451599,
-              202955937, 78649100, 176209504, 266671862}))
+    .factors({227816219, 128814716, 13919506, 231318087}))
   stage_1_butterfly_20 (
     .x_in(stage_0_per_out[40]),
     .y_in(stage_0_per_out[41]),
@@ -1425,8 +1339,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({61720173, 125267062, 49675259, 232451599,
-              202955937, 78649100, 176209504, 266671862}))
+    .factors({227816219, 128814716, 13919506, 231318087}))
   stage_1_butterfly_21 (
     .x_in(stage_0_per_out[42]),
     .y_in(stage_0_per_out[43]),
@@ -1438,8 +1351,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({219083512, 186841927, 139268485, 56943278,
-              78049958, 98889920, 138793148, 243024363}))
+    .factors({118518376, 28824907, 97765534, 137812299}))
   stage_1_butterfly_22 (
     .x_in(stage_0_per_out[44]),
     .y_in(stage_0_per_out[45]),
@@ -1451,8 +1363,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({219083512, 186841927, 139268485, 56943278,
-              78049958, 98889920, 138793148, 243024363}))
+    .factors({118518376, 28824907, 97765534, 137812299}))
   stage_1_butterfly_23 (
     .x_in(stage_0_per_out[46]),
     .y_in(stage_0_per_out[47]),
@@ -1464,8 +1375,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({200399539, 122332647, 49504466, 107197955,
-              244763177, 132483080, 75537498, 137065607}))
+    .factors({108810259, 195631434, 40475021, 74998629}))
   stage_1_butterfly_24 (
     .x_in(stage_0_per_out[48]),
     .y_in(stage_0_per_out[49]),
@@ -1477,8 +1387,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({200399539, 122332647, 49504466, 107197955,
-              244763177, 132483080, 75537498, 137065607}))
+    .factors({108810259, 195631434, 40475021, 74998629}))
   stage_1_butterfly_25 (
     .x_in(stage_0_per_out[50]),
     .y_in(stage_0_per_out[51]),
@@ -1490,8 +1399,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({101003336, 256272276, 73698550, 30930936,
-              13458851, 98085790, 188517169, 227819465}))
+    .factors({214551729, 171721518, 14542514, 150873005}))
   stage_1_butterfly_26 (
     .x_in(stage_0_per_out[52]),
     .y_in(stage_0_per_out[53]),
@@ -1503,8 +1411,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({101003336, 256272276, 73698550, 30930936,
-              13458851, 98085790, 188517169, 227819465}))
+    .factors({214551729, 171721518, 14542514, 150873005}))
   stage_1_butterfly_27 (
     .x_in(stage_0_per_out[54]),
     .y_in(stage_0_per_out[55]),
@@ -1516,8 +1423,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({229100654, 204886617, 43078133, 246630386,
-              100123291, 169182486, 136878682, 86901749}))
+    .factors({234890903, 18399308, 98142515, 250166212}))
   stage_1_butterfly_28 (
     .x_in(stage_0_per_out[56]),
     .y_in(stage_0_per_out[57]),
@@ -1529,8 +1435,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({229100654, 204886617, 43078133, 246630386,
-              100123291, 169182486, 136878682, 86901749}))
+    .factors({234890903, 18399308, 98142515, 250166212}))
   stage_1_butterfly_29 (
     .x_in(stage_0_per_out[58]),
     .y_in(stage_0_per_out[59]),
@@ -1542,8 +1447,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({236109059, 165134943, 244216783, 206705681,
-              85667364, 102915173, 209658551, 241313184}))
+    .factors({223427563, 50725340, 257798138, 100484142}))
   stage_1_butterfly_30 (
     .x_in(stage_0_per_out[60]),
     .y_in(stage_0_per_out[61]),
@@ -1555,8 +1459,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({236109059, 165134943, 244216783, 206705681,
-              85667364, 102915173, 209658551, 241313184}))
+    .factors({223427563, 50725340, 257798138, 100484142}))
   stage_1_butterfly_31 (
     .x_in(stage_0_per_out[62]),
     .y_in(stage_0_per_out[63]),
@@ -1568,8 +1471,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({101414187, 196328787, 234350511, 227651751,
-              5299132, 28242170, 206252403, 56155754}))
+    .factors({163585105, 144414946, 6576175, 189881206}))
   stage_1_butterfly_32 (
     .x_in(stage_0_per_out[64]),
     .y_in(stage_0_per_out[65]),
@@ -1581,8 +1483,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({101414187, 196328787, 234350511, 227651751,
-              5299132, 28242170, 206252403, 56155754}))
+    .factors({163585105, 144414946, 6576175, 189881206}))
   stage_1_butterfly_33 (
     .x_in(stage_0_per_out[66]),
     .y_in(stage_0_per_out[67]),
@@ -1594,8 +1495,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({48471700, 177340471, 172508742, 154421517,
-              34256894, 157966005, 126945619, 95282463}))
+    .factors({3883583, 56700993, 188210893, 81777479}))
   stage_1_butterfly_34 (
     .x_in(stage_0_per_out[68]),
     .y_in(stage_0_per_out[69]),
@@ -1607,8 +1507,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({48471700, 177340471, 172508742, 154421517,
-              34256894, 157966005, 126945619, 95282463}))
+    .factors({3883583, 56700993, 188210893, 81777479}))
   stage_1_butterfly_35 (
     .x_in(stage_0_per_out[70]),
     .y_in(stage_0_per_out[71]),
@@ -1620,8 +1519,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({131023241, 173118058, 262358962, 218231468,
-              42719459, 23405380, 61345534, 173757017}))
+    .factors({133503098, 25569479, 116401819, 139182289}))
   stage_1_butterfly_36 (
     .x_in(stage_0_per_out[72]),
     .y_in(stage_0_per_out[73]),
@@ -1633,8 +1531,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({131023241, 173118058, 262358962, 218231468,
-              42719459, 23405380, 61345534, 173757017}))
+    .factors({133503098, 25569479, 116401819, 139182289}))
   stage_1_butterfly_37 (
     .x_in(stage_0_per_out[74]),
     .y_in(stage_0_per_out[75]),
@@ -1646,8 +1543,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({210770212, 97318594, 226213489, 251138298,
-              43783325, 178386996, 258527796, 10003248}))
+    .factors({227283585, 122008382, 249640399, 10130658}))
   stage_1_butterfly_38 (
     .x_in(stage_0_per_out[76]),
     .y_in(stage_0_per_out[77]),
@@ -1659,8 +1555,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({210770212, 97318594, 226213489, 251138298,
-              43783325, 178386996, 258527796, 10003248}))
+    .factors({227283585, 122008382, 249640399, 10130658}))
   stage_1_butterfly_39 (
     .x_in(stage_0_per_out[78]),
     .y_in(stage_0_per_out[79]),
@@ -1672,8 +1567,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({249146534, 103731033, 137672988, 74454717,
-              259958064, 45686070, 209725121, 114486793}))
+    .factors({113201512, 225636920, 101483624, 176471684}))
   stage_1_butterfly_40 (
     .x_in(stage_0_per_out[80]),
     .y_in(stage_0_per_out[81]),
@@ -1685,8 +1579,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({249146534, 103731033, 137672988, 74454717,
-              259958064, 45686070, 209725121, 114486793}))
+    .factors({113201512, 225636920, 101483624, 176471684}))
   stage_1_butterfly_41 (
     .x_in(stage_0_per_out[82]),
     .y_in(stage_0_per_out[83]),
@@ -1698,8 +1591,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({1562592, 258257144, 209583375, 181167649,
-              14568946, 141849606, 5292226, 190980049}))
+    .factors({163812837, 147433882, 197305753, 184516225}))
   stage_1_butterfly_42 (
     .x_in(stage_0_per_out[84]),
     .y_in(stage_0_per_out[85]),
@@ -1711,8 +1603,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({1562592, 258257144, 209583375, 181167649,
-              14568946, 141849606, 5292226, 190980049}))
+    .factors({163812837, 147433882, 197305753, 184516225}))
   stage_1_butterfly_43 (
     .x_in(stage_0_per_out[86]),
     .y_in(stage_0_per_out[87]),
@@ -1724,8 +1615,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({82684352, 170930026, 261795000, 220994759,
-              160254284, 256173379, 210734246, 186214186}))
+    .factors({96142103, 210298252, 68136911, 27244461}))
   stage_1_butterfly_44 (
     .x_in(stage_0_per_out[88]),
     .y_in(stage_0_per_out[89]),
@@ -1737,8 +1627,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({82684352, 170930026, 261795000, 220994759,
-              160254284, 256173379, 210734246, 186214186}))
+    .factors({96142103, 210298252, 68136911, 27244461}))
   stage_1_butterfly_45 (
     .x_in(stage_0_per_out[90]),
     .y_in(stage_0_per_out[91]),
@@ -1750,8 +1639,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({50222736, 126063290, 26067051, 224794776,
-              64884498, 199633043, 68267735, 5905084}))
+    .factors({149528048, 197074908, 11101448, 243304319}))
   stage_1_butterfly_46 (
     .x_in(stage_0_per_out[92]),
     .y_in(stage_0_per_out[93]),
@@ -1763,8 +1651,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({50222736, 126063290, 26067051, 224794776,
-              64884498, 199633043, 68267735, 5905084}))
+    .factors({149528048, 197074908, 11101448, 243304319}))
   stage_1_butterfly_47 (
     .x_in(stage_0_per_out[94]),
     .y_in(stage_0_per_out[95]),
@@ -1776,8 +1663,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({257649131, 206795535, 109642647, 8950678,
-              57574719, 263530653, 149992379, 59284831}))
+    .factors({265574867, 248876054, 261314274, 245906264}))
   stage_1_butterfly_48 (
     .x_in(stage_0_per_out[96]),
     .y_in(stage_0_per_out[97]),
@@ -1789,8 +1675,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({257649131, 206795535, 109642647, 8950678,
-              57574719, 263530653, 149992379, 59284831}))
+    .factors({265574867, 248876054, 261314274, 245906264}))
   stage_1_butterfly_49 (
     .x_in(stage_0_per_out[98]),
     .y_in(stage_0_per_out[99]),
@@ -1802,8 +1687,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({237102043, 42980173, 266756542, 176665584,
-              186863562, 233888407, 68559335, 144929841}))
+    .factors({161827885, 258649698, 23486645, 78777967}))
   stage_1_butterfly_50 (
     .x_in(stage_0_per_out[100]),
     .y_in(stage_0_per_out[101]),
@@ -1815,8 +1699,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({237102043, 42980173, 266756542, 176665584,
-              186863562, 233888407, 68559335, 144929841}))
+    .factors({161827885, 258649698, 23486645, 78777967}))
   stage_1_butterfly_51 (
     .x_in(stage_0_per_out[102]),
     .y_in(stage_0_per_out[103]),
@@ -1828,8 +1711,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({202059197, 247289727, 23892097, 210914061,
-              87074609, 219738759, 201047927, 69773246}))
+    .factors({246744565, 132703565, 135288005, 54284329}))
   stage_1_butterfly_52 (
     .x_in(stage_0_per_out[104]),
     .y_in(stage_0_per_out[105]),
@@ -1841,8 +1723,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({202059197, 247289727, 23892097, 210914061,
-              87074609, 219738759, 201047927, 69773246}))
+    .factors({246744565, 132703565, 135288005, 54284329}))
   stage_1_butterfly_53 (
     .x_in(stage_0_per_out[106]),
     .y_in(stage_0_per_out[107]),
@@ -1854,8 +1735,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({10143115, 47879495, 165872957, 92650808,
-              100229847, 243681494, 202127782, 65324949}))
+    .factors({164195239, 168407516, 29871855, 63350037}))
   stage_1_butterfly_54 (
     .x_in(stage_0_per_out[108]),
     .y_in(stage_0_per_out[109]),
@@ -1867,8 +1747,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({10143115, 47879495, 165872957, 92650808,
-              100229847, 243681494, 202127782, 65324949}))
+    .factors({164195239, 168407516, 29871855, 63350037}))
   stage_1_butterfly_55 (
     .x_in(stage_0_per_out[110]),
     .y_in(stage_0_per_out[111]),
@@ -1880,8 +1759,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({55567611, 184644727, 247253507, 238382196,
-              79136411, 190388461, 95560742, 49057739}))
+    .factors({191032230, 252442032, 189762285, 236144340}))
   stage_1_butterfly_56 (
     .x_in(stage_0_per_out[112]),
     .y_in(stage_0_per_out[113]),
@@ -1893,8 +1771,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({55567611, 184644727, 247253507, 238382196,
-              79136411, 190388461, 95560742, 49057739}))
+    .factors({191032230, 252442032, 189762285, 236144340}))
   stage_1_butterfly_57 (
     .x_in(stage_0_per_out[114]),
     .y_in(stage_0_per_out[115]),
@@ -1906,8 +1783,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({34855849, 255286072, 232445568, 165350229,
-              131377029, 169508713, 148390399, 71598752}))
+    .factors({234250032, 106338196, 246656426, 209161759}))
   stage_1_butterfly_58 (
     .x_in(stage_0_per_out[116]),
     .y_in(stage_0_per_out[117]),
@@ -1919,8 +1795,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({34855849, 255286072, 232445568, 165350229,
-              131377029, 169508713, 148390399, 71598752}))
+    .factors({234250032, 106338196, 246656426, 209161759}))
   stage_1_butterfly_59 (
     .x_in(stage_0_per_out[118]),
     .y_in(stage_0_per_out[119]),
@@ -1932,8 +1807,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({54534442, 158466952, 242025902, 16128104,
-              87088032, 42355602, 85252512, 50986641}))
+    .factors({67012048, 220375582, 176917280, 37011073}))
   stage_1_butterfly_60 (
     .x_in(stage_0_per_out[120]),
     .y_in(stage_0_per_out[121]),
@@ -1945,8 +1819,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({54534442, 158466952, 242025902, 16128104,
-              87088032, 42355602, 85252512, 50986641}))
+    .factors({67012048, 220375582, 176917280, 37011073}))
   stage_1_butterfly_61 (
     .x_in(stage_0_per_out[122]),
     .y_in(stage_0_per_out[123]),
@@ -1958,8 +1831,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({198785423, 160807241, 256869432, 124400051,
-              99693395, 135618975, 119568150, 55609416}))
+    .factors({226739459, 13519489, 81956368, 230433664}))
   stage_1_butterfly_62 (
     .x_in(stage_0_per_out[124]),
     .y_in(stage_0_per_out[125]),
@@ -1971,8 +1843,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[1]),
-    .factors({198785423, 160807241, 256869432, 124400051,
-              99693395, 135618975, 119568150, 55609416}))
+    .factors({226739459, 13519489, 81956368, 230433664}))
   stage_1_butterfly_63 (
     .x_in(stage_0_per_out[126]),
     .y_in(stage_0_per_out[127]),
@@ -1981,6 +1852,7 @@ module NTT_Top #(
     .clk(clk),
     .rst(rst)
   );
+
 
 
 
@@ -2257,8 +2129,7 @@ module NTT_Top #(
   // TODO(Tian): stage 2 32 butterfly units
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({53818192, 77337691, 18399308, 254850432,
-              145184649, 23486645, 130557622, 214085592}))
+    .factors({49823188, 128164980, 111284191, 235204060}))
   stage_2_butterfly_0 (
     .x_in(stage_1_per_out[0]),
     .y_in(stage_1_per_out[1]),
@@ -2270,8 +2141,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({53818192, 77337691, 18399308, 254850432,
-              145184649, 23486645, 130557622, 214085592}))
+    .factors({49823188, 128164980, 111284191, 235204060}))
   stage_2_butterfly_1 (
     .x_in(stage_1_per_out[2]),
     .y_in(stage_1_per_out[3]),
@@ -2283,8 +2153,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({53818192, 77337691, 18399308, 254850432,
-              145184649, 23486645, 130557622, 214085592}))
+    .factors({49823188, 128164980, 111284191, 235204060}))
   stage_2_butterfly_2 (
     .x_in(stage_1_per_out[4]),
     .y_in(stage_1_per_out[5]),
@@ -2296,8 +2165,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({53818192, 77337691, 18399308, 254850432,
-              145184649, 23486645, 130557622, 214085592}))
+    .factors({49823188, 128164980, 111284191, 235204060}))
   stage_2_butterfly_3 (
     .x_in(stage_1_per_out[6]),
     .y_in(stage_1_per_out[7]),
@@ -2309,8 +2177,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({108810259, 34119889, 50725340, 220375582,
-              182447177, 7055647, 231318087, 205019884}))
+    .factors({189517632, 170752771, 102065274, 131798756}))
   stage_2_butterfly_4 (
     .x_in(stage_1_per_out[8]),
     .y_in(stage_1_per_out[9]),
@@ -2322,8 +2189,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({108810259, 34119889, 50725340, 220375582,
-              182447177, 7055647, 231318087, 205019884}))
+    .factors({189517632, 170752771, 102065274, 131798756}))
   stage_2_butterfly_5 (
     .x_in(stage_1_per_out[10]),
     .y_in(stage_1_per_out[11]),
@@ -2335,8 +2201,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({108810259, 34119889, 50725340, 220375582,
-              182447177, 7055647, 231318087, 205019884}))
+    .factors({189517632, 170752771, 102065274, 131798756}))
   stage_2_butterfly_6 (
     .x_in(stage_1_per_out[12]),
     .y_in(stage_1_per_out[13]),
@@ -2348,8 +2213,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({108810259, 34119889, 50725340, 220375582,
-              182447177, 7055647, 231318087, 205019884}))
+    .factors({189517632, 170752771, 102065274, 131798756}))
   stage_2_butterfly_7 (
     .x_in(stage_1_per_out[14]),
     .y_in(stage_1_per_out[15]),
@@ -2361,8 +2225,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({44942358, 201357873, 171721518, 252442032,
-              254450415, 29871855, 75673633, 189591954}))
+    .factors({40758458, 200054106, 59966873, 71471012}))
   stage_2_butterfly_8 (
     .x_in(stage_1_per_out[16]),
     .y_in(stage_1_per_out[17]),
@@ -2374,8 +2237,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({44942358, 201357873, 171721518, 252442032,
-              254450415, 29871855, 75673633, 189591954}))
+    .factors({40758458, 200054106, 59966873, 71471012}))
   stage_2_butterfly_9 (
     .x_in(stage_1_per_out[18]),
     .y_in(stage_1_per_out[19]),
@@ -2387,8 +2249,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({44942358, 201357873, 171721518, 252442032,
-              254450415, 29871855, 75673633, 189591954}))
+    .factors({40758458, 200054106, 59966873, 71471012}))
   stage_2_butterfly_10 (
     .x_in(stage_1_per_out[20]),
     .y_in(stage_1_per_out[21]),
@@ -2400,8 +2261,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({44942358, 201357873, 171721518, 252442032,
-              254450415, 29871855, 75673633, 189591954}))
+    .factors({40758458, 200054106, 59966873, 71471012}))
   stage_2_butterfly_11 (
     .x_in(stage_1_per_out[22]),
     .y_in(stage_1_per_out[23]),
@@ -2413,8 +2273,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({234890903, 41630462, 72738487, 106338196,
-              170604387, 133081916, 159404461, 245906264}))
+    .factors({196909902, 191662816, 109254766, 100099056}))
   stage_2_butterfly_12 (
     .x_in(stage_1_per_out[24]),
     .y_in(stage_1_per_out[25]),
@@ -2426,8 +2285,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({234890903, 41630462, 72738487, 106338196,
-              170604387, 133081916, 159404461, 245906264}))
+    .factors({196909902, 191662816, 109254766, 100099056}))
   stage_2_butterfly_13 (
     .x_in(stage_1_per_out[26]),
     .y_in(stage_1_per_out[27]),
@@ -2439,8 +2297,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({234890903, 41630462, 72738487, 106338196,
-              170604387, 133081916, 159404461, 245906264}))
+    .factors({196909902, 191662816, 109254766, 100099056}))
   stage_2_butterfly_14 (
     .x_in(stage_1_per_out[28]),
     .y_in(stage_1_per_out[29]),
@@ -2452,8 +2309,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({234890903, 41630462, 72738487, 106338196,
-              170604387, 133081916, 159404461, 245906264}))
+    .factors({196909902, 191662816, 109254766, 100099056}))
   stage_2_butterfly_15 (
     .x_in(stage_1_per_out[30]),
     .y_in(stage_1_per_out[31]),
@@ -2465,8 +2321,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({149851545, 21625356, 98878775, 248876054,
-              227894900, 246656426, 167885779, 231358848}))
+    .factors({146694818, 88552238, 111341228, 155896930}))
   stage_2_butterfly_16 (
     .x_in(stage_1_per_out[32]),
     .y_in(stage_1_per_out[33]),
@@ -2478,8 +2333,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({149851545, 21625356, 98878775, 248876054,
-              227894900, 246656426, 167885779, 231358848}))
+    .factors({146694818, 88552238, 111341228, 155896930}))
   stage_2_butterfly_17 (
     .x_in(stage_1_per_out[34]),
     .y_in(stage_1_per_out[35]),
@@ -2491,8 +2345,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({149851545, 21625356, 98878775, 248876054,
-              227894900, 246656426, 167885779, 231358848}))
+    .factors({146694818, 88552238, 111341228, 155896930}))
   stage_2_butterfly_18 (
     .x_in(stage_1_per_out[36]),
     .y_in(stage_1_per_out[37]),
@@ -2504,8 +2357,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({149851545, 21625356, 98878775, 248876054,
-              227894900, 246656426, 167885779, 231358848}))
+    .factors({146694818, 88552238, 111341228, 155896930}))
   stage_2_butterfly_19 (
     .x_in(stage_1_per_out[38]),
     .y_in(stage_1_per_out[39]),
@@ -2517,8 +2369,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({227816219, 104174682, 258923154, 258649698,
-              253827407, 78607636, 250166212, 37936257}))
+    .factors({202366126, 158816719, 30748955, 122985686}))
   stage_2_butterfly_20 (
     .x_in(stage_1_per_out[40]),
     .y_in(stage_1_per_out[41]),
@@ -2530,8 +2381,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({227816219, 104174682, 258923154, 258649698,
-              253827407, 78607636, 250166212, 37936257}))
+    .factors({202366126, 158816719, 30748955, 122985686}))
   stage_2_butterfly_21 (
     .x_in(stage_1_per_out[42]),
     .y_in(stage_1_per_out[43]),
@@ -2543,8 +2393,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({227816219, 104174682, 258923154, 258649698,
-              253827407, 78607636, 250166212, 37936257}))
+    .factors({202366126, 158816719, 30748955, 122985686}))
   stage_2_butterfly_22 (
     .x_in(stage_1_per_out[44]),
     .y_in(stage_1_per_out[45]),
@@ -2556,8 +2405,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({227816219, 104174682, 258923154, 258649698,
-              253827407, 78607636, 250166212, 37936257}))
+    .factors({202366126, 158816719, 30748955, 122985686}))
   stage_2_butterfly_23 (
     .x_in(stage_1_per_out[46]),
     .y_in(stage_1_per_out[47]),
@@ -2569,8 +2417,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({204666342, 106542036, 28824907, 132703565,
-              170227406, 81956368, 74998629, 59208162}))
+    .factors({147699054, 262046585, 177255039, 193689173}))
   stage_2_butterfly_24 (
     .x_in(stage_1_per_out[48]),
     .y_in(stage_1_per_out[49]),
@@ -2582,8 +2429,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({204666342, 106542036, 28824907, 132703565,
-              170227406, 81956368, 74998629, 59208162}))
+    .factors({147699054, 262046585, 177255039, 193689173}))
   stage_2_butterfly_25 (
     .x_in(stage_1_per_out[50]),
     .y_in(stage_1_per_out[51]),
@@ -2595,8 +2441,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({204666342, 106542036, 28824907, 132703565,
-              170227406, 81956368, 74998629, 59208162}))
+    .factors({147699054, 262046585, 177255039, 193689173}))
   stage_2_butterfly_26 (
     .x_in(stage_1_per_out[52]),
     .y_in(stage_1_per_out[53]),
@@ -2608,8 +2453,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({204666342, 106542036, 28824907, 132703565,
-              170227406, 81956368, 74998629, 59208162}))
+    .factors({147699054, 262046585, 177255039, 193689173}))
   stage_2_butterfly_27 (
     .x_in(stage_1_per_out[54]),
     .y_in(stage_1_per_out[55]),
@@ -2621,8 +2465,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({26687688, 265574867, 139555205, 168407516,
-              10571783, 91452641, 150873005, 236144340}))
+    .factors({86517113, 103143177, 57801361, 162373432}))
   stage_2_butterfly_28 (
     .x_in(stage_1_per_out[56]),
     .y_in(stage_1_per_out[57]),
@@ -2634,8 +2477,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({26687688, 265574867, 139555205, 168407516,
-              10571783, 91452641, 150873005, 236144340}))
+    .factors({86517113, 103143177, 57801361, 162373432}))
   stage_2_butterfly_29 (
     .x_in(stage_1_per_out[58]),
     .y_in(stage_1_per_out[59]),
@@ -2647,8 +2489,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({26687688, 265574867, 139555205, 168407516,
-              10571783, 91452641, 150873005, 236144340}))
+    .factors({86517113, 103143177, 57801361, 162373432}))
   stage_2_butterfly_30 (
     .x_in(stage_1_per_out[60]),
     .y_in(stage_1_per_out[61]),
@@ -2660,8 +2501,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({26687688, 265574867, 139555205, 168407516,
-              10571783, 91452641, 150873005, 236144340}))
+    .factors({86517113, 103143177, 57801361, 162373432}))
   stage_2_butterfly_31 (
     .x_in(stage_1_per_out[62]),
     .y_in(stage_1_per_out[63]),
@@ -2673,8 +2513,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({229216409, 133503098, 199208174, 123954975,
-              181639510, 71064168, 85021501, 27244461}))
+    .factors({172642311, 75324254, 143450922, 149429971}))
   stage_2_butterfly_32 (
     .x_in(stage_1_per_out[64]),
     .y_in(stage_1_per_out[65]),
@@ -2686,8 +2525,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({229216409, 133503098, 199208174, 123954975,
-              181639510, 71064168, 85021501, 27244461}))
+    .factors({172642311, 75324254, 143450922, 149429971}))
   stage_2_butterfly_33 (
     .x_in(stage_1_per_out[66]),
     .y_in(stage_1_per_out[67]),
@@ -2699,8 +2537,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({229216409, 133503098, 199208174, 123954975,
-              181639510, 71064168, 85021501, 27244461}))
+    .factors({172642311, 75324254, 143450922, 149429971}))
   stage_2_butterfly_34 (
     .x_in(stage_1_per_out[68]),
     .y_in(stage_1_per_out[69]),
@@ -2712,8 +2549,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({229216409, 133503098, 199208174, 123954975,
-              181639510, 71064168, 85021501, 27244461}))
+    .factors({172642311, 75324254, 143450922, 149429971}))
   stage_2_butterfly_35 (
     .x_in(stage_1_per_out[70]),
     .y_in(stage_1_per_out[71]),
@@ -2725,8 +2561,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({160286792, 227283585, 180525688, 211668928,
-              216143425, 101483624, 161729483, 243304319}))
+    .factors({52673254, 17079898, 185598009, 62045777}))
   stage_2_butterfly_36 (
     .x_in(stage_1_per_out[72]),
     .y_in(stage_1_per_out[73]),
@@ -2738,8 +2573,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({160286792, 227283585, 180525688, 211668928,
-              216143425, 101483624, 161729483, 243304319}))
+    .factors({52673254, 17079898, 185598009, 62045777}))
   stage_2_butterfly_37 (
     .x_in(stage_1_per_out[74]),
     .y_in(stage_1_per_out[75]),
@@ -2751,8 +2585,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({160286792, 227283585, 180525688, 211668928,
-              216143425, 101483624, 161729483, 243304319}))
+    .factors({52673254, 17079898, 185598009, 62045777}))
   stage_2_butterfly_38 (
     .x_in(stage_1_per_out[76]),
     .y_in(stage_1_per_out[77]),
@@ -2764,8 +2597,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({160286792, 227283585, 180525688, 211668928,
-              216143425, 101483624, 161729483, 243304319}))
+    .factors({52673254, 17079898, 185598009, 62045777}))
   stage_2_butterfly_39 (
     .x_in(stage_1_per_out[78]),
     .y_in(stage_1_per_out[79]),
@@ -2777,8 +2609,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({204152715, 3883583, 255119583, 242800442,
-              119707826, 257268473, 234030247, 184516225}))
+    .factors({175792128, 202257393, 228776079, 152865265}))
   stage_2_butterfly_40 (
     .x_in(stage_1_per_out[80]),
     .y_in(stage_1_per_out[81]),
@@ -2790,8 +2621,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({204152715, 3883583, 255119583, 242800442,
-              119707826, 257268473, 234030247, 184516225}))
+    .factors({175792128, 202257393, 228776079, 152865265}))
   stage_2_butterfly_41 (
     .x_in(stage_1_per_out[82]),
     .y_in(stage_1_per_out[83]),
@@ -2803,8 +2633,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({204152715, 3883583, 255119583, 242800442,
-              119707826, 257268473, 234030247, 184516225}))
+    .factors({175792128, 202257393, 228776079, 152865265}))
   stage_2_butterfly_42 (
     .x_in(stage_1_per_out[84]),
     .y_in(stage_1_per_out[85]),
@@ -2816,8 +2645,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({204152715, 3883583, 255119583, 242800442,
-              119707826, 257268473, 234030247, 184516225}))
+    .factors({175792128, 202257393, 228776079, 152865265}))
   stage_2_butterfly_43 (
     .x_in(stage_1_per_out[86]),
     .y_in(stage_1_per_out[87]),
@@ -2829,8 +2657,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({66148505, 104784816, 22541719, 146361539,
-              39141691, 68136911, 227214070, 91898237}))
+    .factors({70582130, 25574347, 29274521, 175609590}))
   stage_2_butterfly_44 (
     .x_in(stage_1_per_out[88]),
     .y_in(stage_1_per_out[89]),
@@ -2842,8 +2669,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({66148505, 104784816, 22541719, 146361539,
-              39141691, 68136911, 227214070, 91898237}))
+    .factors({70582130, 25574347, 29274521, 175609590}))
   stage_2_butterfly_45 (
     .x_in(stage_1_per_out[90]),
     .y_in(stage_1_per_out[91]),
@@ -2855,8 +2681,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({66148505, 104784816, 22541719, 146361539,
-              39141691, 68136911, 227214070, 91898237}))
+    .factors({70582130, 25574347, 29274521, 175609590}))
   stage_2_butterfly_46 (
     .x_in(stage_1_per_out[92]),
     .y_in(stage_1_per_out[93]),
@@ -2868,8 +2693,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({66148505, 104784816, 22541719, 146361539,
-              39141691, 68136911, 227214070, 91898237}))
+    .factors({70582130, 25574347, 29274521, 175609590}))
   stage_2_butterfly_47 (
     .x_in(stage_1_per_out[94]),
     .y_in(stage_1_per_out[95]),
@@ -2881,8 +2705,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({15417588, 96142103, 196436059, 42733001,
-              166530134, 18729522, 9757140, 81777479}))
+    .factors({78462606, 115957373, 70982951, 191727270}))
   stage_2_butterfly_48 (
     .x_in(stage_1_per_out[96]),
     .y_in(stage_1_per_out[97]),
@@ -2894,8 +2717,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({15417588, 96142103, 196436059, 42733001,
-              166530134, 18729522, 9757140, 81777479}))
+    .factors({78462606, 115957373, 70982951, 191727270}))
   stage_2_butterfly_49 (
     .x_in(stage_1_per_out[98]),
     .y_in(stage_1_per_out[99]),
@@ -2907,8 +2729,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({15417588, 96142103, 196436059, 42733001,
-              166530134, 18729522, 9757140, 81777479}))
+    .factors({78462606, 115957373, 70982951, 191727270}))
   stage_2_butterfly_50 (
     .x_in(stage_1_per_out[100]),
     .y_in(stage_1_per_out[101]),
@@ -2920,8 +2741,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({15417588, 96142103, 196436059, 42733001,
-              166530134, 18729522, 9757140, 81777479}))
+    .factors({78462606, 115957373, 70982951, 191727270}))
   stage_2_butterfly_51 (
     .x_in(stage_1_per_out[102]),
     .y_in(stage_1_per_out[103]),
@@ -2933,8 +2753,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({47751177, 149528048, 84143174, 120936039,
-              256040960, 116401819, 59283803, 78488715}))
+    .factors({233560477, 4690923, 119224607, 227285679}))
   stage_2_butterfly_52 (
     .x_in(stage_1_per_out[104]),
     .y_in(stage_1_per_out[105]),
@@ -2946,8 +2765,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({47751177, 149528048, 84143174, 120936039,
-              256040960, 116401819, 59283803, 78488715}))
+    .factors({233560477, 4690923, 119224607, 227285679}))
   stage_2_butterfly_53 (
     .x_in(stage_1_per_out[106]),
     .y_in(stage_1_per_out[107]),
@@ -2959,8 +2777,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({47751177, 149528048, 84143174, 120936039,
-              256040960, 116401819, 59283803, 78488715}))
+    .factors({233560477, 4690923, 119224607, 227285679}))
   stage_2_butterfly_54 (
     .x_in(stage_1_per_out[108]),
     .y_in(stage_1_per_out[109]),
@@ -2972,8 +2789,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({47751177, 149528048, 84143174, 120936039,
-              256040960, 116401819, 59283803, 78488715}))
+    .factors({233560477, 4690923, 119224607, 227285679}))
   stage_2_butterfly_55 (
     .x_in(stage_1_per_out[110]),
     .y_in(stage_1_per_out[111]),
@@ -2985,8 +2801,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({13860432, 163812837, 143969713, 58071669,
-              27692847, 6576175, 173702965, 10130658}))
+    .factors({153962078, 47317233, 169276669, 67307067}))
   stage_2_butterfly_56 (
     .x_in(stage_1_per_out[112]),
     .y_in(stage_1_per_out[113]),
@@ -2998,8 +2813,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({13860432, 163812837, 143969713, 58071669,
-              27692847, 6576175, 173702965, 10130658}))
+    .factors({153962078, 47317233, 169276669, 67307067}))
   stage_2_butterfly_57 (
     .x_in(stage_1_per_out[114]),
     .y_in(stage_1_per_out[115]),
@@ -3011,8 +2825,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({13860432, 163812837, 143969713, 58071669,
-              27692847, 6576175, 173702965, 10130658}))
+    .factors({153962078, 47317233, 169276669, 67307067}))
   stage_2_butterfly_58 (
     .x_in(stage_1_per_out[116]),
     .y_in(stage_1_per_out[117]),
@@ -3024,8 +2837,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({13860432, 163812837, 143969713, 58071669,
-              27692847, 6576175, 173702965, 10130658}))
+    .factors({153962078, 47317233, 169276669, 67307067}))
   stage_2_butterfly_59 (
     .x_in(stage_1_per_out[118]),
     .y_in(stage_1_per_out[119]),
@@ -3037,8 +2849,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({212648666, 155168409, 37667151, 71295013,
-              2419351, 188210893, 90597117, 129187632}))
+    .factors({11695616, 240684902, 126821849, 138074788}))
   stage_2_butterfly_60 (
     .x_in(stage_1_per_out[120]),
     .y_in(stage_1_per_out[121]),
@@ -3050,8 +2861,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({212648666, 155168409, 37667151, 71295013,
-              2419351, 188210893, 90597117, 129187632}))
+    .factors({11695616, 240684902, 126821849, 138074788}))
   stage_2_butterfly_61 (
     .x_in(stage_1_per_out[122]),
     .y_in(stage_1_per_out[123]),
@@ -3063,8 +2873,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({212648666, 155168409, 37667151, 71295013,
-              2419351, 188210893, 90597117, 129187632}))
+    .factors({11695616, 240684902, 126821849, 138074788}))
   stage_2_butterfly_62 (
     .x_in(stage_1_per_out[124]),
     .y_in(stage_1_per_out[125]),
@@ -3076,8 +2885,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[2]),
-    .factors({212648666, 155168409, 37667151, 71295013,
-              2419351, 188210893, 90597117, 129187632}))
+    .factors({11695616, 240684902, 126821849, 138074788}))
   stage_2_butterfly_63 (
     .x_in(stage_1_per_out[126]),
     .y_in(stage_1_per_out[127]),
@@ -3361,8 +3169,7 @@ module NTT_Top #(
   // TODO(Tian): stage 3 32 butterfly units
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({120670867, 153962078, 103143177, 27685019,
-              111341228, 197386970, 145384235, 227285679}))
+    .factors({216372172, 229105823, 165790423, 99790517}))
   stage_3_butterfly_0 (
     .x_in(stage_2_per_out[0]),
     .y_in(stage_2_per_out[1]),
@@ -3374,8 +3181,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({120670867, 153962078, 103143177, 27685019,
-              111341228, 197386970, 145384235, 227285679}))
+    .factors({216372172, 229105823, 165790423, 99790517}))
   stage_3_butterfly_1 (
     .x_in(stage_2_per_out[2]),
     .y_in(stage_2_per_out[3]),
@@ -3387,8 +3193,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({120670867, 153962078, 103143177, 27685019,
-              111341228, 197386970, 145384235, 227285679}))
+    .factors({216372172, 229105823, 165790423, 99790517}))
   stage_3_butterfly_2 (
     .x_in(stage_2_per_out[4]),
     .y_in(stage_2_per_out[5]),
@@ -3400,8 +3205,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({120670867, 153962078, 103143177, 27685019,
-              111341228, 197386970, 145384235, 227285679}))
+    .factors({216372172, 229105823, 165790423, 99790517}))
   stage_3_butterfly_3 (
     .x_in(stage_2_per_out[6]),
     .y_in(stage_2_per_out[7]),
@@ -3413,8 +3217,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({120670867, 153962078, 103143177, 27685019,
-              111341228, 197386970, 145384235, 227285679}))
+    .factors({216372172, 229105823, 165790423, 99790517}))
   stage_3_butterfly_4 (
     .x_in(stage_2_per_out[8]),
     .y_in(stage_2_per_out[9]),
@@ -3426,8 +3229,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({120670867, 153962078, 103143177, 27685019,
-              111341228, 197386970, 145384235, 227285679}))
+    .factors({216372172, 229105823, 165790423, 99790517}))
   stage_3_butterfly_5 (
     .x_in(stage_2_per_out[10]),
     .y_in(stage_2_per_out[11]),
@@ -3439,8 +3241,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({120670867, 153962078, 103143177, 27685019,
-              111341228, 197386970, 145384235, 227285679}))
+    .factors({216372172, 229105823, 165790423, 99790517}))
   stage_3_butterfly_6 (
     .x_in(stage_2_per_out[12]),
     .y_in(stage_2_per_out[13]),
@@ -3452,8 +3253,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({120670867, 153962078, 103143177, 27685019,
-              111341228, 197386970, 145384235, 227285679}))
+    .factors({216372172, 229105823, 165790423, 99790517}))
   stage_3_butterfly_7 (
     .x_in(stage_2_per_out[14]),
     .y_in(stage_2_per_out[15]),
@@ -3465,8 +3265,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({181852808, 11695616, 6323336, 47317233,
-              30748955, 149145314, 155896930, 76642651}))
+    .factors({221840088, 234642902, 148889498, 249836082}))
   stage_3_butterfly_8 (
     .x_in(stage_2_per_out[16]),
     .y_in(stage_2_per_out[17]),
@@ -3478,8 +3277,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({181852808, 11695616, 6323336, 47317233,
-              30748955, 149145314, 155896930, 76642651}))
+    .factors({221840088, 234642902, 148889498, 249836082}))
   stage_3_butterfly_9 (
     .x_in(stage_2_per_out[18]),
     .y_in(stage_2_per_out[19]),
@@ -3491,8 +3289,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({181852808, 11695616, 6323336, 47317233,
-              30748955, 149145314, 155896930, 76642651}))
+    .factors({221840088, 234642902, 148889498, 249836082}))
   stage_3_butterfly_10 (
     .x_in(stage_2_per_out[20]),
     .y_in(stage_2_per_out[21]),
@@ -3504,8 +3301,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({181852808, 11695616, 6323336, 47317233,
-              30748955, 149145314, 155896930, 76642651}))
+    .factors({221840088, 234642902, 148889498, 249836082}))
   stage_3_butterfly_11 (
     .x_in(stage_2_per_out[22]),
     .y_in(stage_2_per_out[23]),
@@ -3517,8 +3313,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({181852808, 11695616, 6323336, 47317233,
-              30748955, 149145314, 155896930, 76642651}))
+    .factors({221840088, 234642902, 148889498, 249836082}))
   stage_3_butterfly_12 (
     .x_in(stage_2_per_out[24]),
     .y_in(stage_2_per_out[25]),
@@ -3530,8 +3325,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({181852808, 11695616, 6323336, 47317233,
-              30748955, 149145314, 155896930, 76642651}))
+    .factors({221840088, 234642902, 148889498, 249836082}))
   stage_3_butterfly_13 (
     .x_in(stage_2_per_out[26]),
     .y_in(stage_2_per_out[27]),
@@ -3543,8 +3337,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({181852808, 11695616, 6323336, 47317233,
-              30748955, 149145314, 155896930, 76642651}))
+    .factors({221840088, 234642902, 148889498, 249836082}))
   stage_3_butterfly_14 (
     .x_in(stage_2_per_out[28]),
     .y_in(stage_2_per_out[29]),
@@ -3556,8 +3349,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({181852808, 11695616, 6323336, 47317233,
-              30748955, 149145314, 155896930, 76642651}))
+    .factors({221840088, 234642902, 148889498, 249836082}))
   stage_3_butterfly_15 (
     .x_in(stage_2_per_out[30]),
     .y_in(stage_2_per_out[31]),
@@ -3569,8 +3361,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({66003795, 233560477, 179817683, 115957373,
-              177255039, 99093252, 105996489, 138074788}))
+    .factors({36955649, 11699091, 129001811, 73825164}))
   stage_3_butterfly_16 (
     .x_in(stage_2_per_out[32]),
     .y_in(stage_2_per_out[33]),
@@ -3582,8 +3373,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({66003795, 233560477, 179817683, 115957373,
-              177255039, 99093252, 105996489, 138074788}))
+    .factors({36955649, 11699091, 129001811, 73825164}))
   stage_3_butterfly_17 (
     .x_in(stage_2_per_out[34]),
     .y_in(stage_2_per_out[35]),
@@ -3595,8 +3385,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({66003795, 233560477, 179817683, 115957373,
-              177255039, 99093252, 105996489, 138074788}))
+    .factors({36955649, 11699091, 129001811, 73825164}))
   stage_3_butterfly_18 (
     .x_in(stage_2_per_out[36]),
     .y_in(stage_2_per_out[37]),
@@ -3608,8 +3397,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({66003795, 233560477, 179817683, 115957373,
-              177255039, 99093252, 105996489, 138074788}))
+    .factors({36955649, 11699091, 129001811, 73825164}))
   stage_3_butterfly_19 (
     .x_in(stage_2_per_out[38]),
     .y_in(stage_2_per_out[39]),
@@ -3621,8 +3409,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({66003795, 233560477, 179817683, 115957373,
-              177255039, 99093252, 105996489, 138074788}))
+    .factors({36955649, 11699091, 129001811, 73825164}))
   stage_3_butterfly_20 (
     .x_in(stage_2_per_out[40]),
     .y_in(stage_2_per_out[41]),
@@ -3634,8 +3421,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({66003795, 233560477, 179817683, 115957373,
-              177255039, 99093252, 105996489, 138074788}))
+    .factors({36955649, 11699091, 129001811, 73825164}))
   stage_3_butterfly_21 (
     .x_in(stage_2_per_out[42]),
     .y_in(stage_2_per_out[43]),
@@ -3647,8 +3433,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({66003795, 233560477, 179817683, 115957373,
-              177255039, 99093252, 105996489, 138074788}))
+    .factors({36955649, 11699091, 129001811, 73825164}))
   stage_3_butterfly_22 (
     .x_in(stage_2_per_out[44]),
     .y_in(stage_2_per_out[45]),
@@ -3660,8 +3445,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({66003795, 233560477, 179817683, 115957373,
-              177255039, 99093252, 105996489, 138074788}))
+    .factors({36955649, 11699091, 129001811, 73825164}))
   stage_3_butterfly_23 (
     .x_in(stage_2_per_out[46]),
     .y_in(stage_2_per_out[47]),
@@ -3673,8 +3457,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({146694818, 189907315, 109553202, 4690923,
-              57801361, 141548072, 193689173, 201062854}))
+    .factors({94135184, 143639106, 196308904, 72052889}))
   stage_3_butterfly_24 (
     .x_in(stage_2_per_out[48]),
     .y_in(stage_2_per_out[49]),
@@ -3686,8 +3469,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({146694818, 189907315, 109553202, 4690923,
-              57801361, 141548072, 193689173, 201062854}))
+    .factors({94135184, 143639106, 196308904, 72052889}))
   stage_3_butterfly_25 (
     .x_in(stage_2_per_out[50]),
     .y_in(stage_2_per_out[51]),
@@ -3699,8 +3481,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({146694818, 189907315, 109553202, 4690923,
-              57801361, 141548072, 193689173, 201062854}))
+    .factors({94135184, 143639106, 196308904, 72052889}))
   stage_3_butterfly_26 (
     .x_in(stage_2_per_out[52]),
     .y_in(stage_2_per_out[53]),
@@ -3712,8 +3493,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({146694818, 189907315, 109553202, 4690923,
-              57801361, 141548072, 193689173, 201062854}))
+    .factors({94135184, 143639106, 196308904, 72052889}))
   stage_3_butterfly_27 (
     .x_in(stage_2_per_out[54]),
     .y_in(stage_2_per_out[55]),
@@ -3725,8 +3505,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({146694818, 189907315, 109553202, 4690923,
-              57801361, 141548072, 193689173, 201062854}))
+    .factors({94135184, 143639106, 196308904, 72052889}))
   stage_3_butterfly_28 (
     .x_in(stage_2_per_out[56]),
     .y_in(stage_2_per_out[57]),
@@ -3738,8 +3517,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({146694818, 189907315, 109553202, 4690923,
-              57801361, 141548072, 193689173, 201062854}))
+    .factors({94135184, 143639106, 196308904, 72052889}))
   stage_3_butterfly_29 (
     .x_in(stage_2_per_out[58]),
     .y_in(stage_2_per_out[59]),
@@ -3751,8 +3529,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({146694818, 189907315, 109553202, 4690923,
-              57801361, 141548072, 193689173, 201062854}))
+    .factors({94135184, 143639106, 196308904, 72052889}))
   stage_3_butterfly_30 (
     .x_in(stage_2_per_out[60]),
     .y_in(stage_2_per_out[61]),
@@ -3764,8 +3541,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({146694818, 189907315, 109553202, 4690923,
-              57801361, 141548072, 193689173, 201062854}))
+    .factors({94135184, 143639106, 196308904, 72052889}))
   stage_3_butterfly_31 (
     .x_in(stage_2_per_out[62]),
     .y_in(stage_2_per_out[63]),
@@ -3777,8 +3553,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({78852289, 52673254, 140204941, 75324254,
-              59966873, 39593842, 168270865, 175609590}))
+    .factors({160020761, 19095174, 265190919, 47877183}))
   stage_3_butterfly_32 (
     .x_in(stage_2_per_out[64]),
     .y_in(stage_2_per_out[65]),
@@ -3790,8 +3565,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({78852289, 52673254, 140204941, 75324254,
-              59966873, 39593842, 168270865, 175609590}))
+    .factors({160020761, 19095174, 265190919, 47877183}))
   stage_3_butterfly_33 (
     .x_in(stage_2_per_out[66]),
     .y_in(stage_2_per_out[67]),
@@ -3803,8 +3577,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({78852289, 52673254, 140204941, 75324254,
-              59966873, 39593842, 168270865, 175609590}))
+    .factors({160020761, 19095174, 265190919, 47877183}))
   stage_3_butterfly_34 (
     .x_in(stage_2_per_out[68]),
     .y_in(stage_2_per_out[69]),
@@ -3816,8 +3589,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({78852289, 52673254, 140204941, 75324254,
-              59966873, 39593842, 168270865, 175609590}))
+    .factors({160020761, 19095174, 265190919, 47877183}))
   stage_3_butterfly_35 (
     .x_in(stage_2_per_out[70]),
     .y_in(stage_2_per_out[71]),
@@ -3829,8 +3601,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({78852289, 52673254, 140204941, 75324254,
-              59966873, 39593842, 168270865, 175609590}))
+    .factors({160020761, 19095174, 265190919, 47877183}))
   stage_3_butterfly_36 (
     .x_in(stage_2_per_out[72]),
     .y_in(stage_2_per_out[73]),
@@ -3842,8 +3613,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({78852289, 52673254, 140204941, 75324254,
-              59966873, 39593842, 168270865, 175609590}))
+    .factors({160020761, 19095174, 265190919, 47877183}))
   stage_3_butterfly_37 (
     .x_in(stage_2_per_out[74]),
     .y_in(stage_2_per_out[75]),
@@ -3855,8 +3625,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({78852289, 52673254, 140204941, 75324254,
-              59966873, 39593842, 168270865, 175609590}))
+    .factors({160020761, 19095174, 265190919, 47877183}))
   stage_3_butterfly_38 (
     .x_in(stage_2_per_out[76]),
     .y_in(stage_2_per_out[77]),
@@ -3868,8 +3637,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({78852289, 52673254, 140204941, 75324254,
-              59966873, 39593842, 168270865, 175609590}))
+    .factors({160020761, 19095174, 265190919, 47877183}))
   stage_3_butterfly_39 (
     .x_in(stage_2_per_out[78]),
     .y_in(stage_2_per_out[79]),
@@ -3881,8 +3649,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({49823188, 95727610, 97617150, 17079898,
-              109254766, 239095400, 71471012, 115504656}))
+    .factors({183300662, 62061822, 165596304, 83571649}))
   stage_3_butterfly_40 (
     .x_in(stage_2_per_out[80]),
     .y_in(stage_2_per_out[81]),
@@ -3894,8 +3661,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({49823188, 95727610, 97617150, 17079898,
-              109254766, 239095400, 71471012, 115504656}))
+    .factors({183300662, 62061822, 165596304, 83571649}))
   stage_3_butterfly_41 (
     .x_in(stage_2_per_out[82]),
     .y_in(stage_2_per_out[83]),
@@ -3907,8 +3673,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({49823188, 95727610, 97617150, 17079898,
-              109254766, 239095400, 71471012, 115504656}))
+    .factors({183300662, 62061822, 165596304, 83571649}))
   stage_3_butterfly_42 (
     .x_in(stage_2_per_out[84]),
     .y_in(stage_2_per_out[85]),
@@ -3920,8 +3685,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({49823188, 95727610, 97617150, 17079898,
-              109254766, 239095400, 71471012, 115504656}))
+    .factors({183300662, 62061822, 165596304, 83571649}))
   stage_3_butterfly_43 (
     .x_in(stage_2_per_out[86]),
     .y_in(stage_2_per_out[87]),
@@ -3933,8 +3697,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({49823188, 95727610, 97617150, 17079898,
-              109254766, 239095400, 71471012, 115504656}))
+    .factors({183300662, 62061822, 165596304, 83571649}))
   stage_3_butterfly_44 (
     .x_in(stage_2_per_out[88]),
     .y_in(stage_2_per_out[89]),
@@ -3946,8 +3709,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({49823188, 95727610, 97617150, 17079898,
-              109254766, 239095400, 71471012, 115504656}))
+    .factors({183300662, 62061822, 165596304, 83571649}))
   stage_3_butterfly_45 (
     .x_in(stage_2_per_out[90]),
     .y_in(stage_2_per_out[91]),
@@ -3959,8 +3721,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({49823188, 95727610, 97617150, 17079898,
-              109254766, 239095400, 71471012, 115504656}))
+    .factors({183300662, 62061822, 165596304, 83571649}))
   stage_3_butterfly_46 (
     .x_in(stage_2_per_out[92]),
     .y_in(stage_2_per_out[93]),
@@ -3972,8 +3733,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({49823188, 95727610, 97617150, 17079898,
-              109254766, 239095400, 71471012, 115504656}))
+    .factors({183300662, 62061822, 165596304, 83571649}))
   stage_3_butterfly_47 (
     .x_in(stage_2_per_out[94]),
     .y_in(stage_2_per_out[95]),
@@ -3985,8 +3745,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({71460019, 70582130, 68315815, 202257393,
-              102065274, 82771912, 235204060, 118939950}))
+    .factors({47713731, 233080466, 84893967, 92744225}))
   stage_3_butterfly_48 (
     .x_in(stage_2_per_out[96]),
     .y_in(stage_2_per_out[97]),
@@ -3998,8 +3757,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({71460019, 70582130, 68315815, 202257393,
-              102065274, 82771912, 235204060, 118939950}))
+    .factors({47713731, 233080466, 84893967, 92744225}))
   stage_3_butterfly_49 (
     .x_in(stage_2_per_out[98]),
     .y_in(stage_2_per_out[99]),
@@ -4011,8 +3769,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({71460019, 70582130, 68315815, 202257393,
-              102065274, 82771912, 235204060, 118939950}))
+    .factors({47713731, 233080466, 84893967, 92744225}))
   stage_3_butterfly_50 (
     .x_in(stage_2_per_out[100]),
     .y_in(stage_2_per_out[101]),
@@ -4024,8 +3781,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({71460019, 70582130, 68315815, 202257393,
-              102065274, 82771912, 235204060, 118939950}))
+    .factors({47713731, 233080466, 84893967, 92744225}))
   stage_3_butterfly_51 (
     .x_in(stage_2_per_out[102]),
     .y_in(stage_2_per_out[103]),
@@ -4037,8 +3793,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({71460019, 70582130, 68315815, 202257393,
-              102065274, 82771912, 235204060, 118939950}))
+    .factors({47713731, 233080466, 84893967, 92744225}))
   stage_3_butterfly_52 (
     .x_in(stage_2_per_out[104]),
     .y_in(stage_2_per_out[105]),
@@ -4050,8 +3805,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({71460019, 70582130, 68315815, 202257393,
-              102065274, 82771912, 235204060, 118939950}))
+    .factors({47713731, 233080466, 84893967, 92744225}))
   stage_3_butterfly_53 (
     .x_in(stage_2_per_out[106]),
     .y_in(stage_2_per_out[107]),
@@ -4063,8 +3817,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({71460019, 70582130, 68315815, 202257393,
-              102065274, 82771912, 235204060, 118939950}))
+    .factors({47713731, 233080466, 84893967, 92744225}))
   stage_3_butterfly_54 (
     .x_in(stage_2_per_out[108]),
     .y_in(stage_2_per_out[109]),
@@ -4076,8 +3829,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({71460019, 70582130, 68315815, 202257393,
-              102065274, 82771912, 235204060, 118939950}))
+    .factors({47713731, 233080466, 84893967, 92744225}))
   stage_3_butterfly_55 (
     .x_in(stage_2_per_out[110]),
     .y_in(stage_2_per_out[111]),
@@ -4089,8 +3841,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({40758458, 92577793, 76707105, 25574347,
-              157085730, 143450922, 131798756, 206324144}))
+    .factors({178374402, 191796824, 210831626, 5258704}))
   stage_3_butterfly_56 (
     .x_in(stage_2_per_out[112]),
     .y_in(stage_2_per_out[113]),
@@ -4102,8 +3853,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({40758458, 92577793, 76707105, 25574347,
-              157085730, 143450922, 131798756, 206324144}))
+    .factors({178374402, 191796824, 210831626, 5258704}))
   stage_3_butterfly_57 (
     .x_in(stage_2_per_out[114]),
     .y_in(stage_2_per_out[115]),
@@ -4115,8 +3865,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({40758458, 92577793, 76707105, 25574347,
-              157085730, 143450922, 131798756, 206324144}))
+    .factors({178374402, 191796824, 210831626, 5258704}))
   stage_3_butterfly_58 (
     .x_in(stage_2_per_out[116]),
     .y_in(stage_2_per_out[117]),
@@ -4128,8 +3877,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({40758458, 92577793, 76707105, 25574347,
-              157085730, 143450922, 131798756, 206324144}))
+    .factors({178374402, 191796824, 210831626, 5258704}))
   stage_3_butterfly_59 (
     .x_in(stage_2_per_out[118]),
     .y_in(stage_2_per_out[119]),
@@ -4141,8 +3889,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({40758458, 92577793, 76707105, 25574347,
-              157085730, 143450922, 131798756, 206324144}))
+    .factors({178374402, 191796824, 210831626, 5258704}))
   stage_3_butterfly_60 (
     .x_in(stage_2_per_out[120]),
     .y_in(stage_2_per_out[121]),
@@ -4154,8 +3901,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({40758458, 92577793, 76707105, 25574347,
-              157085730, 143450922, 131798756, 206324144}))
+    .factors({178374402, 191796824, 210831626, 5258704}))
   stage_3_butterfly_61 (
     .x_in(stage_2_per_out[122]),
     .y_in(stage_2_per_out[123]),
@@ -4167,8 +3913,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({40758458, 92577793, 76707105, 25574347,
-              157085730, 143450922, 131798756, 206324144}))
+    .factors({178374402, 191796824, 210831626, 5258704}))
   stage_3_butterfly_62 (
     .x_in(stage_2_per_out[124]),
     .y_in(stage_2_per_out[125]),
@@ -4180,8 +3925,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[3]),
-    .factors({40758458, 92577793, 76707105, 25574347,
-              157085730, 143450922, 131798756, 206324144}))
+    .factors({178374402, 191796824, 210831626, 5258704}))
   stage_3_butterfly_63 (
     .x_in(stage_2_per_out[126]),
     .y_in(stage_2_per_out[127]),
@@ -4463,8 +4207,7 @@ module NTT_Top #(
   // TODO(Tian): stage 4 32 butterfly units
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_0 (
     .x_in(stage_3_per_out[0]),
     .y_in(stage_3_per_out[1]),
@@ -4476,8 +4219,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_1 (
     .x_in(stage_3_per_out[2]),
     .y_in(stage_3_per_out[3]),
@@ -4489,8 +4231,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_2 (
     .x_in(stage_3_per_out[4]),
     .y_in(stage_3_per_out[5]),
@@ -4502,8 +4243,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_3 (
     .x_in(stage_3_per_out[6]),
     .y_in(stage_3_per_out[7]),
@@ -4515,8 +4255,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_4 (
     .x_in(stage_3_per_out[8]),
     .y_in(stage_3_per_out[9]),
@@ -4528,8 +4267,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_5 (
     .x_in(stage_3_per_out[10]),
     .y_in(stage_3_per_out[11]),
@@ -4541,8 +4279,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_6 (
     .x_in(stage_3_per_out[12]),
     .y_in(stage_3_per_out[13]),
@@ -4554,8 +4291,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_7 (
     .x_in(stage_3_per_out[14]),
     .y_in(stage_3_per_out[15]),
@@ -4567,8 +4303,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_8 (
     .x_in(stage_3_per_out[16]),
     .y_in(stage_3_per_out[17]),
@@ -4580,8 +4315,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_9 (
     .x_in(stage_3_per_out[18]),
     .y_in(stage_3_per_out[19]),
@@ -4593,8 +4327,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_10 (
     .x_in(stage_3_per_out[20]),
     .y_in(stage_3_per_out[21]),
@@ -4606,8 +4339,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_11 (
     .x_in(stage_3_per_out[22]),
     .y_in(stage_3_per_out[23]),
@@ -4619,8 +4351,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_12 (
     .x_in(stage_3_per_out[24]),
     .y_in(stage_3_per_out[25]),
@@ -4632,8 +4363,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_13 (
     .x_in(stage_3_per_out[26]),
     .y_in(stage_3_per_out[27]),
@@ -4645,8 +4375,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_14 (
     .x_in(stage_3_per_out[28]),
     .y_in(stage_3_per_out[29]),
@@ -4658,8 +4387,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({94135184, 178374402, 124730815, 76573097,
-              129001811, 84893967, 194544757, 175625696}))
+    .factors({135333989, 131414476, 142393906, 112745081}))
   stage_4_butterfly_15 (
     .x_in(stage_3_per_out[30]),
     .y_in(stage_3_per_out[31]),
@@ -4671,8 +4399,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_16 (
     .x_in(stage_3_per_out[32]),
     .y_in(stage_3_per_out[33]),
@@ -4684,8 +4411,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_17 (
     .x_in(stage_3_per_out[34]),
     .y_in(stage_3_per_out[35]),
@@ -4697,8 +4423,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_18 (
     .x_in(stage_3_per_out[36]),
     .y_in(stage_3_per_out[37]),
@@ -4710,8 +4435,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_19 (
     .x_in(stage_3_per_out[38]),
     .y_in(stage_3_per_out[39]),
@@ -4723,8 +4447,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_20 (
     .x_in(stage_3_per_out[40]),
     .y_in(stage_3_per_out[41]),
@@ -4736,8 +4459,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_21 (
     .x_in(stage_3_per_out[42]),
     .y_in(stage_3_per_out[43]),
@@ -4749,8 +4471,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_22 (
     .x_in(stage_3_per_out[44]),
     .y_in(stage_3_per_out[45]),
@@ -4762,8 +4483,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_23 (
     .x_in(stage_3_per_out[46]),
     .y_in(stage_3_per_out[47]),
@@ -4775,8 +4495,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_24 (
     .x_in(stage_3_per_out[48]),
     .y_in(stage_3_per_out[49]),
@@ -4788,8 +4507,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_25 (
     .x_in(stage_3_per_out[50]),
     .y_in(stage_3_per_out[51]),
@@ -4801,8 +4519,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_26 (
     .x_in(stage_3_per_out[52]),
     .y_in(stage_3_per_out[53]),
@@ -4814,8 +4531,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_27 (
     .x_in(stage_3_per_out[54]),
     .y_in(stage_3_per_out[55]),
@@ -4827,8 +4543,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_28 (
     .x_in(stage_3_per_out[56]),
     .y_in(stage_3_per_out[57]),
@@ -4840,8 +4555,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_29 (
     .x_in(stage_3_per_out[58]),
     .y_in(stage_3_per_out[59]),
@@ -4853,8 +4567,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_30 (
     .x_in(stage_3_per_out[60]),
     .y_in(stage_3_per_out[61]),
@@ -4866,8 +4579,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({231414272, 220656190, 11699091, 233080466,
-              196308904, 210831626, 196317032, 263111217}))
+    .factors({225387856, 70516281, 69075086, 260567810}))
   stage_4_butterfly_31 (
     .x_in(stage_3_per_out[62]),
     .y_in(stage_3_per_out[63]),
@@ -4879,8 +4591,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_32 (
     .x_in(stage_3_per_out[64]),
     .y_in(stage_3_per_out[65]),
@@ -4892,8 +4603,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_33 (
     .x_in(stage_3_per_out[66]),
     .y_in(stage_3_per_out[67]),
@@ -4905,8 +4615,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_34 (
     .x_in(stage_3_per_out[68]),
     .y_in(stage_3_per_out[69]),
@@ -4918,8 +4627,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_35 (
     .x_in(stage_3_per_out[70]),
     .y_in(stage_3_per_out[71]),
@@ -4931,8 +4639,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_36 (
     .x_in(stage_3_per_out[72]),
     .y_in(stage_3_per_out[73]),
@@ -4944,8 +4651,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_37 (
     .x_in(stage_3_per_out[74]),
     .y_in(stage_3_per_out[75]),
@@ -4957,8 +4663,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_38 (
     .x_in(stage_3_per_out[76]),
     .y_in(stage_3_per_out[77]),
@@ -4970,8 +4675,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_39 (
     .x_in(stage_3_per_out[78]),
     .y_in(stage_3_per_out[79]),
@@ -4983,8 +4687,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_40 (
     .x_in(stage_3_per_out[80]),
     .y_in(stage_3_per_out[81]),
@@ -4996,8 +4699,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_41 (
     .x_in(stage_3_per_out[82]),
     .y_in(stage_3_per_out[83]),
@@ -5009,8 +4711,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_42 (
     .x_in(stage_3_per_out[84]),
     .y_in(stage_3_per_out[85]),
@@ -5022,8 +4723,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_43 (
     .x_in(stage_3_per_out[86]),
     .y_in(stage_3_per_out[87]),
@@ -5035,8 +4735,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_44 (
     .x_in(stage_3_per_out[88]),
     .y_in(stage_3_per_out[89]),
@@ -5048,8 +4747,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_45 (
     .x_in(stage_3_per_out[90]),
     .y_in(stage_3_per_out[91]),
@@ -5061,8 +4759,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_46 (
     .x_in(stage_3_per_out[92]),
     .y_in(stage_3_per_out[93]),
@@ -5074,8 +4771,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({51997749, 108349160, 229105823, 19095174,
-              148889498, 165596304, 18533839, 184798272}))
+    .factors({194721725, 46265048, 47600907, 134587162}))
   stage_4_butterfly_47 (
     .x_in(stage_3_per_out[94]),
     .y_in(stage_3_per_out[95]),
@@ -5087,8 +4783,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_48 (
     .x_in(stage_3_per_out[96]),
     .y_in(stage_3_per_out[97]),
@@ -5100,8 +4795,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_49 (
     .x_in(stage_3_per_out[98]),
     .y_in(stage_3_per_out[99]),
@@ -5113,8 +4807,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_50 (
     .x_in(stage_3_per_out[100]),
     .y_in(stage_3_per_out[101]),
@@ -5126,8 +4819,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_51 (
     .x_in(stage_3_per_out[102]),
     .y_in(stage_3_per_out[103]),
@@ -5139,8 +4831,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_52 (
     .x_in(stage_3_per_out[104]),
     .y_in(stage_3_per_out[105]),
@@ -5152,8 +4843,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_53 (
     .x_in(stage_3_per_out[106]),
     .y_in(stage_3_per_out[107]),
@@ -5165,8 +4855,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_54 (
     .x_in(stage_3_per_out[108]),
     .y_in(stage_3_per_out[109]),
@@ -5178,8 +4867,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_55 (
     .x_in(stage_3_per_out[110]),
     .y_in(stage_3_per_out[111]),
@@ -5191,8 +4879,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_56 (
     .x_in(stage_3_per_out[112]),
     .y_in(stage_3_per_out[113]),
@@ -5204,8 +4891,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_57 (
     .x_in(stage_3_per_out[114]),
     .y_in(stage_3_per_out[115]),
@@ -5217,8 +4903,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_58 (
     .x_in(stage_3_per_out[116]),
     .y_in(stage_3_per_out[117]),
@@ -5230,8 +4915,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_59 (
     .x_in(stage_3_per_out[118]),
     .y_in(stage_3_per_out[119]),
@@ -5243,8 +4927,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_60 (
     .x_in(stage_3_per_out[120]),
     .y_in(stage_3_per_out[121]),
@@ -5256,8 +4939,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_61 (
     .x_in(stage_3_per_out[122]),
     .y_in(stage_3_per_out[123]),
@@ -5269,8 +4951,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_62 (
     .x_in(stage_3_per_out[124]),
     .y_in(stage_3_per_out[125]),
@@ -5282,8 +4963,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[4]),
-    .factors({46529833, 85069259, 234642902, 62061822,
-              102579498, 3179002, 99790517, 47877183}))
+    .factors({105312654, 242569099, 234985940, 210749829}))
   stage_4_butterfly_63 (
     .x_in(stage_3_per_out[126]),
     .y_in(stage_3_per_out[127]),
@@ -5292,6 +4972,8 @@ module NTT_Top #(
     .clk(clk),
     .rst(rst)
   );
+
+
 
 
 
@@ -5565,8 +5247,7 @@ module NTT_Top #(
   // TODO(Tian): stage 5 32 butterfly units
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_0 (
     .x_in(stage_4_per_out[0]),
     .y_in(stage_4_per_out[1]),
@@ -5578,8 +5259,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_1 (
     .x_in(stage_4_per_out[2]),
     .y_in(stage_4_per_out[3]),
@@ -5591,8 +5271,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_2 (
     .x_in(stage_4_per_out[4]),
     .y_in(stage_4_per_out[5]),
@@ -5604,8 +5283,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_3 (
     .x_in(stage_4_per_out[6]),
     .y_in(stage_4_per_out[7]),
@@ -5617,8 +5295,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_4 (
     .x_in(stage_4_per_out[8]),
     .y_in(stage_4_per_out[9]),
@@ -5630,8 +5307,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_5 (
     .x_in(stage_4_per_out[10]),
     .y_in(stage_4_per_out[11]),
@@ -5643,8 +5319,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_6 (
     .x_in(stage_4_per_out[12]),
     .y_in(stage_4_per_out[13]),
@@ -5656,8 +5331,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_7 (
     .x_in(stage_4_per_out[14]),
     .y_in(stage_4_per_out[15]),
@@ -5669,8 +5343,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_8 (
     .x_in(stage_4_per_out[16]),
     .y_in(stage_4_per_out[17]),
@@ -5682,8 +5355,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_9 (
     .x_in(stage_4_per_out[18]),
     .y_in(stage_4_per_out[19]),
@@ -5695,8 +5367,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_10 (
     .x_in(stage_4_per_out[20]),
     .y_in(stage_4_per_out[21]),
@@ -5708,8 +5379,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_11 (
     .x_in(stage_4_per_out[22]),
     .y_in(stage_4_per_out[23]),
@@ -5721,8 +5391,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_12 (
     .x_in(stage_4_per_out[24]),
     .y_in(stage_4_per_out[25]),
@@ -5734,8 +5403,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_13 (
     .x_in(stage_4_per_out[26]),
     .y_in(stage_4_per_out[27]),
@@ -5747,8 +5415,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_14 (
     .x_in(stage_4_per_out[28]),
     .y_in(stage_4_per_out[29]),
@@ -5760,8 +5427,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_15 (
     .x_in(stage_4_per_out[30]),
     .y_in(stage_4_per_out[31]),
@@ -5773,8 +5439,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_16 (
     .x_in(stage_4_per_out[32]),
     .y_in(stage_4_per_out[33]),
@@ -5786,8 +5451,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_17 (
     .x_in(stage_4_per_out[34]),
     .y_in(stage_4_per_out[35]),
@@ -5799,8 +5463,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_18 (
     .x_in(stage_4_per_out[36]),
     .y_in(stage_4_per_out[37]),
@@ -5812,8 +5475,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_19 (
     .x_in(stage_4_per_out[38]),
     .y_in(stage_4_per_out[39]),
@@ -5825,8 +5487,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_20 (
     .x_in(stage_4_per_out[40]),
     .y_in(stage_4_per_out[41]),
@@ -5838,8 +5499,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_21 (
     .x_in(stage_4_per_out[42]),
     .y_in(stage_4_per_out[43]),
@@ -5851,8 +5511,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_22 (
     .x_in(stage_4_per_out[44]),
     .y_in(stage_4_per_out[45]),
@@ -5864,8 +5523,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_23 (
     .x_in(stage_4_per_out[46]),
     .y_in(stage_4_per_out[47]),
@@ -5877,8 +5535,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_24 (
     .x_in(stage_4_per_out[48]),
     .y_in(stage_4_per_out[49]),
@@ -5890,8 +5547,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_25 (
     .x_in(stage_4_per_out[50]),
     .y_in(stage_4_per_out[51]),
@@ -5903,8 +5559,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_26 (
     .x_in(stage_4_per_out[52]),
     .y_in(stage_4_per_out[53]),
@@ -5916,8 +5571,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_27 (
     .x_in(stage_4_per_out[54]),
     .y_in(stage_4_per_out[55]),
@@ -5929,8 +5583,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_28 (
     .x_in(stage_4_per_out[56]),
     .y_in(stage_4_per_out[57]),
@@ -5942,8 +5595,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_29 (
     .x_in(stage_4_per_out[58]),
     .y_in(stage_4_per_out[59]),
@@ -5955,8 +5607,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_30 (
     .x_in(stage_4_per_out[60]),
     .y_in(stage_4_per_out[61]),
@@ -5968,8 +5619,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({42982065, 163057267, 197853640, 25800822,
-              69075086, 234985940, 260567810, 210749829}))
+    .factors({87759933, 137531660, 105446074, 71274504}))
   stage_5_butterfly_31 (
     .x_in(stage_4_per_out[62]),
     .y_in(stage_4_per_out[63]),
@@ -5981,8 +5631,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_32 (
     .x_in(stage_4_per_out[64]),
     .y_in(stage_4_per_out[65]),
@@ -5994,8 +5643,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_33 (
     .x_in(stage_4_per_out[66]),
     .y_in(stage_4_per_out[67]),
@@ -6007,8 +5655,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_34 (
     .x_in(stage_4_per_out[68]),
     .y_in(stage_4_per_out[69]),
@@ -6020,8 +5667,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_35 (
     .x_in(stage_4_per_out[70]),
     .y_in(stage_4_per_out[71]),
@@ -6033,8 +5679,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_36 (
     .x_in(stage_4_per_out[72]),
     .y_in(stage_4_per_out[73]),
@@ -6046,8 +5691,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_37 (
     .x_in(stage_4_per_out[74]),
     .y_in(stage_4_per_out[75]),
@@ -6059,8 +5703,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_38 (
     .x_in(stage_4_per_out[76]),
     .y_in(stage_4_per_out[77]),
@@ -6072,8 +5715,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_39 (
     .x_in(stage_4_per_out[78]),
     .y_in(stage_4_per_out[79]),
@@ -6085,8 +5727,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_40 (
     .x_in(stage_4_per_out[80]),
     .y_in(stage_4_per_out[81]),
@@ -6098,8 +5739,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_41 (
     .x_in(stage_4_per_out[82]),
     .y_in(stage_4_per_out[83]),
@@ -6111,8 +5751,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_42 (
     .x_in(stage_4_per_out[84]),
     .y_in(stage_4_per_out[85]),
@@ -6124,8 +5763,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_43 (
     .x_in(stage_4_per_out[86]),
     .y_in(stage_4_per_out[87]),
@@ -6137,8 +5775,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_44 (
     .x_in(stage_4_per_out[88]),
     .y_in(stage_4_per_out[89]),
@@ -6150,8 +5787,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_45 (
     .x_in(stage_4_per_out[90]),
     .y_in(stage_4_per_out[91]),
@@ -6163,8 +5799,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_46 (
     .x_in(stage_4_per_out[92]),
     .y_in(stage_4_per_out[93]),
@@ -6176,8 +5811,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_47 (
     .x_in(stage_4_per_out[94]),
     .y_in(stage_4_per_out[95]),
@@ -6189,8 +5823,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_48 (
     .x_in(stage_4_per_out[96]),
     .y_in(stage_4_per_out[97]),
@@ -6202,8 +5835,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_49 (
     .x_in(stage_4_per_out[98]),
     .y_in(stage_4_per_out[99]),
@@ -6215,8 +5847,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_50 (
     .x_in(stage_4_per_out[100]),
     .y_in(stage_4_per_out[101]),
@@ -6228,8 +5859,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_51 (
     .x_in(stage_4_per_out[102]),
     .y_in(stage_4_per_out[103]),
@@ -6241,8 +5871,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_52 (
     .x_in(stage_4_per_out[104]),
     .y_in(stage_4_per_out[105]),
@@ -6254,8 +5883,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_53 (
     .x_in(stage_4_per_out[106]),
     .y_in(stage_4_per_out[107]),
@@ -6267,8 +5895,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_54 (
     .x_in(stage_4_per_out[108]),
     .y_in(stage_4_per_out[109]),
@@ -6280,8 +5907,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_55 (
     .x_in(stage_4_per_out[110]),
     .y_in(stage_4_per_out[111]),
@@ -6293,8 +5919,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_56 (
     .x_in(stage_4_per_out[112]),
     .y_in(stage_4_per_out[113]),
@@ -6306,8 +5931,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_57 (
     .x_in(stage_4_per_out[114]),
     .y_in(stage_4_per_out[115]),
@@ -6319,8 +5943,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_58 (
     .x_in(stage_4_per_out[116]),
     .y_in(stage_4_per_out[117]),
@@ -6332,8 +5955,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_59 (
     .x_in(stage_4_per_out[118]),
     .y_in(stage_4_per_out[119]),
@@ -6345,8 +5967,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_60 (
     .x_in(stage_4_per_out[120]),
     .y_in(stage_4_per_out[121]),
@@ -6358,8 +5979,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_61 (
     .x_in(stage_4_per_out[122]),
     .y_in(stage_4_per_out[123]),
@@ -6371,8 +5991,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_62 (
     .x_in(stage_4_per_out[124]),
     .y_in(stage_4_per_out[125]),
@@ -6384,8 +6003,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[5]),
-    .factors({135333989, 194721725, 131414476, 46265048,
-              125976015, 220769014, 155624840, 133782759}))
+    .factors({96332896, 48587502, 177699333, 140261680}))
   stage_5_butterfly_63 (
     .x_in(stage_4_per_out[126]),
     .y_in(stage_4_per_out[127]),
@@ -6394,6 +6012,7 @@ module NTT_Top #(
     .clk(clk),
     .rst(rst)
   );
+
 
 
   // TODO(Yang): stage 5 -> stage 6 permutation
@@ -6666,8 +6285,7 @@ module NTT_Top #(
   // TODO(Tian): stage 6 32 butterfly units
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_0 (
     .x_in(stage_5_per_out[0]),
     .y_in(stage_5_per_out[1]),
@@ -6679,8 +6297,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_1 (
     .x_in(stage_5_per_out[2]),
     .y_in(stage_5_per_out[3]),
@@ -6692,8 +6309,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_2 (
     .x_in(stage_5_per_out[4]),
     .y_in(stage_5_per_out[5]),
@@ -6705,8 +6321,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_3 (
     .x_in(stage_5_per_out[6]),
     .y_in(stage_5_per_out[7]),
@@ -6718,8 +6333,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_4 (
     .x_in(stage_5_per_out[8]),
     .y_in(stage_5_per_out[9]),
@@ -6731,8 +6345,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_5 (
     .x_in(stage_5_per_out[10]),
     .y_in(stage_5_per_out[11]),
@@ -6744,8 +6357,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_6 (
     .x_in(stage_5_per_out[12]),
     .y_in(stage_5_per_out[13]),
@@ -6757,8 +6369,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_7 (
     .x_in(stage_5_per_out[14]),
     .y_in(stage_5_per_out[15]),
@@ -6770,8 +6381,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_8 (
     .x_in(stage_5_per_out[16]),
     .y_in(stage_5_per_out[17]),
@@ -6783,8 +6393,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_9 (
     .x_in(stage_5_per_out[18]),
     .y_in(stage_5_per_out[19]),
@@ -6796,8 +6405,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_10 (
     .x_in(stage_5_per_out[20]),
     .y_in(stage_5_per_out[21]),
@@ -6809,8 +6417,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_11 (
     .x_in(stage_5_per_out[22]),
     .y_in(stage_5_per_out[23]),
@@ -6822,8 +6429,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_12 (
     .x_in(stage_5_per_out[24]),
     .y_in(stage_5_per_out[25]),
@@ -6835,8 +6441,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_13 (
     .x_in(stage_5_per_out[26]),
     .y_in(stage_5_per_out[27]),
@@ -6848,8 +6453,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_14 (
     .x_in(stage_5_per_out[28]),
     .y_in(stage_5_per_out[29]),
@@ -6861,8 +6465,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_15 (
     .x_in(stage_5_per_out[30]),
     .y_in(stage_5_per_out[31]),
@@ -6874,8 +6477,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_16 (
     .x_in(stage_5_per_out[32]),
     .y_in(stage_5_per_out[33]),
@@ -6887,8 +6489,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_17 (
     .x_in(stage_5_per_out[34]),
     .y_in(stage_5_per_out[35]),
@@ -6900,8 +6501,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_18 (
     .x_in(stage_5_per_out[36]),
     .y_in(stage_5_per_out[37]),
@@ -6913,8 +6513,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_19 (
     .x_in(stage_5_per_out[38]),
     .y_in(stage_5_per_out[39]),
@@ -6926,8 +6525,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_20 (
     .x_in(stage_5_per_out[40]),
     .y_in(stage_5_per_out[41]),
@@ -6939,8 +6537,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_21 (
     .x_in(stage_5_per_out[42]),
     .y_in(stage_5_per_out[43]),
@@ -6952,8 +6549,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_22 (
     .x_in(stage_5_per_out[44]),
     .y_in(stage_5_per_out[45]),
@@ -6965,8 +6561,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_23 (
     .x_in(stage_5_per_out[46]),
     .y_in(stage_5_per_out[47]),
@@ -6978,8 +6573,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_24 (
     .x_in(stage_5_per_out[48]),
     .y_in(stage_5_per_out[49]),
@@ -6991,8 +6585,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_25 (
     .x_in(stage_5_per_out[50]),
     .y_in(stage_5_per_out[51]),
@@ -7004,8 +6597,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_26 (
     .x_in(stage_5_per_out[52]),
     .y_in(stage_5_per_out[53]),
@@ -7017,8 +6609,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_27 (
     .x_in(stage_5_per_out[54]),
     .y_in(stage_5_per_out[55]),
@@ -7030,8 +6621,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_28 (
     .x_in(stage_5_per_out[56]),
     .y_in(stage_5_per_out[57]),
@@ -7043,8 +6633,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_29 (
     .x_in(stage_5_per_out[58]),
     .y_in(stage_5_per_out[59]),
@@ -7056,8 +6645,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_30 (
     .x_in(stage_5_per_out[60]),
     .y_in(stage_5_per_out[61]),
@@ -7069,8 +6657,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_31 (
     .x_in(stage_5_per_out[62]),
     .y_in(stage_5_per_out[63]),
@@ -7082,8 +6669,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_32 (
     .x_in(stage_5_per_out[64]),
     .y_in(stage_5_per_out[65]),
@@ -7095,8 +6681,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_33 (
     .x_in(stage_5_per_out[66]),
     .y_in(stage_5_per_out[67]),
@@ -7108,8 +6693,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_34 (
     .x_in(stage_5_per_out[68]),
     .y_in(stage_5_per_out[69]),
@@ -7121,8 +6705,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_35 (
     .x_in(stage_5_per_out[70]),
     .y_in(stage_5_per_out[71]),
@@ -7134,8 +6717,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_36 (
     .x_in(stage_5_per_out[72]),
     .y_in(stage_5_per_out[73]),
@@ -7147,8 +6729,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_37 (
     .x_in(stage_5_per_out[74]),
     .y_in(stage_5_per_out[75]),
@@ -7160,8 +6741,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_38 (
     .x_in(stage_5_per_out[76]),
     .y_in(stage_5_per_out[77]),
@@ -7173,8 +6753,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_39 (
     .x_in(stage_5_per_out[78]),
     .y_in(stage_5_per_out[79]),
@@ -7186,8 +6765,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_40 (
     .x_in(stage_5_per_out[80]),
     .y_in(stage_5_per_out[81]),
@@ -7199,8 +6777,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_41 (
     .x_in(stage_5_per_out[82]),
     .y_in(stage_5_per_out[83]),
@@ -7212,8 +6789,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_42 (
     .x_in(stage_5_per_out[84]),
     .y_in(stage_5_per_out[85]),
@@ -7225,8 +6801,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_43 (
     .x_in(stage_5_per_out[86]),
     .y_in(stage_5_per_out[87]),
@@ -7238,8 +6813,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_44 (
     .x_in(stage_5_per_out[88]),
     .y_in(stage_5_per_out[89]),
@@ -7251,8 +6825,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_45 (
     .x_in(stage_5_per_out[90]),
     .y_in(stage_5_per_out[91]),
@@ -7264,8 +6837,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_46 (
     .x_in(stage_5_per_out[92]),
     .y_in(stage_5_per_out[93]),
@@ -7277,8 +6849,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_47 (
     .x_in(stage_5_per_out[94]),
     .y_in(stage_5_per_out[95]),
@@ -7290,8 +6861,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_48 (
     .x_in(stage_5_per_out[96]),
     .y_in(stage_5_per_out[97]),
@@ -7303,8 +6873,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_49 (
     .x_in(stage_5_per_out[98]),
     .y_in(stage_5_per_out[99]),
@@ -7316,8 +6885,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_50 (
     .x_in(stage_5_per_out[100]),
     .y_in(stage_5_per_out[101]),
@@ -7329,8 +6897,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_51 (
     .x_in(stage_5_per_out[102]),
     .y_in(stage_5_per_out[103]),
@@ -7342,8 +6909,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_52 (
     .x_in(stage_5_per_out[104]),
     .y_in(stage_5_per_out[105]),
@@ -7355,8 +6921,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_53 (
     .x_in(stage_5_per_out[106]),
     .y_in(stage_5_per_out[107]),
@@ -7368,8 +6933,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_54 (
     .x_in(stage_5_per_out[108]),
     .y_in(stage_5_per_out[109]),
@@ -7381,8 +6945,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_55 (
     .x_in(stage_5_per_out[110]),
     .y_in(stage_5_per_out[111]),
@@ -7394,8 +6957,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_56 (
     .x_in(stage_5_per_out[112]),
     .y_in(stage_5_per_out[113]),
@@ -7407,8 +6969,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_57 (
     .x_in(stage_5_per_out[114]),
     .y_in(stage_5_per_out[115]),
@@ -7420,8 +6981,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_58 (
     .x_in(stage_5_per_out[116]),
     .y_in(stage_5_per_out[117]),
@@ -7433,8 +6993,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_59 (
     .x_in(stage_5_per_out[118]),
     .y_in(stage_5_per_out[119]),
@@ -7446,8 +7005,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_60 (
     .x_in(stage_5_per_out[120]),
     .y_in(stage_5_per_out[121]),
@@ -7459,8 +7017,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_61 (
     .x_in(stage_5_per_out[122]),
     .y_in(stage_5_per_out[123]),
@@ -7472,8 +7029,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_62 (
     .x_in(stage_5_per_out[124]),
     .y_in(stage_5_per_out[125]),
@@ -7485,8 +7041,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[6]),
-    .factors({180609988, 172037025, 130838261, 219782419,
-              162923847, 90670588, 197095417, 128108241}))
+    .factors({250183461, 180167806, 69574326, 174860716}))
   stage_6_butterfly_63 (
     .x_in(stage_5_per_out[126]),
     .y_in(stage_5_per_out[127]),
@@ -7769,8 +7324,7 @@ module NTT_Top #(
   // TODO(Tian): stage 7 32 butterfly units
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_0 (
     .x_in(stage_6_per_out[0]),
     .y_in(stage_6_per_out[1]),
@@ -7782,8 +7336,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_1 (
     .x_in(stage_6_per_out[2]),
     .y_in(stage_6_per_out[3]),
@@ -7795,8 +7348,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_2 (
     .x_in(stage_6_per_out[4]),
     .y_in(stage_6_per_out[5]),
@@ -7808,8 +7360,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_3 (
     .x_in(stage_6_per_out[6]),
     .y_in(stage_6_per_out[7]),
@@ -7821,8 +7372,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_4 (
     .x_in(stage_6_per_out[8]),
     .y_in(stage_6_per_out[9]),
@@ -7834,8 +7384,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_5 (
     .x_in(stage_6_per_out[10]),
     .y_in(stage_6_per_out[11]),
@@ -7847,8 +7396,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_6 (
     .x_in(stage_6_per_out[12]),
     .y_in(stage_6_per_out[13]),
@@ -7860,8 +7408,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_7 (
     .x_in(stage_6_per_out[14]),
     .y_in(stage_6_per_out[15]),
@@ -7873,8 +7420,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_8 (
     .x_in(stage_6_per_out[16]),
     .y_in(stage_6_per_out[17]),
@@ -7886,8 +7432,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_9 (
     .x_in(stage_6_per_out[18]),
     .y_in(stage_6_per_out[19]),
@@ -7899,8 +7444,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_10 (
     .x_in(stage_6_per_out[20]),
     .y_in(stage_6_per_out[21]),
@@ -7912,8 +7456,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_11 (
     .x_in(stage_6_per_out[22]),
     .y_in(stage_6_per_out[23]),
@@ -7925,8 +7468,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_12 (
     .x_in(stage_6_per_out[24]),
     .y_in(stage_6_per_out[25]),
@@ -7938,8 +7480,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_13 (
     .x_in(stage_6_per_out[26]),
     .y_in(stage_6_per_out[27]),
@@ -7951,8 +7492,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_14 (
     .x_in(stage_6_per_out[28]),
     .y_in(stage_6_per_out[29]),
@@ -7964,8 +7504,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_15 (
     .x_in(stage_6_per_out[30]),
     .y_in(stage_6_per_out[31]),
@@ -7977,8 +7516,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_16 (
     .x_in(stage_6_per_out[32]),
     .y_in(stage_6_per_out[33]),
@@ -7990,8 +7528,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_17 (
     .x_in(stage_6_per_out[34]),
     .y_in(stage_6_per_out[35]),
@@ -8003,8 +7540,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_18 (
     .x_in(stage_6_per_out[36]),
     .y_in(stage_6_per_out[37]),
@@ -8016,8 +7552,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_19 (
     .x_in(stage_6_per_out[38]),
     .y_in(stage_6_per_out[39]),
@@ -8029,8 +7564,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_20 (
     .x_in(stage_6_per_out[40]),
     .y_in(stage_6_per_out[41]),
@@ -8042,8 +7576,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_21 (
     .x_in(stage_6_per_out[42]),
     .y_in(stage_6_per_out[43]),
@@ -8055,8 +7588,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_22 (
     .x_in(stage_6_per_out[44]),
     .y_in(stage_6_per_out[45]),
@@ -8068,8 +7600,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_23 (
     .x_in(stage_6_per_out[46]),
     .y_in(stage_6_per_out[47]),
@@ -8081,8 +7612,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_24 (
     .x_in(stage_6_per_out[48]),
     .y_in(stage_6_per_out[49]),
@@ -8094,8 +7624,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_25 (
     .x_in(stage_6_per_out[50]),
     .y_in(stage_6_per_out[51]),
@@ -8107,8 +7636,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_26 (
     .x_in(stage_6_per_out[52]),
     .y_in(stage_6_per_out[53]),
@@ -8120,8 +7648,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_27 (
     .x_in(stage_6_per_out[54]),
     .y_in(stage_6_per_out[55]),
@@ -8133,8 +7660,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_28 (
     .x_in(stage_6_per_out[56]),
     .y_in(stage_6_per_out[57]),
@@ -8146,8 +7672,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_29 (
     .x_in(stage_6_per_out[58]),
     .y_in(stage_6_per_out[59]),
@@ -8159,8 +7684,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_30 (
     .x_in(stage_6_per_out[60]),
     .y_in(stage_6_per_out[61]),
@@ -8172,8 +7696,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_31 (
     .x_in(stage_6_per_out[62]),
     .y_in(stage_6_per_out[63]),
@@ -8185,8 +7708,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_32 (
     .x_in(stage_6_per_out[64]),
     .y_in(stage_6_per_out[65]),
@@ -8198,8 +7720,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_33 (
     .x_in(stage_6_per_out[66]),
     .y_in(stage_6_per_out[67]),
@@ -8211,8 +7732,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_34 (
     .x_in(stage_6_per_out[68]),
     .y_in(stage_6_per_out[69]),
@@ -8224,8 +7744,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_35 (
     .x_in(stage_6_per_out[70]),
     .y_in(stage_6_per_out[71]),
@@ -8237,8 +7756,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_36 (
     .x_in(stage_6_per_out[72]),
     .y_in(stage_6_per_out[73]),
@@ -8250,8 +7768,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_37 (
     .x_in(stage_6_per_out[74]),
     .y_in(stage_6_per_out[75]),
@@ -8263,8 +7780,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_38 (
     .x_in(stage_6_per_out[76]),
     .y_in(stage_6_per_out[77]),
@@ -8276,8 +7792,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_39 (
     .x_in(stage_6_per_out[78]),
     .y_in(stage_6_per_out[79]),
@@ -8289,8 +7804,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_40 (
     .x_in(stage_6_per_out[80]),
     .y_in(stage_6_per_out[81]),
@@ -8302,8 +7816,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_41 (
     .x_in(stage_6_per_out[82]),
     .y_in(stage_6_per_out[83]),
@@ -8315,8 +7828,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_42 (
     .x_in(stage_6_per_out[84]),
     .y_in(stage_6_per_out[85]),
@@ -8328,8 +7840,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_43 (
     .x_in(stage_6_per_out[86]),
     .y_in(stage_6_per_out[87]),
@@ -8341,8 +7852,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_44 (
     .x_in(stage_6_per_out[88]),
     .y_in(stage_6_per_out[89]),
@@ -8354,8 +7864,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_45 (
     .x_in(stage_6_per_out[90]),
     .y_in(stage_6_per_out[91]),
@@ -8367,8 +7876,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_46 (
     .x_in(stage_6_per_out[92]),
     .y_in(stage_6_per_out[93]),
@@ -8380,8 +7888,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_47 (
     .x_in(stage_6_per_out[94]),
     .y_in(stage_6_per_out[95]),
@@ -8393,8 +7900,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_48 (
     .x_in(stage_6_per_out[96]),
     .y_in(stage_6_per_out[97]),
@@ -8406,8 +7912,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_49 (
     .x_in(stage_6_per_out[98]),
     .y_in(stage_6_per_out[99]),
@@ -8419,8 +7924,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_50 (
     .x_in(stage_6_per_out[100]),
     .y_in(stage_6_per_out[101]),
@@ -8432,8 +7936,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_51 (
     .x_in(stage_6_per_out[102]),
     .y_in(stage_6_per_out[103]),
@@ -8445,8 +7948,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_52 (
     .x_in(stage_6_per_out[104]),
     .y_in(stage_6_per_out[105]),
@@ -8458,8 +7960,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_53 (
     .x_in(stage_6_per_out[106]),
     .y_in(stage_6_per_out[107]),
@@ -8471,8 +7972,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_54 (
     .x_in(stage_6_per_out[108]),
     .y_in(stage_6_per_out[109]),
@@ -8484,8 +7984,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_55 (
     .x_in(stage_6_per_out[110]),
     .y_in(stage_6_per_out[111]),
@@ -8497,8 +7996,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_56 (
     .x_in(stage_6_per_out[112]),
     .y_in(stage_6_per_out[113]),
@@ -8510,8 +8008,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_57 (
     .x_in(stage_6_per_out[114]),
     .y_in(stage_6_per_out[115]),
@@ -8523,8 +8020,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_58 (
     .x_in(stage_6_per_out[116]),
     .y_in(stage_6_per_out[117]),
@@ -8536,8 +8032,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_59 (
     .x_in(stage_6_per_out[118]),
     .y_in(stage_6_per_out[119]),
@@ -8549,8 +8044,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_60 (
     .x_in(stage_6_per_out[120]),
     .y_in(stage_6_per_out[121]),
@@ -8562,8 +8056,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_61 (
     .x_in(stage_6_per_out[122]),
     .y_in(stage_6_per_out[123]),
@@ -8575,8 +8068,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_62 (
     .x_in(stage_6_per_out[124]),
     .y_in(stage_6_per_out[125]),
@@ -8588,8 +8080,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[7]),
-    .factors({250183461, 250183461, 180167806, 180167806,
-              69574326, 69574326, 174860716, 174860716}))
+    .factors({185593570, 185593570, 183496802, 183496802}))
   stage_7_butterfly_63 (
     .x_in(stage_6_per_out[126]),
     .y_in(stage_6_per_out[127]),
@@ -8871,8 +8362,7 @@ module NTT_Top #(
   // TODO(Tian): stage 8 32 butterfly units
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_0 (
     .x_in(stage_7_per_out[0]),
     .y_in(stage_7_per_out[1]),
@@ -8884,8 +8374,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_1 (
     .x_in(stage_7_per_out[2]),
     .y_in(stage_7_per_out[3]),
@@ -8897,8 +8386,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_2 (
     .x_in(stage_7_per_out[4]),
     .y_in(stage_7_per_out[5]),
@@ -8910,8 +8398,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_3 (
     .x_in(stage_7_per_out[6]),
     .y_in(stage_7_per_out[7]),
@@ -8923,8 +8410,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_4 (
     .x_in(stage_7_per_out[8]),
     .y_in(stage_7_per_out[9]),
@@ -8936,8 +8422,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_5 (
     .x_in(stage_7_per_out[10]),
     .y_in(stage_7_per_out[11]),
@@ -8949,8 +8434,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_6 (
     .x_in(stage_7_per_out[12]),
     .y_in(stage_7_per_out[13]),
@@ -8962,8 +8446,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_7 (
     .x_in(stage_7_per_out[14]),
     .y_in(stage_7_per_out[15]),
@@ -8975,8 +8458,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_8 (
     .x_in(stage_7_per_out[16]),
     .y_in(stage_7_per_out[17]),
@@ -8988,8 +8470,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_9 (
     .x_in(stage_7_per_out[18]),
     .y_in(stage_7_per_out[19]),
@@ -9001,8 +8482,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_10 (
     .x_in(stage_7_per_out[20]),
     .y_in(stage_7_per_out[21]),
@@ -9014,8 +8494,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_11 (
     .x_in(stage_7_per_out[22]),
     .y_in(stage_7_per_out[23]),
@@ -9027,8 +8506,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_12 (
     .x_in(stage_7_per_out[24]),
     .y_in(stage_7_per_out[25]),
@@ -9040,8 +8518,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_13 (
     .x_in(stage_7_per_out[26]),
     .y_in(stage_7_per_out[27]),
@@ -9053,8 +8530,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_14 (
     .x_in(stage_7_per_out[28]),
     .y_in(stage_7_per_out[29]),
@@ -9066,8 +8542,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_15 (
     .x_in(stage_7_per_out[30]),
     .y_in(stage_7_per_out[31]),
@@ -9079,8 +8554,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_16 (
     .x_in(stage_7_per_out[32]),
     .y_in(stage_7_per_out[33]),
@@ -9092,8 +8566,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_17 (
     .x_in(stage_7_per_out[34]),
     .y_in(stage_7_per_out[35]),
@@ -9105,8 +8578,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_18 (
     .x_in(stage_7_per_out[36]),
     .y_in(stage_7_per_out[37]),
@@ -9118,8 +8590,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_19 (
     .x_in(stage_7_per_out[38]),
     .y_in(stage_7_per_out[39]),
@@ -9131,8 +8602,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_20 (
     .x_in(stage_7_per_out[40]),
     .y_in(stage_7_per_out[41]),
@@ -9144,8 +8614,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_21 (
     .x_in(stage_7_per_out[42]),
     .y_in(stage_7_per_out[43]),
@@ -9157,8 +8626,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_22 (
     .x_in(stage_7_per_out[44]),
     .y_in(stage_7_per_out[45]),
@@ -9170,8 +8638,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_23 (
     .x_in(stage_7_per_out[46]),
     .y_in(stage_7_per_out[47]),
@@ -9183,8 +8650,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_24 (
     .x_in(stage_7_per_out[48]),
     .y_in(stage_7_per_out[49]),
@@ -9196,8 +8662,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_25 (
     .x_in(stage_7_per_out[50]),
     .y_in(stage_7_per_out[51]),
@@ -9209,8 +8674,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_26 (
     .x_in(stage_7_per_out[52]),
     .y_in(stage_7_per_out[53]),
@@ -9222,8 +8686,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_27 (
     .x_in(stage_7_per_out[54]),
     .y_in(stage_7_per_out[55]),
@@ -9235,8 +8698,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_28 (
     .x_in(stage_7_per_out[56]),
     .y_in(stage_7_per_out[57]),
@@ -9248,8 +8710,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_29 (
     .x_in(stage_7_per_out[58]),
     .y_in(stage_7_per_out[59]),
@@ -9261,8 +8722,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_30 (
     .x_in(stage_7_per_out[60]),
     .y_in(stage_7_per_out[61]),
@@ -9274,8 +8734,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_31 (
     .x_in(stage_7_per_out[62]),
     .y_in(stage_7_per_out[63]),
@@ -9287,8 +8746,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_32 (
     .x_in(stage_7_per_out[64]),
     .y_in(stage_7_per_out[65]),
@@ -9300,8 +8758,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_33 (
     .x_in(stage_7_per_out[66]),
     .y_in(stage_7_per_out[67]),
@@ -9313,8 +8770,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_34 (
     .x_in(stage_7_per_out[68]),
     .y_in(stage_7_per_out[69]),
@@ -9326,8 +8782,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_35 (
     .x_in(stage_7_per_out[70]),
     .y_in(stage_7_per_out[71]),
@@ -9339,8 +8794,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_36 (
     .x_in(stage_7_per_out[72]),
     .y_in(stage_7_per_out[73]),
@@ -9352,8 +8806,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_37 (
     .x_in(stage_7_per_out[74]),
     .y_in(stage_7_per_out[75]),
@@ -9365,8 +8818,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_38 (
     .x_in(stage_7_per_out[76]),
     .y_in(stage_7_per_out[77]),
@@ -9378,8 +8830,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_39 (
     .x_in(stage_7_per_out[78]),
     .y_in(stage_7_per_out[79]),
@@ -9391,8 +8842,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_40 (
     .x_in(stage_7_per_out[80]),
     .y_in(stage_7_per_out[81]),
@@ -9404,8 +8854,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_41 (
     .x_in(stage_7_per_out[82]),
     .y_in(stage_7_per_out[83]),
@@ -9417,8 +8866,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_42 (
     .x_in(stage_7_per_out[84]),
     .y_in(stage_7_per_out[85]),
@@ -9430,8 +8878,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_43 (
     .x_in(stage_7_per_out[86]),
     .y_in(stage_7_per_out[87]),
@@ -9443,8 +8890,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_44 (
     .x_in(stage_7_per_out[88]),
     .y_in(stage_7_per_out[89]),
@@ -9456,8 +8902,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_45 (
     .x_in(stage_7_per_out[90]),
     .y_in(stage_7_per_out[91]),
@@ -9469,8 +8914,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_46 (
     .x_in(stage_7_per_out[92]),
     .y_in(stage_7_per_out[93]),
@@ -9482,8 +8926,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_47 (
     .x_in(stage_7_per_out[94]),
     .y_in(stage_7_per_out[95]),
@@ -9495,8 +8938,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_48 (
     .x_in(stage_7_per_out[96]),
     .y_in(stage_7_per_out[97]),
@@ -9508,8 +8950,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_49 (
     .x_in(stage_7_per_out[98]),
     .y_in(stage_7_per_out[99]),
@@ -9521,8 +8962,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_50 (
     .x_in(stage_7_per_out[100]),
     .y_in(stage_7_per_out[101]),
@@ -9534,8 +8974,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_51 (
     .x_in(stage_7_per_out[102]),
     .y_in(stage_7_per_out[103]),
@@ -9547,8 +8986,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_52 (
     .x_in(stage_7_per_out[104]),
     .y_in(stage_7_per_out[105]),
@@ -9560,8 +8998,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_53 (
     .x_in(stage_7_per_out[106]),
     .y_in(stage_7_per_out[107]),
@@ -9573,8 +9010,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_54 (
     .x_in(stage_7_per_out[108]),
     .y_in(stage_7_per_out[109]),
@@ -9586,8 +9022,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_55 (
     .x_in(stage_7_per_out[110]),
     .y_in(stage_7_per_out[111]),
@@ -9599,8 +9034,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_56 (
     .x_in(stage_7_per_out[112]),
     .y_in(stage_7_per_out[113]),
@@ -9612,8 +9046,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_57 (
     .x_in(stage_7_per_out[114]),
     .y_in(stage_7_per_out[115]),
@@ -9625,8 +9058,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_58 (
     .x_in(stage_7_per_out[116]),
     .y_in(stage_7_per_out[117]),
@@ -9638,8 +9070,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_59 (
     .x_in(stage_7_per_out[118]),
     .y_in(stage_7_per_out[119]),
@@ -9651,8 +9082,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_60 (
     .x_in(stage_7_per_out[120]),
     .y_in(stage_7_per_out[121]),
@@ -9664,8 +9094,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_61 (
     .x_in(stage_7_per_out[122]),
     .y_in(stage_7_per_out[123]),
@@ -9677,8 +9106,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_62 (
     .x_in(stage_7_per_out[124]),
     .y_in(stage_7_per_out[125]),
@@ -9690,8 +9118,7 @@ module NTT_Top #(
 
   butterfly #(
     .start(START_CYCLE[8]),
-    .factors({185593570, 185593570, 185593570, 185593570,
-              183496802, 183496802, 183496802, 183496802}))
+    .factors({75074761, 75074761, 75074761, 75074761}))
   stage_8_butterfly_63 (
     .x_in(stage_7_per_out[126]),
     .y_in(stage_7_per_out[127]),
@@ -9700,4 +9127,6 @@ module NTT_Top #(
     .clk(clk),
     .rst(rst)
   );
+
+
 endmodule

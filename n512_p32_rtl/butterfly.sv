@@ -21,7 +21,7 @@
 
 
 module butterfly
-#(parameter [7:0] start = 6, parameter [27:0] factors[32]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1})
+#(parameter [6:0] start = 6, parameter [27:0] factors[16]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1})
 (
         input   [27:0]  x_in,
         input   [27:0]  y_in,
@@ -48,8 +48,8 @@ module butterfly
     reg     [27:0]  x6_reg;
         
     reg             enable;
-    reg     [7:0]   counter;
-    reg     [4:0]   index;        
+    reg     [6:0]   counter;
+    reg     [3:0]   index;        
         
     //assign  w = 28'habcdef0;
     
