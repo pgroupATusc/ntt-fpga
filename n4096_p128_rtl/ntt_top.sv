@@ -47,6 +47,12 @@ module NTT_Top #(
   logic [DATA_WIDTH_PER_INPUT-1:0] stage_8_per_in[INPUT_PER_CYCLE-1:0];
   logic [DATA_WIDTH_PER_INPUT-1:0] stage_8_per_out[INPUT_PER_CYCLE-1:0];
 
+  logic [DATA_WIDTH_PER_INPUT-1:0] stage_9_per_in[INPUT_PER_CYCLE-1:0];
+  logic [DATA_WIDTH_PER_INPUT-1:0] stage_9_per_out[INPUT_PER_CYCLE-1:0];
+
+  logic [DATA_WIDTH_PER_INPUT-1:0] stage_10_per_in[INPUT_PER_CYCLE-1:0];
+  logic [DATA_WIDTH_PER_INPUT-1:0] stage_10_per_out[INPUT_PER_CYCLE-1:0];
+
   parameter [7:0] START_CYCLE[12] = {0, 7, 14, 21, 28, 35, 42, 67, 93, 121, 153, 193};
 
   // TODO(Tian): stage 0 32 butterfly units
