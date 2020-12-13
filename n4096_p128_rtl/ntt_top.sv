@@ -13591,8 +13591,8 @@ module NTT_Top #(
     .outData_125(stage_10_per_out[125]),
     .outData_126(stage_10_per_out[126]),
     .outData_127(stage_10_per_out[127]),
-    .in_start(in_start[8]),
-    .out_start(out_start[8]),
+    .in_start(in_start[10]),
+    .out_start(out_start[10]),
     .clk(clk),
     .rst(rst)
   );
