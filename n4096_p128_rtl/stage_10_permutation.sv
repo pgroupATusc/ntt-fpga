@@ -37331,8 +37331,6 @@ rst
 
   wire [4:0] addr_r_wire_0;        
 
-  wire [4:0] addr_r_wire_0;        
-
   reg [4:0] read_address;
 
   always @ (posedge clk) begin
